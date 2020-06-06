@@ -8,9 +8,11 @@ $blue: #007bff;
 @import "site-navbar";
 /* Blocks */
 @import "site-blocks";
-#drop-down{
+
+#drop-down {
     position: relative;
-    #list{
+
+    #list {
         list-style: none;
         color: $blue;
         display: none;
@@ -19,57 +21,76 @@ $blue: #007bff;
         width: 100%;
         padding: 0;
     }
-    &:hover{
+
+    &:hover {
         transition: 1s ease;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
-        background: white!important;
-        color: $blue!important  ;
-        #list{
+        background: white !important;
+        color: $blue !important;
+
+        #list {
             display: block;
             border-bottom-right-radius: 10px;
             border-bottom-left-radius: 10px;
 
-            li{
-                &:hover{
+            li {
+                &:hover {
                     transition: 1s ease;
                     margin: 10px 0px;
                     background: $blue;
                     font-size: 17px;
                     color: white;
                 }
+
                 padding: 10px 20px;
                 text-align: center;
-               
+
             }
         }
-        
+
     }
-   a{
-            
-           &:hover{
-                transition: 1s ease;
-               color: $blue!important;
-               svg{
-                   fill:$blue ;
-               }
-               color: black!important;
-           }
-      
-   }
+
+    a {
+
+        &:hover {
+            transition: 1s ease;
+            color: $blue !important;
+
+            svg {
+                fill: $blue;
+            }
+
+            color: black !important;
+        }
+
+    }
 }
-#header-top{
+
+#header-top {
     background: transparent;
     border-bottom: 1px solid white;
     padding-bottom: 10px;
-    *{
-        color:white;
+
+    * {
+        color: white;
         font-size: 13px;
     }
-    svg{
+
+    svg {
         width: 15px;
         height: 15px;
         fill: white;
         margin: 0px 10px 1px 0px;
     }
 }
+#menu-nav-bar{
+    .logo{
+        width: 35%;
+    }
+}
+@media only screen and (max-width: 991px) {
+    #menu-nav-bar .logo {
+        width: 59%;
+    }
+  }

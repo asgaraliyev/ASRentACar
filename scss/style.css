@@ -2251,4 +2251,14 @@ h1, h2, h3, h4, h5,
   fill: white;
   margin: 0px 10px 1px 0px;
 }
+
+#menu-nav-bar .logo {
+  width: 35%;
+}
+
+@media only screen and (max-width: 991px) {
+  #menu-nav-bar .logo {
+    width: 59%;
+  }
+}
 /*# sourceMappingURL=style.css.map */
