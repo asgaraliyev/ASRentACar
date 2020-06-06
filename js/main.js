@@ -8,7 +8,7 @@ jQuery(document).ready(function($) {
 
 	"use strict";
 
-	
+			
 	var siteMenuClone = function() {
 
 		$('.js-clone-nav').each(function() {
@@ -121,7 +121,14 @@ jQuery(document).ready(function($) {
 	};
 	// siteSliderRange();
 
-
+	$(window).on('load',
+	function(){
+		setInterval(() => {
+		$("#loading").fadeOut("slow");
+		}, 1000);
+	}
+	
+	);
 	
 
 	var siteCarousel = function () {
