@@ -128,7 +128,7 @@ jQuery(document).ready(function($) {
 		$("html").css({
 			"overflow":"auto"
 		});
-		}, 0);
+		}, 1);
 	}
 	
 	);

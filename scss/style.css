@@ -1,5 +1,5 @@
 * {
-  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
 }
 
 /* Base */
@@ -2188,12 +2188,69 @@ html {
   overflow: hidden;
 }
 
+#name-and-car {
+  width: 100%;
+}
+
+#name-and-car #car-name {
+  margin: 200px 0px 0px 0px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.349);
+  width: 100%;
+}
+
+#name-and-car #car-name a {
+  font-size: 200%;
+  color: white;
+}
+
 #a-car {
-  margin: 50px 0px 0px 0px;
-  width: 90%;
-  min-height: 75%;
+  width: 100%;
   background: rgba(0, 0, 0, 0.85);
   padding: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#a-car .side {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#a-car .asagi {
+  height: auto !important;
+  padding: 10px;
+}
+
+#a-car .asagi ul {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  float: left;
+}
+
+#a-car .asagi ul li {
+  padding: 7px;
+}
+
+#a-car .asagi ul * {
+  color: white;
+  list-style: none;
 }
 
 #loading {
@@ -2371,5 +2428,85 @@ html {
   #list {
     color: #212529;
   }
+}
+
+#page-wrap {
+  width: 100%;
+  position: relative;
+}
+
+#banner {
+  width: 500px;
+  height: 333px;
+  position: relative;
+  -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
+  left: 50%;
+  -webkit-transform: translate(-50%, 0px);
+          transform: translate(-50%, 0px);
+}
+
+#banner div {
+  position: absolute;
+  max-height: 100%;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+@-webkit-keyframes wipe {
+  0% {
+    -webkit-mask-position: 0 0;
+  }
+  100% {
+    -webkit-mask-position: -1200px -1200px;
+  }
+}
+
+/*Images 2*/
+#banner div:nth-child(1) {
+  -webkit-animation: wipe 6s infinite;
+  -webkit-animation-delay: 12s;
+  -webkit-animation-direction: alternate;
+  -webkit-mask-size: 2000px 2000px;
+  -webkit-mask-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, black), color-stop(0.45, black), color-stop(0.5, rgba(0, 0, 0, 0)), color-stop(0.55, rgba(0, 0, 0, 0)), color-stop(1, rgba(0, 0, 0, 0)));
+}
+
+/*Images 3*/
+#banner div:nth-child(2) {
+  -webkit-animation: wipe 6s infinite;
+  -webkit-animation-delay: 9s;
+  -webkit-animation-direction: alternate;
+  -webkit-mask-size: 2000px 2000px;
+  -webkit-mask-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, black), color-stop(0.45, black), color-stop(0.5, rgba(0, 0, 0, 0)), color-stop(0.55, rgba(0, 0, 0, 0)), color-stop(1, rgba(0, 0, 0, 0)));
+}
+
+/*Images 4*/
+#banner div:nth-child(3) {
+  -webkit-animation: wipe 6s infinite;
+  -webkit-animation-delay: 6s;
+  -webkit-animation-direction: alternate;
+  -webkit-mask-size: 2000px 2000px;
+  -webkit-mask-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, black), color-stop(0.45, black), color-stop(0.5, rgba(0, 0, 0, 0)), color-stop(0.55, rgba(0, 0, 0, 0)), color-stop(1, rgba(0, 0, 0, 0)));
+}
+
+/*Images 5*/
+#banner div:nth-child(4) {
+  -webkit-animation: wipe 6s infinite;
+  -webkit-animation-delay: 3s;
+  -webkit-animation-direction: alternate;
+  -webkit-mask-size: 2000px 2000px;
+  -webkit-mask-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, black), color-stop(0.45, black), color-stop(0.5, rgba(0, 0, 0, 0)), color-stop(0.55, rgba(0, 0, 0, 0)), color-stop(1, rgba(0, 0, 0, 0)));
+}
+
+/*Images 1*/
+#banner div:nth-child(5) {
+  -webkit-animation: wipe 6s infinite;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-direction: alternate;
+  -webkit-mask-size: 2000px 2000px;
+  -webkit-mask-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, black), color-stop(0.45, black), color-stop(0.5, rgba(0, 0, 0, 0)), color-stop(0.55, rgba(0, 0, 0, 0)), color-stop(1, rgba(0, 0, 0, 0)));
 }
 /*# sourceMappingURL=style.css.map */

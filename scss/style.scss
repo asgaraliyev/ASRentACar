@@ -5,125 +5,178 @@ $blue: #007bff;
 $black:#212529;
 $gray:rgb(62, 62, 62);
 $tgray:rgba(62, 62, 62, 0.9);
-*{
-    font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+* {
+    font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
 }
+
 /* Base */
 @import "site-base";
 /* Navbar */
 @import "site-navbar";
 /* Blocks */
 @import "site-blocks";
-html{
+
+html {
     overflow: hidden;
 }
-#a-car{
-    margin: 50px 0px 0px 0px;
-    width: 90%;
-    min-height: 75%;
-    background: rgba(0, 0, 0,0.85);
-    padding: 25px;
+#name-and-car{
+    width:100%;
+    #car-name{
+        margin: 200px 0px 0px 0px;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.349);
+        width: 100%;
+        a{
+            font-size: 200%;
+            color: white;
+    
+        }
+    }
 }
-#loading{
+#a-car {
+   
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .side {
+
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+    }
+
+    .asagi {
+        height: auto!important;
+        padding: 10px;
+        ul{
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            float: left;
+            li{
+                padding: 7px;
+            }
+            *{
+                color: white;
+                list-style: none;
+            }
+        }
+    }
+}
+
+#loading {
     background: $gray;
-    top: 0!important;
-    left: 0!important;
+    top: 0 !important;
+    left: 0 !important;
     z-index: 20;
     width: 100vw;
     height: 100vh;
     position: fixed;
-    
+
+
 }
+
 #loading .loader {
-	display: flex;
-	align-items: center;
+    display: flex;
+    align-items: center;
     justify-content: space-around;
     width: 100%;
-	height: 100%;
+    height: 100%;
     flex-direction: column;
-    img{
+
+    img {
         width: 50%;
     }
-   
+
 }
 
 #loading .car {
-    
-	&__body {
-		animation: shake 0.2s ease-in-out infinite alternate;
-	}
-	
-	&__line {
-		transform-origin: center right;
-		stroke-dasharray: 22;
-		animation: line 0.8s ease-in-out infinite;
-		animation-fill-mode: both;
-		
-		&--top {
-			animation-delay: 0s;
-		}
-		
-		&--middle {
-			animation-delay: 0.2s;
-		}
-		
-		&--bottom {
-			animation-delay: 0.4s;
-		}
-	}
+
+    &__body {
+        animation: shake 0.2s ease-in-out infinite alternate;
+    }
+
+    &__line {
+        transform-origin: center right;
+        stroke-dasharray: 22;
+        animation: line 0.8s ease-in-out infinite;
+        animation-fill-mode: both;
+
+        &--top {
+            animation-delay: 0s;
+        }
+
+        &--middle {
+            animation-delay: 0.2s;
+        }
+
+        &--bottom {
+            animation-delay: 0.4s;
+        }
+    }
 }
 
 @keyframes shake {
-	0% {
-		transform: translateY(-1%);
-	}
-	100% {
-		transform: translateY(3%);
-	}
+    0% {
+        transform: translateY(-1%);
+    }
+
+    100% {
+        transform: translateY(3%);
+    }
 }
 
 @keyframes line {
-	0% {
-		stroke-dashoffset: 22;
-	}
-	
-	25% {
-		stroke-dashoffset: 22;
-	}
-	
-	50% {
-		stroke-dashoffset: 0;
-	}
-	
-	51% {
-		stroke-dashoffset: 0;
-	}
-	
-	80% {
-		stroke-dashoffset: -22;
-	}
-	
-	100% {
-		stroke-dashoffset: -22;
-	}
+    0% {
+        stroke-dashoffset: 22;
+    }
+
+    25% {
+        stroke-dashoffset: 22;
+    }
+
+    50% {
+        stroke-dashoffset: 0;
+    }
+
+    51% {
+        stroke-dashoffset: 0;
+    }
+
+    80% {
+        stroke-dashoffset: -22;
+    }
+
+    100% {
+        stroke-dashoffset: -22;
+    }
 }
 
 
 #list {
     background: transparent;
-    border: none!important;
-    outline: none!important;
+    border: none !important;
+    outline: none !important;
     color: white;
-    option{
-        border: none!important;
-        outline: none!important;
+
+    option {
+        border: none !important;
+        outline: none !important;
         background: transparent;
         color: $blue;
-        &:hover{
+
+        &:hover {
             color: white;
             background: $blue;
-            border: none!important;
-            outline: none!important;
+            border: none !important;
+            outline: none !important;
         }
     }
 }
@@ -145,18 +198,129 @@ html{
         margin: 0px 10px 1px 0px;
     }
 }
-#menu-nav-bar{
-    .logo{
+
+#menu-nav-bar {
+    .logo {
         width: 35%;
     }
 }
+
 @media only screen and (max-width: 991px) {
     #menu-nav-bar .logo {
         width: 59%;
     }
+
     #list {
         color: $black;
     }
-    
-  }
-  
+
+
+
+}
+
+
+#page-wrap {
+    width: 100%;
+    position: relative;
+}
+
+#banner {
+    width: 500px;
+    height: 333px;
+    position: relative;
+    -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
+    left: 50%;
+    transform: translate(-50%, 0px);
+}
+
+#banner div {
+    position: absolute;
+    max-height: 100%;
+}
+
+img {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+@-webkit-keyframes wipe {
+    0% {
+        -webkit-mask-position: 0 0;
+    }
+
+    100% {
+        -webkit-mask-position: -1200px -1200px;
+    }
+}
+
+
+/*Images 2*/
+#banner div:nth-child(1) {
+    -webkit-animation: wipe 6s infinite;
+    -webkit-animation-delay: 12s;
+    -webkit-animation-direction: alternate;
+    -webkit-mask-size: 2000px 2000px;
+    -webkit-mask-image: -webkit-gradient(linear, left top, right bottom,
+            color-stop(0.00, rgba(0, 0, 0, 1)),
+            color-stop(0.45, rgba(0, 0, 0, 1)),
+            color-stop(0.50, rgba(0, 0, 0, 0)),
+            color-stop(0.55, rgba(0, 0, 0, 0)),
+            color-stop(1.00, rgba(0, 0, 0, 0)));
+}
+
+/*Images 3*/
+#banner div:nth-child(2) {
+    -webkit-animation: wipe 6s infinite;
+    -webkit-animation-delay: 9s;
+    -webkit-animation-direction: alternate;
+    -webkit-mask-size: 2000px 2000px;
+    -webkit-mask-image: -webkit-gradient(linear, left top, right bottom,
+            color-stop(0.00, rgba(0, 0, 0, 1)),
+            color-stop(0.45, rgba(0, 0, 0, 1)),
+            color-stop(0.50, rgba(0, 0, 0, 0)),
+            color-stop(0.55, rgba(0, 0, 0, 0)),
+            color-stop(1.00, rgba(0, 0, 0, 0)));
+}
+
+/*Images 4*/
+#banner div:nth-child(3) {
+    -webkit-animation: wipe 6s infinite;
+    -webkit-animation-delay: 6s;
+    -webkit-animation-direction: alternate;
+    -webkit-mask-size: 2000px 2000px;
+    -webkit-mask-image: -webkit-gradient(linear, left top, right bottom,
+            color-stop(0.00, rgba(0, 0, 0, 1)),
+            color-stop(0.45, rgba(0, 0, 0, 1)),
+            color-stop(0.50, rgba(0, 0, 0, 0)),
+            color-stop(0.55, rgba(0, 0, 0, 0)),
+            color-stop(1.00, rgba(0, 0, 0, 0)));
+}
+
+/*Images 5*/
+#banner div:nth-child(4) {
+    -webkit-animation: wipe 6s infinite;
+    -webkit-animation-delay: 3s;
+    -webkit-animation-direction: alternate;
+    -webkit-mask-size: 2000px 2000px;
+    -webkit-mask-image: -webkit-gradient(linear, left top, right bottom,
+            color-stop(0.00, rgba(0, 0, 0, 1)),
+            color-stop(0.45, rgba(0, 0, 0, 1)),
+            color-stop(0.50, rgba(0, 0, 0, 0)),
+            color-stop(0.55, rgba(0, 0, 0, 0)),
+            color-stop(1.00, rgba(0, 0, 0, 0)));
+}
+
+/*Images 1*/
+#banner div:nth-child(5) {
+    -webkit-animation: wipe 6s infinite;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-direction: alternate;
+    -webkit-mask-size: 2000px 2000px;
+    -webkit-mask-image: -webkit-gradient(linear, left top, right bottom,
+            color-stop(0.00, rgba(0, 0, 0, 1)),
+            color-stop(0.45, rgba(0, 0, 0, 1)),
+            color-stop(0.50, rgba(0, 0, 0, 0)),
+            color-stop(0.55, rgba(0, 0, 0, 0)),
+            color-stop(1.00, rgba(0, 0, 0, 0)));
+}
