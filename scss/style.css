@@ -2184,8 +2184,20 @@ h1, h2, h3, h4, h5,
   border-radius: 50%;
 }
 
+html {
+  overflow: hidden;
+}
+
+#a-car {
+  margin: 50px 0px 0px 0px;
+  width: 90%;
+  min-height: 75%;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 25px;
+}
+
 #loading {
-  background: #3e3e3eff;
+  background: #3e3e3e;
   top: 0 !important;
   left: 0 !important;
   z-index: 20;

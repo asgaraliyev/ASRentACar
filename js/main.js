@@ -125,7 +125,10 @@ jQuery(document).ready(function($) {
 	function(){
 		setInterval(() => {
 		$("#loading").fadeOut("slow");
-		}, 1000);
+		$("html").css({
+			"overflow":"auto"
+		});
+		}, 0);
 	}
 	
 	);
