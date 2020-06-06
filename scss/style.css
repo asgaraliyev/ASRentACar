@@ -2233,4 +2233,22 @@ h1, h2, h3, h4, h5,
 #drop-down a:hover svg {
   fill: #007bff;
 }
+
+#header-top {
+  background: transparent;
+  border-bottom: 1px solid white;
+  padding-bottom: 10px;
+}
+
+#header-top * {
+  color: white;
+  font-size: 13px;
+}
+
+#header-top svg {
+  width: 15px;
+  height: 15px;
+  fill: white;
+  margin: 0px 10px 1px 0px;
+}
 /*# sourceMappingURL=style.css.map */

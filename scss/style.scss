@@ -58,3 +58,18 @@ $blue: #007bff;
       
    }
 }
+#header-top{
+    background: transparent;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+    *{
+        color:white;
+        font-size: 13px;
+    }
+    svg{
+        width: 15px;
+        height: 15px;
+        fill: white;
+        margin: 0px 10px 1px 0px;
+    }
+}
