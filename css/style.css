@@ -1581,3 +1581,20 @@ h1, h2, h3, h4, h5,
     -ms-flex: 0 0 50px;
     flex: 0 0 50px;
     border-radius: 50%; }
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 50px;
+  right: -30px;
+  width: 120px;
+  z-index: 99;
+  height: 120px;
+  border: none;
+  outline: none;
+  background: url("../images/scrollcar.png") no-repeat;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+  background-size: 80px;
+}
