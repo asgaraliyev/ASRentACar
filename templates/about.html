@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="{{ url_for('static',filename='css/aos.css') }}">
   <link rel="stylesheet" href="{{ url_for('static',filename='scss/style.css') }}">
 
-<<<<<<< HEAD
+
   <link rel="stylesheet" href="{{ url_for('static',filename='fonts/icomoon/style.css') }}">
 
   <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
@@ -32,30 +32,26 @@
   <link rel="stylesheet" href="{{ url_for('static',filename='scss/style.css') }}">
   <!-- MAIN CSS -->
   <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
-=======
+
   <!-- MAIN CSS -->
   <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
 
->>>>>>> e1eda9597c9aca1b87ef13e8826310947a20263e
+
 
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
   <div id="loading">
     <div class="loader">
-<<<<<<< HEAD
       <img src="images/logos/logo.png" alt="ASRentACarLOGO">
       <img src="images/animations/wheelLoading.gif" alt="ASRentACarLOGO">
 
-
     </div>
-=======
       <img src="{{ url_for('static',filename='images/logos/logo.png') }}" alt="ASRentACarLOGO">
       <img src="{{ url_for('static',filename='images/animations/wheelLoading.gif') }}" alt="ASRentACarLOGO">
       
         
       </div>
->>>>>>> 63ad6f6c3c95fdc80480885421accb238d80ef81
   </div>
 
   <div class="site-wrap" id="home-section">
@@ -142,7 +138,7 @@
 
           <div class="col-3 ">
             <div class="site-logo">
-              <a href="/"><img class="logo" src="{{url_for('static', filename='images/logos/icon.png'}}" alt="ASRentACarLOGO"></a>
+              <a href="{{url_for('index')}}"><img class="logo" src="{{url_for('static', filename='images/logos/icon.png')}}" alt="ASRentACarLOGO"></a>
             </div>
           </div>
 
@@ -210,7 +206,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6 mb-5 mb-lg-0 order-lg-2">
-            <img src="{{url_for('static, filename='images/hero_2.jpg')}}" alt="Image" class="img-fluid">
+            <img src="{{url_for('static', filename='images/hero_2.jpg')}}" alt="Image" class="img-fluid">
           </div>
           <div class="col-lg-4 mr-auto">
             <h2>Car Company</h2>
@@ -264,17 +260,10 @@
               <div class="col-lg-3">
                 <h2 class="footer-heading mb-4">Quick Links</h2>
                 <ul class="list-unstyled">
-<<<<<<< HEAD
                 <li><a href="{{url_for('index')}}" class="nav-link">Home</a></li>
                 <li><a href="{{url_for('cars')}}" class="nav-link">Cars</a></li>
                 <li><a href="{{url_for('about')}}" class="nav-link">About</a></li>
                 <li><a href="{{url_for('contact')}}" class="nav-link">Contact</a></li>
-=======
-                  <li><a href="{{url_for('index')}}" class="nav-link">Home</a></li>
-                  <li><a href="{{url_for('cars')}}" class="nav-link">Cars</a></li>
-                  <li><a href="{{url_for('about')}}" class="nav-link">About</a></li>
-                  <li><a href="{{url_for('contact')}}" class="nav-link">Contact</a></li>
->>>>>>> e1eda9597c9aca1b87ef13e8826310947a20263e
                 </ul>
               </div>
               <div class="col-lg-3">
