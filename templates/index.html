@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap-datepicker.css') }}">
   <link rel="stylesheet" href="{{ url_for('static',filename='css/jquery.fancybox.min.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static',filename='css/jquery.fancybox.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/owl.carousel.min.css') }}">
   <link rel="stylesheet" href="{{ url_for('static',filename='css/owl.theme.default.min.css') }}">
   <link rel="stylesheet" href="{{ url_for('static',filename='fonts/flaticon/font/flaticon.css') }}">
   <link rel="stylesheet" href="{{ url_for('static',filename='css/aos.css') }}">
@@ -24,14 +24,14 @@
 
 </head>
 
-<body  data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
   <div id="loading">
     <div class="loader">
       <img src="{{ url_for('static',filename='images/logos/logo.png') }}" alt="ASRentACarLOGO">
       <img src="{{ url_for('static',filename='images/animations/wheelLoading.gif') }}" alt="ASRentACarLOGO">
-      
-        
-      </div>
+
+
+    </div>
   </div>
 
   <div class="site-wrap" id="home-section">
@@ -118,7 +118,8 @@
 
           <div class="col-3 ">
             <div class="site-logo">
-              <a href="/index.html"><img class="logo" src="{{ url_for('static',filename='images/logos/icon.png') }}" alt="ASRentACarLOGO"></a>
+              <a href="/index"><img class="logo" src="{{ url_for('static',filename='images/logos/icon.png') }}"
+                  alt="ASRentACarLOGO"></a>
             </div>
           </div>
 
@@ -133,10 +134,10 @@
 
             <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
               <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                <li><a href="{{ url_for('static',filename='index.html') }}" class="nav-link">Home</a></li>
-                <li><a href="{{ url_for('static',filename='cars.html') }}" class="nav-link">Cars</a></li>
-                <li><a href="{{ url_for('static',filename='about.html') }}" class="nav-link">About</a></li>
-                <li><a href="{{ url_for('static',filename='contact.html') }}" class="nav-link">Contact</a></li>
+                <li><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+                <li><a href="{{ url_for('cars') }}" class="nav-link">Cars</a></li>
+                <li><a href="{{ url_for('about') }}" class="nav-link">About</a></li>
+                <li><a href="{{ url_for('contact') }}" class="nav-link">Contact</a></li>
                 <li><a href="#" class="nav-link"> <select id="list">
                       <option>Language</option>
                       <option>English</option>
@@ -146,14 +147,14 @@
 
                 </li>
                 <li><a href="#" class="nav-link"> <select id="list">
-                  <option>Exchange</option>
-                  <option>Dollar</option>
-                  <option>Lira</option>
-                  <option>Manat</option>
-                  <option>Euro</option>
-                </select> </a>
+                      <option>Exchange</option>
+                      <option>Dollar</option>
+                      <option>Lira</option>
+                      <option>Manat</option>
+                      <option>Euro</option>
+                    </select> </a>
 
-            </li>
+                </li>
 
 
               </ul>
@@ -167,7 +168,8 @@
     </header>
 
     <div class="ftco-blocks-cover-1">
-      <div class="ftco-cover-1 overlay" style="background-image: url('{{ url_for('static',filename='images/hero_1.jpg') }}')">
+      <div class="ftco-cover-1 overlay"
+        style="background-image: url('{{ url_for('static',filename='images/hero_1.jpg') }}');">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-lg-5">
@@ -197,7 +199,7 @@
                 </ul>
                 <div class="d-flex align-items-center bg-light p-3">
                   <span>$150/day</span>
-                  <a href="{{ url_for('static',filename='contact.html') }}" class="ml-auto btn btn-primary">Rent Now</a>
+                  <a href="/contact" class="ml-auto btn btn-primary">Rent Now</a>
                 </div>
               </div>
             </div>
@@ -227,7 +229,8 @@
 
             <div class="nonloop-block-13 owl-carousel">
               <div class="item-1">
-                <a href="#"><img src="{{ url_for('static',filename='images/img_1.jpg') }} "alt="Image" class="img-fluid"></a>
+                <a href="#"><img src="{{ url_for('static',filename='images/img_1.jpg') }}" alt="Image"
+                    class="img-fluid"></a>
                 <div class="item-1-contents">
                   <div class="text-center">
                     <h3><a href="#">Range Rover S64 Coupe</a></h3>
@@ -252,14 +255,15 @@
                     </li>
                   </ul>
                   <div class="d-flex action">
-                    <a href="{{ url_for('static',filename='contact.html') }} "class="btn btn-primary">Rent Now</a>
+                    <a href="contact.html " class="btn btn-primary">Rent Now</a>
                   </div>
                 </div>
               </div>
 
 
               <div class="item-1">
-                <a href="#"><img src="{{ url_for('static',filename='images/img_2.jpg') }}" alt="Image" class="img-fluid"></a>
+                <a href="#"><img src="{{ url_for('static',filename='images/img_2.jpg') }}" alt="Image"
+                    class="img-fluid"></a>
                 <div class="item-1-contents">
                   <div class="text-center">
                     <h3><a href="#">Range Rover S64 Coupe</a></h3>
@@ -284,7 +288,7 @@
                     </li>
                   </ul>
                   <div class="d-flex action">
-                    <a href="{{ url_for('static',filename='contact.html') }}" class="btn btn-primary">Rent Now</a>
+                    <a href="/contact" class="btn btn-primary">Rent Now</a>
                   </div>
                 </div>
               </div>
@@ -372,10 +376,10 @@
               <div class="col-lg-3">
                 <h2 class="footer-heading mb-4">Quick Links</h2>
                 <ul class="list-unstyled">
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Cars</a></li>
-                  <li><a href="#">About</a></li>
-                  <li><a href="#">Contact Us</a></li>
+                  <li><a href="{{url_for('index')}}" class="nav-link">Home</a></li>
+                  <li><a href="{{url_for('cars')}}" class="nav-link">Cars</a></li>
+                  <li><a href="{{url_for('about')}}" class="nav-link">About</a></li>
+                  <li><a href="{{url_for('contact')}}" class="nav-link">Contact</a></li>
                 </ul>
               </div>
               <div class="col-lg-3">
@@ -410,7 +414,7 @@
 
   </div>
 
-<a onclick="topFunction()" id="myBtn" title="Go to top"></a>
+  <a onclick="topFunction()" id="myBtn" title="Go to top"></a>
 
   <script src="{{ url_for('static',filename='js/jquery-3.3.1.min.js') }}"></script>
   <script src="{{ url_for('static',filename='js/popper.min.js') }}"></script>
