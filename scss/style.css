@@ -241,7 +241,7 @@ html {
 }
 
 .primary-black--hover:hover {
-  background: #000;
+  background: #212529;
   color: #fff;
 }
 
@@ -251,7 +251,7 @@ html {
 }
 
 .primary-dark--hover:hover {
-  background: gray;
+  background: #9ba5ae;
   color: #fff;
 }
 
@@ -283,12 +283,12 @@ body {
 }
 
 ::-moz-selection {
-  background: #000;
+  background: #212529;
   color: #fff;
 }
 
 ::selection {
-  background: #000;
+  background: #212529;
   color: #fff;
 }
 
@@ -313,15 +313,15 @@ h1, h2, h3, h4, h5,
 }
 
 .text-black {
-  color: #000 !important;
+  color: #212529 !important;
 }
 
 .bg-black {
-  background: #000 !important;
+  background: #212529 !important;
 }
 
 .color-black-opacity-5 {
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(33, 37, 41, 0.5);
 }
 
 .color-white-opacity-5 {
@@ -337,7 +337,7 @@ h1, h2, h3, h4, h5,
 .btn.btn-outline-white:hover {
   background: #fff;
   border-color: #fff;
-  color: #000;
+  color: #212529;
 }
 
 .line-height-1 {
@@ -345,7 +345,7 @@ h1, h2, h3, h4, h5,
 }
 
 .bg-black {
-  background: #000;
+  background: #212529;
 }
 
 .form-control {
@@ -379,7 +379,7 @@ h1, h2, h3, h4, h5,
 
 .site-footer {
   padding: 4em 0;
-  background: #000;
+  background: #212529;
 }
 
 @media (min-width: 768px) {
@@ -419,9 +419,9 @@ h1, h2, h3, h4, h5,
 
 .bg-text-line {
   display: inline;
-  background: #000;
-  -webkit-box-shadow: 20px 0 0 #000, -20px 0 0 #000;
-          box-shadow: 20px 0 0 #000, -20px 0 0 #000;
+  background: #212529;
+  -webkit-box-shadow: 20px 0 0 #212529, -20px 0 0 #212529;
+          box-shadow: 20px 0 0 #212529, -20px 0 0 #212529;
 }
 
 .text-white-opacity-05 {
@@ -429,7 +429,7 @@ h1, h2, h3, h4, h5,
 }
 
 .text-black-opacity-05 {
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(33, 37, 41, 0.5);
 }
 
 .hover-bg-enlarge {
@@ -731,7 +731,7 @@ h1, h2, h3, h4, h5,
   letter-spacing: normal;
   -webkit-transition: 0s all;
   transition: 0s all;
-  color: #000 !important;
+  color: #212529 !important;
 }
 
 .site-navbar .site-navigation .site-menu .has-children .dropdown a.active {
@@ -1021,7 +1021,7 @@ h1, h2, h3, h4, h5,
 }
 
 .sticky-wrapper.is-sticky .site-navbar ul li a {
-  color: #000 !important;
+  color: #212529 !important;
 }
 
 .sticky-wrapper.is-sticky .site-navbar ul li a.active {
@@ -1079,7 +1079,7 @@ h1, h2, h3, h4, h5,
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(33, 37, 41, 0.3);
   z-index: 1;
 }
 
@@ -1228,7 +1228,7 @@ h1, h2, h3, h4, h5,
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  color: #000;
+  color: #212529;
 }
 
 .block-img-video-1 > a:hover .icon {
@@ -1319,7 +1319,7 @@ h1, h2, h3, h4, h5,
   padding: 30px;
   font-style: italic;
   font-size: 18px;
-  color: #000;
+  color: #212529;
   font-family: 'Georgia', Times, serif;
   position: relative;
 }
@@ -1369,7 +1369,7 @@ h1, h2, h3, h4, h5,
   width: 7px;
   height: 7px;
   border-radius: 4px;
-  background: #cccccc;
+  background: #eff1f3;
   -webkit-transition: 0.3s all cubic-bezier(0.32, 0.71, 0.53, 0.53);
   transition: 0.3s all cubic-bezier(0.32, 0.71, 0.53, 0.53);
   margin: 3px;
@@ -1382,7 +1382,7 @@ h1, h2, h3, h4, h5,
 .post-entry {
   background: #fff;
   padding: 30px;
-  border: 1px solid #e6e6e6;
+  border: 1px solid white;
   border-radius: 4px;
   -webkit-transition: .3s all ease;
   transition: .3s all ease;
@@ -1402,7 +1402,7 @@ h1, h2, h3, h4, h5,
 }
 
 .by {
-  color: #000;
+  color: #212529;
   border-bottom: 1px dotted #ccc;
 }
 
@@ -1412,11 +1412,11 @@ h1, h2, h3, h4, h5,
 
 .form-control {
   border: none;
-  border: 1px solid #e6e6e6;
+  border: 1px solid white;
 }
 
 .form-control:hover, .form-control:active, .form-control:focus {
-  border: 1px solid #666666;
+  border: 1px solid #7e8b98;
 }
 
 .sidebar-box {
@@ -1468,7 +1468,7 @@ h1, h2, h3, h4, h5,
 
 .categories li.active a,
 .sidelink li.active a {
-  color: #000;
+  color: #212529;
   font-style: italic;
 }
 
@@ -1514,7 +1514,7 @@ h1, h2, h3, h4, h5,
 
 .comment-list li .comment-body h3 {
   font-size: 20px;
-  color: #000;
+  color: #212529;
 }
 
 .comment-list li .comment-body .meta {
@@ -1526,19 +1526,19 @@ h1, h2, h3, h4, h5,
 
 .comment-list li .comment-body .reply {
   padding: 5px 10px;
-  background: #e6e6e6;
-  color: #000;
+  background: white;
+  color: #212529;
   text-transform: uppercase;
   font-size: 14px;
 }
 
 .comment-list li .comment-body .reply:hover {
-  color: #000;
-  background: #e3e3e3;
+  color: #212529;
+  background: white;
 }
 
 .search-form {
-  background: #f7f7f7;
+  background: white;
   padding: 10px;
 }
 
@@ -1653,11 +1653,11 @@ h1, h2, h3, h4, h5,
 }
 
 .footer-suscribe-form .form-control {
-  color: #000;
+  color: #212529;
 }
 
 .footer-suscribe-form .form-control:hover, .footer-suscribe-form .form-control:active, .footer-suscribe-form .form-control:focus {
-  color: #000 !important;
+  color: #212529 !important;
 }
 
 .footer-suscribe-form .btn {
@@ -1701,7 +1701,7 @@ h1, h2, h3, h4, h5,
   right: 0;
   bottom: 0;
   opacity: .5;
-  background: #000;
+  background: #212529;
 }
 
 .ftco-cover-1.overlay h1 {
@@ -1797,7 +1797,7 @@ h1, h2, h3, h4, h5,
 }
 
 .blog-entry .blog-excerpt a {
-  color: #000;
+  color: #212529;
 }
 
 .blog-entry .blog-excerpt a:hover {
@@ -1929,7 +1929,7 @@ h1, h2, h3, h4, h5,
 }
 
 .post-entry-1 .post-entry-1-contents h2 a {
-  color: #000;
+  color: #212529;
 }
 
 .post-entry-1 .post-entry-1-contents h2 a:hover {
@@ -2002,14 +2002,14 @@ h1, h2, h3, h4, h5,
   background: #fff;
   position: relative;
   margin-top: -90px;
-  -webkit-box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 10px 0px rgba(33, 37, 41, 0.1);
+          box-shadow: 0 0 10px 0px rgba(33, 37, 41, 0.1);
 }
 
 .trip-form h3 {
   font-size: 20px;
   margin-bottom: 30px;
-  color: #000;
+  color: #212529;
 }
 
 .item-1 .item-1-contents {
@@ -2134,7 +2134,7 @@ h1, h2, h3, h4, h5,
 }
 
 .service-1.dark .service-1-contents h3, .service-1.dark .service-1-contents p {
-  color: #000;
+  color: #212529;
 }
 
 .service-1.dark .service-1-contents h3 {
@@ -2160,7 +2160,7 @@ h1, h2, h3, h4, h5,
   right: 0;
   bottom: 0;
   content: "";
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(33, 37, 41, 0.5);
 }
 
 .testimonial-2 {
@@ -2197,6 +2197,8 @@ h1, h2, h3, h4, h5,
 #list option:hover {
   color: white;
   background: #007bff;
+  border: none !important;
+  outline: none !important;
 }
 
 #header-top {
@@ -2224,6 +2226,9 @@ h1, h2, h3, h4, h5,
 @media only screen and (max-width: 991px) {
   #menu-nav-bar .logo {
     width: 59%;
+  }
+  #list {
+    color: #212529;
   }
 }
 /*# sourceMappingURL=style.css.map */

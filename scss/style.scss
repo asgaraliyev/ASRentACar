@@ -2,6 +2,8 @@
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
 $blue: #007bff;
+$black:#212529;
+
 /* Base */
 @import "site-base";
 /* Navbar */
@@ -22,6 +24,8 @@ $blue: #007bff;
         &:hover{
             color: white;
             background: $blue;
+            border: none!important;
+            outline: none!important;
         }
     }
 }
@@ -52,4 +56,8 @@ $blue: #007bff;
     #menu-nav-bar .logo {
         width: 59%;
     }
+    #list {
+        color: $black;
+    }
+    
   }
