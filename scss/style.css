@@ -2180,58 +2180,23 @@ h1, h2, h3, h4, h5,
   border-radius: 50%;
 }
 
-#drop-down {
-  position: relative;
-}
-
-#drop-down #list {
-  list-style: none;
-  color: #007bff;
-  display: none;
-  position: absolute;
-  background: white;
-  width: 100%;
-  padding: 0;
-}
-
-#drop-down:hover {
-  -webkit-transition: 1s ease;
-  transition: 1s ease;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  background: white !important;
-  color: #007bff !important;
-}
-
-#drop-down:hover #list {
-  display: block;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-}
-
-#drop-down:hover #list li {
-  padding: 10px 20px;
-  text-align: center;
-}
-
-#drop-down:hover #list li:hover {
-  -webkit-transition: 1s ease;
-  transition: 1s ease;
-  margin: 10px 0px;
-  background: #007bff;
-  font-size: 17px;
+#list {
+  background: transparent;
+  border: none !important;
+  outline: none !important;
   color: white;
 }
 
-#drop-down a:hover {
-  -webkit-transition: 1s ease;
-  transition: 1s ease;
-  color: #007bff !important;
-  color: black !important;
+#list option {
+  border: none !important;
+  outline: none !important;
+  background: transparent;
+  color: #007bff;
 }
 
-#drop-down a:hover svg {
-  fill: #007bff;
+#list option:hover {
+  color: white;
+  background: #007bff;
 }
 
 #header-top {
