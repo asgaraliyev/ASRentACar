@@ -1,0 +1,60 @@
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+$blue: #007bff;
+/* Base */
+@import "site-base";
+/* Navbar */
+@import "site-navbar";
+/* Blocks */
+@import "site-blocks";
+#drop-down{
+    position: relative;
+    #list{
+        list-style: none;
+        color: $blue;
+        display: none;
+        position: absolute;
+        background: white;
+        width: 100%;
+        padding: 0;
+    }
+    &:hover{
+        transition: 1s ease;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        background: white!important;
+        color: $blue!important  ;
+        #list{
+            display: block;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+
+            li{
+                &:hover{
+                    transition: 1s ease;
+                    margin: 10px 0px;
+                    background: $blue;
+                    font-size: 17px;
+                    color: white;
+                }
+                padding: 10px 20px;
+                text-align: center;
+               
+            }
+        }
+        
+    }
+   a{
+            
+           &:hover{
+                transition: 1s ease;
+               color: $blue!important;
+               svg{
+                   fill:$blue ;
+               }
+               color: black!important;
+           }
+      
+   }
+}
