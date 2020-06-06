@@ -29,12 +29,12 @@
 
     <div id="loading">
         <div class="loader">
-            <img src="images/logos/logo.png" alt="ASRentACarLOGO">
-            <img src="images/animations/wheelLoading.gif" alt="ASRentACarLOGO">
-
-
+          <img src="{{ url_for('static',filename='images/logos/logo.png') }}" alt="ASRentACarLOGO">
+          <img src="{{ url_for('static',filename='images/animations/wheelLoading.gif') }}" alt="ASRentACarLOGO">
+    
+    
         </div>
-    </div>
+      </div>
     <div class="site-wrap" id="home-section">
 
         <div class="site-mobile-menu site-navbar-target">
@@ -339,19 +339,19 @@
         </footer>
     </div>
 
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.sticky.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="js/jquery.fancybox.min.js"></script>
-    <script src="js/jquery.easing.1.3.js"></script>
-    <script src="js/bootstrap-datepicker.min.js"></script>
-    <script src="js/aos.js"></script>
-
-    <script src="js/main.js"></script>
+    <script src="{{ url_for('static',filename='js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.sticky.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.waypoints.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.animateNumber.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.fancybox.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.easing.1.3.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/aos.js') }}"></script>
+  
+    <script src="{{ url_for('static',filename='js/main.js') }}"></script>
 
 </body>
 
