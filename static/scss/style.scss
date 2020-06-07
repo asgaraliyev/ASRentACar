@@ -25,7 +25,7 @@ html {
     #car-name{
         margin: 200px 0px 0px 0px;
         text-align: center;
-        background: rgba(0, 0, 0, 0.349);
+        background: rgba(255, 0, 0, 0.438);
         width: 100%;
         a{
             font-size: 200%;
@@ -62,6 +62,7 @@ html {
             float: left;
             li{
                 padding: 7px;
+                font-size: 100%;
             }
             *{
                 color: white;

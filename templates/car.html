@@ -12,112 +12,115 @@
   {% include "menu.html" %}
 
 
-        <div class="ftco-blocks-cover-1">
-            <div class="ftco-cover-1 overlay innerpage"
-                style="background-image: url('images/hero_2.jpg');height: auto!important;">
-                <div class="container">
-                    <div style="height: auto!important;" class="row align-items-center justify-content-center">
-                        <div id="name-and-car">
-                            <div id="car-name"><a href="#">Bmw M6 gran coupe</a></div>
-                            <div id="a-car">
+        {%for car in cars%}
+            {% if car['id']== id %}
+            <div class="ftco-blocks-cover-1">
+                <div class="ftco-cover-1 overlay innerpage"
+                    style="background-image: url('{{ url_for('static',filename='images/hero_2.jpg') }}');height: auto!important;">
+                    <div class="container">
+                        <div style="height: auto!important;" class="row align-items-center justify-content-center">
+                            <div id="name-and-car">
+                                <div id="car-name"><a href="#">{{car['car_name']}}</a></div>
+                                <div id="a-car">
 
-                                <div class="side">
-                                    <div id="page-wrap">
-                                        <div id="banner">
-                                            <div><img src="{{ url_for('static',filename='images/img_4.jpg') }}"></div>
-                                            <div><img src="{{ url_for('static',filename='images/post_1.jpg') }}"></div>
-                                            <div><img src="{{ url_for('static',filename='images/hero_1.jpg') }}"></div>
-                                            <div><img src="{{ url_for('static',filename='images/img_1.jpg') }}"></div>
-                                            <!-- <div><img src="images/img_2.jpg"></div> -->
+                                    <div class="side">
+                                        <div id="page-wrap">
+                                            <div id="banner">
+                                                <div><img src="{{ url_for('static',filename='images/img_4.jpg') }}"></div>
+                                                <div><img src="{{ url_for('static',filename='images/post_1.jpg') }}"></div>
+                                                <div><img src="{{ url_for('static',filename='images/hero_1.jpg') }}"></div>
+                                                <div><img src="{{ url_for('static',filename='images/img_1.jpg') }}"></div>
+                                                <!-- <div><img src="images/img_2.jpg"></div> -->
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="side asagi">
-                                    <ul>
-                                        <li>
-                                            <span>Transmision:</span><span>auto</span>
+                                    <div class="side asagi">
+                                        <ul>
+                                            <li>
+                                                <span>Car Type:</span><span>{{car['car_type']}}</span>
 
-                                        </li>
-                                        <li>
-                                            <span>Transmision:</span><span>auto</span>
+                                            </li>
+                                            <li>
+                                                <span>Doors:</span><span>{{car['doors']}}</span>
 
-                                        </li>
-                                        <li>
-                                            <span>Transmision:</span><span>auto</span>
+                                            </li>
+                                            <li>
+                                                <span>Engine:</span><span>{{car['engine']}}</span>
 
-                                        </li>
+                                            </li>
 
-                                    </ul>
-                                    <ul>
-                                        <li>
-                                            <span>Transmision:</span><span>auto</span>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <span>Year:</span><span>{{car['year']}}</span>
 
-                                        </li>
-                                        <li>
-                                            <span>Transmision:</span><span>auto</span>
+                                            </li>
+                                            <li>
+                                                <span>Transmision:</span><span>{{car['transmision']}}</span>
 
-                                        </li>
-                                        <li>
-                                            <span>Transmision:</span><span>auto</span>
+                                            </li>
+                                            <li>
+                                                <span>Bagage:</span><span>{{car['bagage']}}</span>
 
-                                        </li>
+                                            </li>
 
-                                    </ul>
-                                    <ul>
-                                        <li>
-                                            <span>Transmision:</span><span>auto</span>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <span>oil:</span><span>{{car['oil']}}</span>
 
-                                        </li>
-                                        <li>
-                                            <span>Transmision:</span><span>auto</span>
+                                            </li>
+                                            <li>
+                                                <span>km:</span><span>{{car['km']}} km</span>
 
-                                        </li>
-                                        <li>
-                                            <span>Transmision:</span><span>auto</span>
+                                            </li>
+                                            <li>
+                                                <span>km:</span><span>{{car['car_name']}}</span>
 
-                                        </li>
+                                            </li>
 
-                                    </ul>
-                                    <ul>
-                                        <li>
-                                            <span>Transmision:</span><span>auto</span>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <span>Transmision:</span><span>{{car['car_name']}}</span>
 
-                                        </li>
-                                        <li>
-                                            <span>Transmision:</span><span>auto</span>
+                                            </li>
+                                            <li>
+                                                <span>Transmision:</span><span>{{car['car_name']}}</span>
 
-                                        </li>
-                                        <li>
-                                            <span>Transmision:</span><span>auto</span>
+                                            </li>
+                                            <li>
+                                                <span>Transmision:</span><span>{{car['car_name']}}</span>
 
-                                        </li>
+                                            </li>
 
-                                    </ul>
-                                    <ul>
-                                        <li>
-                                            <span>Transmision:</span><span>auto</span>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <span>Transmision:</span><span>{{car['car_name']}}</span>
 
-                                        </li>
-                                        <li>
-                                            <span>Transmision:</span><span>auto</span>
+                                            </li>
+                                            <li>
+                                                <span>Transmision:</span><span>{{car['car_name']}}</span>
 
-                                        </li>
-                                        <li>
-                                            <span>Transmision:</span><span>auto</span>
+                                            </li>
+                                            <li>
+                                                <span>Transmision:</span><span>{{car['car_name']}}</span>
 
-                                        </li>
+                                            </li>
 
-                                    </ul>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-
+            {% endif%}
+        {% endfor %}
 
 
 

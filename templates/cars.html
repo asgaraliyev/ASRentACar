@@ -28,205 +28,45 @@
     <div class="site-section bg-light">
       <div class="container">
         <div class="row">
+
+
+          
+
+          {%for car in cars%}
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="item-1">
-              <a href="#"><img src="{{url_for('static', filename='images/img_1.jpg')}}" alt="Image" class="img-fluid"></a>
+             
+              <a href="{{ url_for('car',id=car['id'])}}"><img src="{{ url_for('static', filename=car['photo_links'])}}" alt="Image" class="img-fluid"></a>
               <div class="item-1-contents">
                 <div class="text-center">
-                  <h3><a href="#">Range Rover S64 Coupe</a></h3>
-                  <div class="rent-price"><span>$250/</span>day</div>
+                  <h3><a href="{{ url_for('car',id=car['id'])}}">{{car["car_name"]}}</a></h3>
+                  <div class="rent-price"><span>${{car["day1"]}}/</span>day</div>
                 </div>
                 <ul class="specs">
                   <li>
                     <span>Doors</span>
-                    <span class="spec">4</span>
+                    <span class="spec">{{car["doors"]}}</span>
                   </li>
                   <li>
                     <span>Seats</span>
-                    <span class="spec">5</span>
+                    <span class="spec">{{car["doors"]}}</span>
                   </li>
                   <li>
                     <span>Transmission</span>
-                    <span class="spec">Automatic</span>
+                    <span class="spec">{{car["transmision"]}}</span>
                   </li>
                   <li>
-                    <span>Minium age</span>
-                    <span class="spec">18 years</span>
+                    <span>Year</span>
+                    <span class="spec">{{car["year"]}}</span>
                   </li>
                 </ul>
                 <div class="d-flex action">
-                  <a href="{{ url_for('contact') }}" class="btn btn-primary">Rent Now</a>
+                  <a href="{{ url_for('car',id=car['id'])}}" class="btn btn-primary">Details</a>
                 </div>
               </div>
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="item-1">
-              <a href="#"><img src="{{url_for('static', filename='images/img_2.jpg')}}" alt="Image" class="img-fluid"></a>
-              <div class="item-1-contents">
-                <div class="text-center">
-                  <h3><a href="#">Range Rover S64 Coupe</a></h3>
-                  <div class="rent-price"><span>$250/</span>day</div>
-                </div>
-                <ul class="specs">
-                  <li>
-                    <span>Doors</span>
-                    <span class="spec">4</span>
-                  </li>
-                  <li>
-                    <span>Seats</span>
-                    <span class="spec">5</span>
-                  </li>
-                  <li>
-                    <span>Transmission</span>
-                    <span class="spec">Automatic</span>
-                  </li>
-                  <li>
-                    <span>Minium age</span>
-                    <span class="spec">18 years</span>
-                  </li>
-                </ul>
-                <div class="d-flex action">
-                  <a href="{{ url_for('contact') }}" class="btn btn-primary">Rent Now</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="item-1">
-              <a href="#"><img src="{{url_for('static', filename='images/img_3.jpg')}}" alt="Image" class="img-fluid"></a>
-              <div class="item-1-contents">
-                <div class="text-center">
-                  <h3><a href="#">Range Rover S64 Coupe</a></h3>
-                  <div class="rent-price"><span>$250/</span>day</div>
-                </div>
-                <ul class="specs">
-                  <li>
-                    <span>Doors</span>
-                    <span class="spec">4</span>
-                  </li>
-                  <li>
-                    <span>Seats</span>
-                    <span class="spec">5</span>
-                  </li>
-                  <li>
-                    <span>Transmission</span>
-                    <span class="spec">Automatic</span>
-                  </li>
-                  <li>
-                    <span>Minium age</span>
-                    <span class="spec">18 years</span>
-                  </li>
-                </ul>
-                <div class="d-flex action">
-                  <a href="{{ url_for('contact') }}" class="btn btn-primary">Rent Now</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="item-1">
-              <a href="#"><img src="{{url_for('static', filename='images/img_1.jpg')}}" alt="Image" class="img-fluid"></a>
-              <div class="item-1-contents">
-                <div class="text-center">
-                  <h3><a href="#">Range Rover S64 Coupe</a></h3>
-                  <div class="rent-price"><span>$250/</span>day</div>
-                </div>
-                <ul class="specs">
-                  <li>
-                    <span>Doors</span>
-                    <span class="spec">4</span>
-                  </li>
-                  <li>
-                    <span>Seats</span>
-                    <span class="spec">5</span>
-                  </li>
-                  <li>
-                    <span>Transmission</span>
-                    <span class="spec">Automatic</span>
-                  </li>
-                  <li>
-                    <span>Minium age</span>
-                    <span class="spec">18 years</span>
-                  </li>
-                </ul>
-                <div class="d-flex action">
-                  <a href="{{ url_for('contact') }}" class="btn btn-primary">Rent Now</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="item-1">
-              <a href="#"><img src="{{url_for('static', filename='images/img_2.jpg')}}" alt="Image" class="img-fluid"></a>
-              <div class="item-1-contents">
-                <div class="text-center">
-                  <h3><a href="#">Range Rover S64 Coupe</a></h3>
-                  <div class="rent-price"><span>$250/</span>day</div>
-                </div>
-                <ul class="specs">
-                  <li>
-                    <span>Doors</span>
-                    <span class="spec">4</span>
-                  </li>
-                  <li>
-                    <span>Seats</span>
-                    <span class="spec">5</span>
-                  </li>
-                  <li>
-                    <span>Transmission</span>
-                    <span class="spec">Automatic</span>
-                  </li>
-                  <li>
-                    <span>Minium age</span>
-                    <span class="spec">18 years</span>
-                  </li>
-                </ul>
-                <div class="d-flex action">
-                  <a href="{{ url_for('contact') }}" class="btn btn-primary">Rent Now</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="item-1">
-              <a href="#"><img src="{{url_for('static', filename='images/img_1.jpg')}}" alt="Image" class="img-fluid"></a>
-              <div class="item-1-contents">
-                <div class="text-center">
-                  <h3><a href="#">Range Rover S64 Coupe</a></h3>
-                  <div class="rent-price"><span>$250/</span>day</div>
-                </div>
-                <ul class="specs">
-                  <li>
-                    <span>Doors</span>
-                    <span class="spec">4</span>
-                  </li>
-                  <li>
-                    <span>Seats</span>
-                    <span class="spec">5</span>
-                  </li>
-                  <li>
-                    <span>Transmission</span>
-                    <span class="spec">Automatic</span>
-                  </li>
-                  <li>
-                    <span>Minium age</span>
-                    <span class="spec">18 years</span>
-                  </li>
-                </ul>
-                <div class="d-flex action">
-                  <a href="{{ url_for('contact') }}" class="btn btn-primary">Rent Now</a>
-                </div>
-              </div>
-            </div>
-          </div>
+          {% endfor %}
 
 
           <div class="col-12">
