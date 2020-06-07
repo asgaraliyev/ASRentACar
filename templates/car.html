@@ -26,16 +26,24 @@
                                     <div class="side">
                                         <div id="page-wrap">
                                             <div id="banner">
-                                                <div><img src="{{ url_for('static',filename='images/img_4.jpg') }}"></div>
-                                                <div><img src="{{ url_for('static',filename='images/post_1.jpg') }}"></div>
-                                                <div><img src="{{ url_for('static',filename='images/hero_1.jpg') }}"></div>
-                                                <div><img src="{{ url_for('static',filename='images/img_1.jpg') }}"></div>
+                                                <div><img src="{{ url_for('static',filename=car['links'][0]) }}"></div>
+                                                <div><img src="{{ url_for('static',filename=car['links'][1]) }}"></div>
+                                                <div><img src="{{ url_for('static',filename=car['links'][2]) }}"></div>
+                                                <div><img src="{{ url_for('static',filename=car['links'][3]) }}"></div>
                                                 <!-- <div><img src="images/img_2.jpg"></div> -->
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="side asagi">
+                                        <div id="calculate">
+                                                <div id='close-cal-func' class="close-cal">
+                                                    <p>Close</p>
+                                                </div>
+                                                
+
+
+                                        </div>
                                         <ul>
                                             <li>
                                                 <span>Car Type:</span><span>{{car['car_type']}}</span>
@@ -76,41 +84,39 @@
 
                                             </li>
                                             <li>
-                                                <span>km:</span><span>{{car['car_name']}}</span>
+                                                <span></span><span></span>
 
                                             </li>
 
                                         </ul>
                                         <ul>
                                             <li>
-                                                <span>Transmision:</span><span>{{car['car_name']}}</span>
+                                                <span>2-3 days : </span><span> {{car['days2_3']}} $</span>
 
                                             </li>
                                             <li>
-                                                <span>Transmision:</span><span>{{car['car_name']}}</span>
+                                                <span>4-7 days: </span><span> {{car['days4_7']}} $</span>
 
                                             </li>
                                             <li>
-                                                <span>Transmision:</span><span>{{car['car_name']}}</span>
+                                                <span>8-15 days: </span><span> {{car['days8_15']}} $</span>
 
                                             </li>
+
+                                            <li>
+                                                <span>16-30 days : </span><span> {{car['days16_30']}} $ </span>
+
+                                            </li>
+                                            <li>
+                                                <span>30 + days : </span><span> {{car['days30']}} $ </span>
+
+                                            </li>
+                                           
 
                                         </ul>
-                                        <ul>
-                                            <li>
-                                                <span>Transmision:</span><span>{{car['car_name']}}</span>
-
-                                            </li>
-                                            <li>
-                                                <span>Transmision:</span><span>{{car['car_name']}}</span>
-
-                                            </li>
-                                            <li>
-                                                <span>Transmision:</span><span>{{car['car_name']}}</span>
-
-                                            </li>
-
-                                        </ul>
+                                    </div>
+                                    <div id="calc-button">
+                                        <button id="calculateFunc" type="button"><p>Calculate</p></button>
                                     </div>
                                 </div>
                             </div>

@@ -1,5 +1,4 @@
-[
-    {
+[{
         "id": 1,
         "car_name": "BMW x5",
         "car_type": "suv",
@@ -7,13 +6,11 @@
         "seat": 7,
         "engine": 4.0,
         "transmision": "automatic",
-        "day1": 50,
-        "day2": 100,
-        "day3": 150,
-        "day4": 200,
-        "day5": 225,
-        "day6": 250,
-        "day16_30": 300,
+        "days2_3": 50,
+        "days4_7": 100,
+        "days8_15": 150,
+        "days16_30": 200,
+        "days30": 225,
         "eco": false,
         "premium": true,
         "year": 2015,
@@ -23,8 +20,14 @@
         "bluetooth": false,
         "oil": "disel",
         "km": 1700,
-        "photo_links":"images/cars/carid1.jpeg"
-          
+        "photo_links": "images/cars/carid1.jpeg",
+        "links": [
+            "images/cars/carid1.jpeg",
+            "images/cars/car2id1.jpeg",
+            "images/cars/carid3.jpeg",
+            "images/cars/carid4.jpeg"
+        ]
+
     },
     {
         "id": 2,
@@ -34,13 +37,11 @@
         "seat": 5,
         "engine": 3.0,
         "transmision": "mechanic",
-        "day1": 30,
-        "day2": 300,
-        "day3": 350,
-        "day4": 400,
-        "day5": 425,
-        "day6": 450,
-        "day16_30": 500,
+        "days2_3": 30,
+        "days4_7": 300,
+        "days8_15": 350,
+        "days16_30": 400,    
+        "days30": 425,
         "eco": true,
         "premium": true,
         "year": 2020,
@@ -50,24 +51,28 @@
         "bluetooth": true,
         "oil": "gasoline",
         "km": 100,
-         "photo_links":"images/cars/carid2.jpeg"
-      
+        "photo_links": "images/cars/carid2.jpeg",
+        "links": [
+            "images/cars/carid2.jpeg",
+            "images/cars/car2id2.jpeg",
+            "images/cars/carid3.jpeg",
+            "images/cars/carid4.jpeg"
+        ]
+
     },
     {
-        "id":3,
+        "id": 3,
         "car_name": "Kia Optima",
         "car_type": "sedan",
         "doors": 4,
         "seat": 5,
         "engine": 2.0,
         "transmision": "mechanic",
-        "day1": 30,
-        "day2": 350,
-        "day3": 400,
-        "day4": 450,
-        "day5": 475,
-        "day6": 500,
-        "day16_30": 600,
+        "days2_3": 30,
+        "days4_7": 350,
+        "days8_15": 400,
+        "days16_30": 450,
+        "days30": 475,
         "eco": true,
         "premium": true,
         "year": 2017,
@@ -77,8 +82,14 @@
         "bluetooth": true,
         "oil": "gasoline",
         "km": 600,
-         "photo_links":"images/cars/carid3.jpeg"
-        
+        "photo_links": "images/cars/carid3.jpeg",
+        "links": [
+            "images/cars/carid1.jpeg",
+            "images/cars/carid2.jpeg",
+            "images/cars/carid3.jpeg",
+            "images/cars/carid4.jpeg"
+        ]
+
     },
 
     {
@@ -89,13 +100,11 @@
         "seat": 7,
         "engine": 4.0,
         "transmision": "automatic",
-        "day1": 50,
-        "day2": 100,
-        "day3": 150,
-        "day4": 200,
-        "day5": 225,
-        "day6": 250,
-        "day16_30": 300,
+        "days2_3": 50,
+        "days4_7": 100,
+        "days8_15": 150,
+        "days16_30": 200,
+        "days30": 225,
         "eco": false,
         "premium": true,
         "year": 2015,
@@ -105,7 +114,13 @@
         "bluetooth": false,
         "oil": "disel",
         "km": 1700,
-         "photo_links":"images/cars/carid4.jpeg"
+        "photo_links": "images/cars/carid4.jpeg",
+        "links": [
+            "images/cars/carid1.jpeg",
+            "images/cars/carid2.jpeg",
+            "images/cars/carid3.jpeg",
+            "images/cars/carid4.jpeg"
+        ]
     },
 
     {
@@ -116,13 +131,11 @@
         "seat": 5,
         "engine": 3.5,
         "transmision": "automatic",
-        "day1":100,
-        "day2": 150,
-        "day3": 200,
-        "day4": 250,
-        "day5": 300,
-        "day6": 350,
-        "day16_30": 700,
+        "days2_3": 100,
+        "days4_7": 150,
+        "days8_15": 200,
+        "days16_30": 250,
+        "days30": 300,
         "eco": false,
         "premium": true,
         "year": 2015,
@@ -132,7 +145,13 @@
         "bluetooth": false,
         "oil": "disel",
         "km": 1700,
-         "photo_links":"images/cars/carid5.jpeg"
+        "photo_links": "images/cars/carid5.jpeg",
+        "links": [
+            "images/cars/carid1.jpeg",
+            "images/cars/carid2.jpeg",
+            "images/cars/carid3.jpeg",
+            "images/cars/carid4.jpeg"
+        ]
     },
     {
         "id": 6,
@@ -142,13 +161,11 @@
         "seat": 5,
         "engine": 2.5,
         "transmision": "mechanic",
-        "day1": 40,
-        "day2":70,
-        "day3": 100,
-        "day4":125,
-        "day5":150,
-        "day6": 170,
-        "day16_30": 300,
+        "days2_3": 40,
+        "days4_7": 70,
+        "days8_15": 100,
+        "days16_30": 125,
+        "days30": 150,
         "eco": true,
         "premium": false,
         "year": 2010,
@@ -158,7 +175,13 @@
         "bluetooth": true,
         "oil": "disel",
         "km": 1700,
-         "photo_links":"images/cars/carid6.jpeg"
+        "photo_links": "images/cars/carid6.jpeg",
+        "links": [
+            "images/cars/carid6.jpeg",
+            "images/cars/car2id6.jpeg",
+            "images/cars/carid3.jpeg",
+            "images/cars/carid4.jpeg"
+        ]
     },
     {
         "id": 7,
@@ -168,13 +191,11 @@
         "seat": 5,
         "engine": 2.5,
         "transmision": "automatic",
-        "day1":70,
-        "day2": 100,
-        "day3": 120,
-        "day4": 150,
-        "day5": 170,
-        "day6": 200,
-        "day16_30": 350,
+        "days2_3": 70,
+        "days4_7": 100,
+        "days8_15": 120,
+        "days16_30": 150,
+        "days30": 170,
         "eco": false,
         "premium": true,
         "year": 2012,
@@ -184,7 +205,13 @@
         "oil": "disel",
         "km": 1700,
         "bluetooth": true,
-        "photo_links": "images/cars/carid7.jpeg"
+        "photo_links": "images/cars/carid7.jpeg",
+        "links": [
+            "images/cars/carid7.jpeg",
+            "images/cars/car2id7.jpeg",
+            "images/cars/carid3.jpeg",
+            "images/cars/carid4.jpeg"
+        ]
     }
 
 

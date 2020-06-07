@@ -341,7 +341,13 @@ jQuery(document).ready(function($) {
 			mybutton.style.display = "none";
 		}
 	}
-
+	$("#calculateFunc").on("click",function(){
+		$("#calculate").fadeIn();
+		
+	})
+	$("#close-cal-func").on("click",function(){
+		$("#calculate").fadeOut();
+	})
 	
 });
 // When the user clicks on the button, scroll to the top of the document
