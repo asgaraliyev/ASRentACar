@@ -342,11 +342,19 @@ jQuery(document).ready(function($) {
 		}
 	}
 	$("#calculateFunc").on("click",function(){
-		$("#calculate").fadeIn();
+		$("#calculateFunc").fadeOut();
+		$("#calculate").fadeIn(
+			function(){
+				$("#calculate").css({
+					"display":"flex"
+				});
+			}
+		);
 		
 	})
 	$("#close-cal-func").on("click",function(){
 		$("#calculate").fadeOut();
+		$("#calculateFunc").fadeIn();
 	})
 	
 });
