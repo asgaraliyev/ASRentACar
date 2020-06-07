@@ -8,7 +8,20 @@
   {% include "loader.html" %}
 
   <div class="site-wrap" id="home-section">
-
+    {% if iscalc%}
+        <div id="calced">
+            <script>
+                alert('{{iscalc}}')
+            </script>
+        </div>
+    {% endif%}
+    {% if error%}
+        <!-- <div id="calced"> -->
+            <script>
+                alert('{{error}}')
+            </script>
+        <!-- </div> -->
+    {% endif%}
   {% include "menu.html" %}
 
 
@@ -36,7 +49,8 @@
                                     </div>
 
                                     <div class="side asagi">
-                                        <div id="calculate">
+                                        <form action='/calc/{{car["id"]}}' method="post" id="calculate">
+
                                                 <div id='close-cal-func' class="close-cal">
                                                     <p>Close</p>
                                                 </div>
@@ -57,15 +71,15 @@
                                                 </ul>
                                                 <ul>
                                                     <li>
-                                                        &nbsp;&nbsp;<input type="date" name="" class="inputs">
+                                                        &nbsp;&nbsp;<input type="date" name="pick" class="inputs">
                                                     </li>
                                                     <li>
-                                                        &nbsp;&nbsp;<input type="date" name="" class="inputs">
+                                                        &nbsp;&nbsp;<input type="date" name="drop" class="inputs">
         
                                                     </li>
                                                     <li id="check-box">
                                                         <div class="slide-box">
-                                                            <input type="checkbox"
+                                                            <input type="checkbox" name="baby"
                                                                    class="slide-box__checkbox"
                                                                    id="slideBox"
                                                                    value="0"
@@ -77,10 +91,12 @@
                                                     </li>
         
                                                 </ul>
+                                               
                                                 <div id="calc-in-calc">
-                                                    <button id="calculate-in-calc" type="button">Calculate</button>
+                                                    <button id="calculate-in-calc" type="submit">Calculate</button>
                                                 </div>
-                                        </div>
+                                               
+                                            </form>
                                         <ul>
                                             <li>
                                                 <span>Car Type:</span><span>{{car['car_type']}}</span>
@@ -128,24 +144,24 @@
                                         </ul>
                                         <ul>
                                             <li>
-                                                <span>2-3 days : </span><span> {{car['days2_3']}} $</span>
+                                                <span>2-3 days : </span><span> {{car['days']['2_3']}} $ </span>
 
                                             </li>
                                             <li>
-                                                <span>4-7 days: </span><span> {{car['days4_7']}} $</span>
+                                                <span>4-7 days : </span><span> {{car['days']['4_7']}} $ </span>
 
                                             </li>
                                             <li>
-                                                <span>8-15 days: </span><span> {{car['days8_15']}} $</span>
+                                                <span>8-15 days : </span><span> {{car['days']['8_15']}} $ </span>
 
                                             </li>
 
                                             <li>
-                                                <span>16-30 days : </span><span> {{car['days16_30']}} $ </span>
+                                                <span>16-30 days : </span><span> {{car['days']['16_30']}} $ </span>
 
                                             </li>
                                             <li>
-                                                <span>30 + days : </span><span> {{car['days30']}} $ </span>
+                                                <span>30 + days : </span><span> {{car['days']['30_']}} $ </span>
 
                                             </li>
                                            

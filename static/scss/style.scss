@@ -20,7 +20,12 @@ $tgray:rgba(62, 62, 62, 0.9);
 html {
     overflow: hidden;
 }
-
+#calced{
+    width: 100vw;
+    height: 100vw;
+    background: white;
+    position: fixed;
+}
 #name-and-car {
     width: 100%;
 
