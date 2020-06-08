@@ -4,205 +4,239 @@
 {% include "head.html" %}
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-  
-  {% include "loader.html" %}
-  {% if totalPrice%}
-  <div id="calc-result">
-    <button id="close-calc-func" class="close-result">
-        <div><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
-            <g>
-                <g>
-                    <path d="M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717    L34.143,5.859c-7.811-7.811-20.475-7.811-28.285,0c-7.81,7.811-7.811,20.475,0,28.285l221.857,221.857L5.858,477.859    c-7.811,7.811-7.811,20.475,0,28.285c3.905,3.905,9.024,5.857,14.143,5.857c5.119,0,10.237-1.952,14.143-5.857L256,284.287    l221.857,221.857c3.905,3.905,9.024,5.857,14.143,5.857s10.237-1.952,14.143-5.857c7.811-7.811,7.811-20.475,0-28.285    L284.286,256.002z"/>
-                </g>
-            </g>
-            
-            </svg></div>
-        <div>Close</div>
-    </button>
-    <div class="result">
 
-    </div>
+    {% include "loader.html" %}
+    {% if totalPrice%}
+    {%for car in cars%}
+    {% if car['id']== id %}
+    
+    <div id="calc-result">
+       
+        <button id="close-calc-func" class="close-result">
+            <div><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001"
+                    style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+                    <g>
+                        <g>
+                            <path
+                                d="M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717    L34.143,5.859c-7.811-7.811-20.475-7.811-28.285,0c-7.81,7.811-7.811,20.475,0,28.285l221.857,221.857L5.858,477.859    c-7.811,7.811-7.811,20.475,0,28.285c3.905,3.905,9.024,5.857,14.143,5.857c5.119,0,10.237-1.952,14.143-5.857L256,284.287    l221.857,221.857c3.905,3.905,9.024,5.857,14.143,5.857s10.237-1.952,14.143-5.857c7.811-7.811,7.811-20.475,0-28.285    L284.286,256.002z" />
+                        </g>
+                    </g>
 
-  </div>
-{% endif%}
-  <div class="site-wrap" id="home-section">
-    {% if error%}
-        <!-- <div id="calced"> -->
-            <script>
-                alert('{{error}}')
-            </script>
-        <!-- </div> -->
-    {% endif%}
-
-
-  {% include "menu.html" %}
-
-
-        {%for car in cars%}
-            {% if car['id']== id %}
-            <div class="ftco-blocks-cover-1">
-                <div class="ftco-cover-1 overlay innerpage"
-                    style="background-image: url('{{ url_for('static',filename='images/hero_2.jpg') }}');height: auto!important;">
-                    <div class="container">
-                        <div style="height: auto!important;" class="row align-items-center justify-content-center">
-                            <div id="name-and-car">
-                                <div id="car-name"><a href="#">{{car['car_name']}}</a></div>
-                                <div id="a-car">
-
-                                    <div class="side">
-                                        <div id="page-wrap">
-                                            <div id="banner">
-                                                <div><img src="{{ url_for('static',filename=car['links'][0]) }}"></div>
-                                                <div><img src="{{ url_for('static',filename=car['links'][1]) }}"></div>
-                                                <div><img src="{{ url_for('static',filename=car['links'][2]) }}"></div>
-                                                <div><img src="{{ url_for('static',filename=car['links'][3]) }}"></div>
-                                                <!-- <div><img src="images/img_2.jpg"></div> -->
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="side asagi">
-                                        <form action='/calc/{{car["id"]}}' method="post" id="calculate">
-
-                                                <div id='close-cal-func' class="close-cal">
-                                                    <p>Close</p>
-                                                </div>
-                                                <ul>
-                                                    <li>
-                                                        <span>Pick Up Date:</span>
-        
-                                                    </li>
-                                                    <li>
-                                                        <span>Drop Date:</span>
-        
-                                                    </li>
-                                                    <li>
-                                                        <span>Baby Seat: 30$ </span>
-        
-                                                    </li>
-        
-                                                </ul>
-                                                <ul>
-                                                    <li>
-                                                        &nbsp;&nbsp;<input type="date" name="pick" class="inputs">
-                                                    </li>
-                                                    <li>
-                                                        &nbsp;&nbsp;<input type="date" name="drop" class="inputs">
-        
-                                                    </li>
-                                                    <li id="check-box">
-                                                        <div class="slide-box">
-                                                            <input type="checkbox" name="baby"
-                                                                   class="slide-box__checkbox"
-                                                                   id="slideBox"
-                                                                   value="0"
-                                                                   checked
-                                                            />
-                                                            <label for="slideBox"/>
-                                                          </div>
-        
-                                                    </li>
-        
-                                                </ul>
-                                               
-                                                <div id="calc-in-calc">
-                                                    <button id="calculate-in-calc" type="submit">Calculate</button>
-                                                </div>
-                                               
-                                            </form>
-                                        <ul>
-                                            <li>
-                                                <span>Car Type:</span><span>{{car['car_type']}}</span>
-
-                                            </li>
-                                            <li>
-                                                <span>Doors:</span><span>{{car['doors']}}</span>
-
-                                            </li>
-                                            <li>
-                                                <span>Engine:</span><span>{{car['engine']}}</span>
-
-                                            </li>
-
-                                        </ul>
-                                        <ul>
-                                            <li>
-                                                <span>Year:</span><span>{{car['year']}}</span>
-
-                                            </li>
-                                            <li>
-                                                <span>Transmision:</span><span>{{car['transmision']}}</span>
-
-                                            </li>
-                                            <li>
-                                                <span>Bagage:</span><span>{{car['bagage']}}</span>
-
-                                            </li>
-
-                                        </ul>
-                                        <ul>
-                                            <li>
-                                                <span>oil:</span><span>{{car['oil']}}</span>
-
-                                            </li>
-                                            <li>
-                                                <span>km:</span><span>{{car['km']}} km</span>
-
-                                            </li>
-                                            <li>
-                                                <span></span><span></span>
-
-                                            </li>
-
-                                        </ul>
-                                        <ul>
-                                            <li>
-                                                <span>2-3 days : </span><span> {{car['days']['2_3']}} $ </span>
-
-                                            </li>
-                                            <li>
-                                                <span>4-7 days : </span><span> {{car['days']['4_7']}} $ </span>
-
-                                            </li>
-                                            <li>
-                                                <span>8-15 days : </span><span> {{car['days']['8_15']}} $ </span>
-
-                                            </li>
-
-                                            <li>
-                                                <span>16-30 days : </span><span> {{car['days']['16_30']}} $ </span>
-
-                                            </li>
-                                            <li>
-                                                <span>30 + days : </span><span> {{car['days']['30_']}} $ </span>
-
-                                            </li>
-                                           
-
-                                        </ul>
-                                    </div>
-                                    <div id="calc-button">
-                                        <button id="calculateFunc" type="button"><p>Calculate</p></button>
-                                    </div>
-                                </div>
-                            </div>
-
+                </svg></div>
+            <div>Close</div>
+        </button>
+        <div class="result">
+            <div class="little-result">
+                <a id="title">{{car['car_name']}}</a>
+                <div class="containter">
+                    <br>
+                    <div class="site-logo">
+                        <a href="{{ url_for('index') }}"><img class="logo" src="{{ url_for('static',filename='images/logos/icon.png') }}"
+                            alt="ASRentACarLOGO"></a>
+                      </div>
+                    <br>
+                </div>
+                <div class="side">
+                    <div id="page-wrap">
+                        <div id="banner">
+                            <div><img src="{{ url_for('static',filename=car['links'][0]) }}"></div>
+                            <div><img src="{{ url_for('static',filename=car['links'][1]) }}"></div>
+                            <div><img src="{{ url_for('static',filename=car['links'][2]) }}"></div>
+                            <div><img src="{{ url_for('static',filename=car['links'][3]) }}"></div>
+                            <!-- <div><img src="images/img_2.jpg"></div> -->
                         </div>
                     </div>
                 </div>
+                <div class="containter">
+                    <br>
+                        <h1>{{totalPrice}} $ for {{totalDays}} days </h1>
+                    <br>
+                </div>
+
             </div>
-            {% endif%}
+        </div>
+
+    </div>
+    {% endif%}
+    {% endfor %}
+    {% endif%}
+    <div class="site-wrap" id="home-section">
+        {% if error%}
+        <!-- <div id="calced"> -->
+        <script>
+            alert('{{error}}')
+        </script>
+        <!-- </div> -->
+        {% endif%}
+
+
+        {% include "menu.html" %}
+
+
+        {%for car in cars%}
+        {% if car['id']== id %}
+        <div class="ftco-blocks-cover-1">
+            <div class="ftco-cover-1 overlay innerpage"
+                style="background-image: url('{{ url_for('static',filename='images/hero_2.jpg') }}');height: auto!important;">
+                <div class="container">
+                    <div style="height: auto!important;" class="row align-items-center justify-content-center">
+                        <div id="name-and-car">
+                            <div id="car-name"><a href="#">{{car['car_name']}}</a></div>
+                            <div id="a-car">
+
+                                <div class="side">
+                                    <div id="page-wrap">
+                                        <div id="banner">
+                                            <div><img src="{{ url_for('static',filename=car['links'][0]) }}"></div>
+                                            <div><img src="{{ url_for('static',filename=car['links'][1]) }}"></div>
+                                            <div><img src="{{ url_for('static',filename=car['links'][2]) }}"></div>
+                                            <div><img src="{{ url_for('static',filename=car['links'][3]) }}"></div>
+                                            <!-- <div><img src="images/img_2.jpg"></div> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="side asagi">
+                                    <form action='/calc/{{car["id"]}}' method="post" id="calculate">
+
+                                        <div id='close-cal-func' class="close-cal">
+                                            <p>Close</p>
+                                        </div>
+                                        <ul>
+                                            <li>
+                                                <span>Pick Up Date:</span>
+
+                                            </li>
+                                            <li>
+                                                <span>Drop Date:</span>
+
+                                            </li>
+                                            <li>
+                                                <span>Baby Seat: 30$ </span>
+
+                                            </li>
+
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                &nbsp;&nbsp;<input type="date" name="pick" class="inputs">
+                                            </li>
+                                            <li>
+                                                &nbsp;&nbsp;<input type="date" name="drop" class="inputs">
+
+                                            </li>
+                                            <li id="check-box">
+                                                <div class="slide-box">
+                                                    <input type="checkbox" name="baby" class="slide-box__checkbox"
+                                                        id="slideBox" value="0" checked />
+                                                    <label for="slideBox" />
+                                                </div>
+
+                                            </li>
+
+                                        </ul>
+
+                                        <div id="calc-in-calc">
+                                            <button id="calculate-in-calc" type="submit">Calculate</button>
+                                        </div>
+
+                                    </form>
+                                    <ul>
+                                        <li>
+                                            <span>Car Type:</span><span>{{car['car_type']}}</span>
+
+                                        </li>
+                                        <li>
+                                            <span>Doors:</span><span>{{car['doors']}}</span>
+
+                                        </li>
+                                        <li>
+                                            <span>Engine:</span><span>{{car['engine']}}</span>
+
+                                        </li>
+
+                                    </ul>
+                                    <ul>
+                                        <li>
+                                            <span>Year:</span><span>{{car['year']}}</span>
+
+                                        </li>
+                                        <li>
+                                            <span>Transmision:</span><span>{{car['transmision']}}</span>
+
+                                        </li>
+                                        <li>
+                                            <span>Bagage:</span><span>{{car['bagage']}}</span>
+
+                                        </li>
+
+                                    </ul>
+                                    <ul>
+                                        <li>
+                                            <span>oil:</span><span>{{car['oil']}}</span>
+
+                                        </li>
+                                        <li>
+                                            <span>km:</span><span>{{car['km']}} km</span>
+
+                                        </li>
+                                        <li>
+                                            <span></span><span></span>
+
+                                        </li>
+
+                                    </ul>
+                                    <ul>
+                                        <li>
+                                            <span>2-3 days : </span><span> {{car['days']['2_3']}} $ </span>
+
+                                        </li>
+                                        <li>
+                                            <span>4-7 days : </span><span> {{car['days']['4_7']}} $ </span>
+
+                                        </li>
+                                        <li>
+                                            <span>8-15 days : </span><span> {{car['days']['8_15']}} $ </span>
+
+                                        </li>
+
+                                        <li>
+                                            <span>16-30 days : </span><span> {{car['days']['16_30']}} $ </span>
+
+                                        </li>
+                                        <li>
+                                            <span>30 + days : </span><span> {{car['days']['30_']}} $ </span>
+
+                                        </li>
+
+
+                                    </ul>
+                                </div>
+                                <div id="calc-button">
+                                    <button id="calculateFunc" type="button">
+                                        <p>Calculate</p>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif%}
         {% endfor %}
 
 
 
-  {% include "footer.html" %}
+        {% include "footer.html" %}
 
-  </div>
+    </div>
 
-  {% include "scrolltop.html" %}
+    {% include "scrolltop.html" %}
 
-  {% include "scriptler.html" %}
+    {% include "scriptler.html" %}
 
 </body>
 

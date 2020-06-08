@@ -34,41 +34,88 @@ html {
     position: fixed;
     display: flex;
     justify-content: center;
-    background: white;
-    z-index: 2;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 20;
+
+    #title {
+        position: absolute;
+        font-weight: bolder;
+        text-transform: uppercase;
+        top: -100px;
+        font-size: 200%;
+        color: white;
+    }
+
+    .result {
+        width: 100%;
+        min-height: 70%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        display: flex;
+        justify-content: center;
+
+        .little-result {
+            height: 100%;
+            width: 75%;
+            position: absolute;
+
+            .site-logo {
+                text-align: center;
+
+                img {
+                    width: 100px;
+                }
+            }
+
+            h1 {
+                color: white;
+                text-align: center;
+                font-weight: bolder;
+
+            }
+        }
+    }
 
     .close-result {
         position: absolute;
         top: 20px;
-        margin:20px;
+        margin: 20px;
         right: 20px;
         float: right;
         padding: 10px;
-        background: red;
-        border:none;
+        background: white;
+        border: none;
         outline: none;
         border-radius: 10px;
-        &:hover{
-            background: whitesmoke;
-            *{
-                color:red;
-                fill:red;
+
+        &:hover {
+            background: red;
+
+            * {
+                color: white;
+                fill: white;
             }
         }
-        &:focus{
-            background: whitesmoke;
-            *{
-                color:red;
-                fill:red;
-            } 
+
+        &:focus {
+            background: red;
+
+            * {
+                color: white;
+                fill: white;
+            }
         }
-        div{
-            color:white;
+
+        div {
+            color: red;
             display: inline-block;
             font-weight: bolder;
-            svg{
+
+            svg {
                 height: 25px;
-                fill:white;
+                fill: red;
             }
         }
     }
