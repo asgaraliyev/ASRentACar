@@ -356,6 +356,11 @@ jQuery(document).ready(function($) {
 		$("#calculate").fadeOut();
 		$("#calculateFunc").fadeIn();
 	})
+	$("#close-calc-func").on("click",
+	function(){
+		$("#calc-result").fadeOut();
+	}
+	);
 	
 });
 // When the user clicks on the button, scroll to the top of the document

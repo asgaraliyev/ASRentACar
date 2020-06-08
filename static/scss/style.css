@@ -2195,6 +2195,62 @@ html {
   position: fixed;
 }
 
+#calc-result {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: white;
+  z-index: 2;
+}
+
+#calc-result .close-result {
+  position: absolute;
+  top: 20px;
+  margin: 20px;
+  right: 20px;
+  float: right;
+  padding: 10px;
+  background: red;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+}
+
+#calc-result .close-result:hover {
+  background: whitesmoke;
+}
+
+#calc-result .close-result:hover * {
+  color: red;
+  fill: red;
+}
+
+#calc-result .close-result:focus {
+  background: whitesmoke;
+}
+
+#calc-result .close-result:focus * {
+  color: red;
+  fill: red;
+}
+
+#calc-result .close-result div {
+  color: white;
+  display: inline-block;
+  font-weight: bolder;
+}
+
+#calc-result .close-result div svg {
+  height: 25px;
+  fill: white;
+}
+
 #name-and-car {
   width: 100%;
 }

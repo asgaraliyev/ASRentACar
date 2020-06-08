@@ -22,12 +22,38 @@ def car(id):
 def dataNowDays(picked):
     pick=str(picked).split("-")
     pickk=[]
-    for i in pick:
-        pickk.append(int(i))
-    pick=date(pickk[0],pickk[1],pickk[2])
-    today=date.today()
-    howmanydays=pick-today
-    print("howmanydays:",howmanydays)
+    try:
+        for i in pick:    
+            i=i.replace(" ","")
+            pickk.append(int(i))
+        pick=date(pickk[0],pickk[1],pickk[2])
+        today=date.today()
+        today=str(today).split("-")
+        todayy=[]
+        for i in today:
+            i=i.replace(" ","")
+            
+            todayy.append(int(i))
+        print(todayy,"seseseseasease")
+        fromToday=pick-date(todayy[0],todayy[1],todayy[2])
+        print(fromToday,"seseseseasease")
+
+        try:
+            fromToday=int(str(fromToday).split(",")[0].strip("days"))
+        except Exception as ex:
+            print(ex,"""
+               try:
+            fromToday=int(str(fromToday).split(",")[0].strip("days"))
+        except Exception as ex:
+            """)
+            fromToday=1
+        if fromToday<0:
+            return True
+        
+    except Exception as ex:
+        print(ex)
+        return True
+    return False
     
 def totalDays(droped,picked):
     drop=str(droped).split("-")
@@ -49,8 +75,11 @@ def totalDays(droped,picked):
 def cheking(pick,drop):
     total=str(pick)+str(drop)
     print(total)
-    dataNowDays(pick)
-    if len(total)<19:
+    if dataNowDays(pick):
+        return "Informasiya yanlis daxil edilib",False
+    elif str(pick)==str(drop):
+        return "Goturulme tarixi ve buraxilma tarixi eyni ola bilmez",False
+    elif len(total)<19:
         return "Goturulme tarixi ve ya buraxilma tarixi daxil edilmeyib",False
     elif totalDays(drop,pick)<0:
         return "Buraxilma tarixi Goturulme tarixinden tezdir",False
@@ -59,9 +88,7 @@ def cheking(pick,drop):
 def calPrice(pick,drop,baby,id,carss):
     totalPrice=0
     numberDays=totalDays(drop,pick)
-    print(baby,"babyu")
-    if "0"!=str(baby):
-        totalPrice+=30
+    
     for car in carss:
         if car['id']==id:
             if numberDays<4:
@@ -70,11 +97,14 @@ def calPrice(pick,drop,baby,id,carss):
                 totalPrice+=numberDays*car['days']['4_7']
             elif numberDays<16:
                 totalPrice+=numberDays*car['days']['8_15']
-            elif numberDays<31:
+            elif numberDays<30:
                 totalPrice+=numberDays*car['days']['16_30']
-            elif numberDays>31:
-                totalPrice+=numberDays*car['days']['30_'] 
-    print(totalPrice)
+            elif numberDays>=30:
+                totalPrice+=numberDays*car['days']['30_']
+    if "0"!=str(baby):
+        totalPrice+=30
+        return totalPrice,numberDays,True
+    return totalPrice,numberDays,False
     
 @app.route("/calc/<int:id>",methods=["POST"])
 def calc(id):
@@ -82,7 +112,6 @@ def calc(id):
         pick=request.form.get('pick')
         drop=request.form.get('drop')
         baby=request.form.get('baby')
-        
         with open("cars.json","r") as file:
             data=file.read()
             file.close()
@@ -92,7 +121,8 @@ def calc(id):
             error=res[0]
             return render_template("car.html",id=id,cars=obyekt,error=error)
         else:
-            calPrice(pick,drop,baby,id,obyekt) 
+            totalPrice,totalDays,totalBaby=calPrice(pick,drop,baby,id,obyekt) 
+            return render_template("car.html",id=id,cars=obyekt,totalPrice=totalPrice,totalDays=totalDays,totalBaby=totalBaby) 
         return render_template("car.html",id=id,cars=obyekt) 
         
     return "islemedi"

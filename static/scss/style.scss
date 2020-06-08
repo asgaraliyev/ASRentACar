@@ -20,12 +20,60 @@ $tgray:rgba(62, 62, 62, 0.9);
 html {
     overflow: hidden;
 }
-#calced{
+
+#calced {
     width: 100vw;
     height: 100vw;
     background: white;
     position: fixed;
 }
+
+#calc-result {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    background: white;
+    z-index: 2;
+
+    .close-result {
+        position: absolute;
+        top: 20px;
+        margin:20px;
+        right: 20px;
+        float: right;
+        padding: 10px;
+        background: red;
+        border:none;
+        outline: none;
+        border-radius: 10px;
+        &:hover{
+            background: whitesmoke;
+            *{
+                color:red;
+                fill:red;
+            }
+        }
+        &:focus{
+            background: whitesmoke;
+            *{
+                color:red;
+                fill:red;
+            } 
+        }
+        div{
+            color:white;
+            display: inline-block;
+            font-weight: bolder;
+            svg{
+                height: 25px;
+                fill:white;
+            }
+        }
+    }
+}
+
 #name-and-car {
     width: 100%;
 
@@ -109,6 +157,7 @@ html {
             background: rgba(0, 0, 0, 0.99);
             display: none;
             padding-bottom: 30px;
+
             #calc-in-calc {
                 background: white;
                 position: absolute;
