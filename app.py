@@ -2,6 +2,15 @@ from flask import Flask,render_template,url_for,request
 import json
 from datetime import date
 app = Flask(__name__)
+@app.errorhandler(404)
+def error404(error):
+    return render_template("404.html")
+@app.errorhandler(500)
+def error500(error):
+    return render_template("404.html")
+@app.errorhandler(403)
+def error500(error):
+    return render_template("404.html")
 @app.route("/cars")
 def cars():
     with open("cars.json","r") as file:

@@ -21,6 +21,71 @@ html {
     overflow: hidden;
 }
 
+#crash-car {
+    width: 50%;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+
+    .car {
+        z-index: 1;
+        position: relative;
+    }
+
+    .table {
+        width: 25%;
+        bottom: 0;
+        position: absolute;
+        height: 100%;
+        margin: 0;
+    }
+}
+
+#error-page {
+
+    width: 100vw;
+    height: 100vh;
+    background: rgb(131, 131, 131);
+    background: linear-gradient(0deg, rgba(131, 131, 131, 1) 0%, rgba(255, 255, 255, 1) 100%);
+
+    .logo {
+        top: 20px;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+
+        p {
+            margin-top: 50px;
+            font-weight: bold;
+            font-size: 25px;
+            color: #484848;
+        }
+
+        img {
+            height: 25%;
+            width: 25%;
+        }
+    }
+
+    .photo-div {
+        top: 50%;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        text-align: center;
+        .menu {
+            ul {
+                li {
+                    display: inline-block;
+                    list-style: none;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
 #calced {
     width: 100vw;
     height: 100vw;

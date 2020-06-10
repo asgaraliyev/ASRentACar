@@ -2188,6 +2188,69 @@ html {
   overflow: hidden;
 }
 
+#crash-car {
+  width: 50%;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+}
+
+#crash-car .car {
+  z-index: 1;
+  position: relative;
+}
+
+#crash-car .table {
+  width: 25%;
+  bottom: 0;
+  position: absolute;
+  height: 100%;
+  margin: 0;
+}
+
+#error-page {
+  width: 100vw;
+  height: 100vh;
+  background: #838383;
+  background: -webkit-gradient(linear, left bottom, left top, from(#838383), to(white));
+  background: linear-gradient(0deg, #838383 0%, white 100%);
+}
+
+#error-page .logo {
+  top: 20px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+#error-page .logo p {
+  margin-top: 50px;
+  font-weight: bold;
+  font-size: 25px;
+  color: #484848;
+}
+
+#error-page .logo img {
+  height: 25%;
+  width: 25%;
+}
+
+#error-page .photo-div {
+  top: 50%;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+}
+
+#error-page .photo-div .menu ul li {
+  display: inline-block;
+  list-style: none;
+  font-weight: bold;
+}
+
 #calced {
   width: 100vw;
   height: 100vw;
