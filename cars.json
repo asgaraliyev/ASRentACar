@@ -1,0 +1,232 @@
+[{
+        "id": 1,
+        "car_name": "BMW x5",
+        "car_type": "suv",
+        "doors": 4,
+        "seat": 7,
+        "engine": 4.0,
+        "transmision": "automatic",
+        "days":{
+            "2_3":50,
+            "4_7":45,
+            "8_15":40,
+            "16_30":35,
+            "30_":30
+        },
+        "eco": false,
+        "premium": true,
+        "year": 2015,
+        "bagage": 4,
+        "wifi": true,
+        "gps": true,
+        "bluetooth": false,
+        "oil": "disel",
+        "km": 1700,
+        "photo_links": "images/cars/carid1.jpeg",
+        "links": [
+            "images/cars/carid1.jpeg",
+            "images/cars/car2id1.jpeg",
+            "images/cars/carid3.jpeg",
+            "images/cars/carid4.jpeg"
+        ]
+
+    },
+    {
+        "id": 2,
+        "car_name": "Mercedes e class",
+        "car_type": "sedan",
+        "doors": 4,
+        "seat": 5,
+        "engine": 3.0,
+        "transmision": "mechanic",
+        "days":{
+            "2_3":50,
+            "4_7":45,
+            "8_15":40,
+            "16_30":35,
+            "30_":30
+        },
+        "eco": true,
+        "premium": true,
+        "year": 2020,
+        "bagage": 3,
+        "wifi": true,
+        "gps": true,
+        "bluetooth": true,
+        "oil": "gasoline",
+        "km": 100,
+        "photo_links": "images/cars/carid2.jpeg",
+        "links": [
+            "images/cars/carid2.jpeg",
+            "images/cars/car2id2.jpeg",
+            "images/cars/carid3.jpeg",
+            "images/cars/carid4.jpeg"
+        ]
+
+    },
+    {
+        "id": 3,
+        "car_name": "Kia Optima",
+        "car_type": "sedan",
+        "doors": 4,
+        "seat": 5,
+        "engine": 2.0,
+        "transmision": "mechanic",
+        "days":{
+            "2_3":50,
+            "4_7":45,
+            "8_15":40,
+            "16_30":35,
+            "30_":30
+        },
+        "eco": true,
+        "premium": true,
+        "year": 2017,
+        "bagage": 4,
+        "wifi": false,
+        "gps": false,
+        "bluetooth": true,
+        "oil": "gasoline",
+        "km": 600,
+        "photo_links": "images/cars/carid3.jpeg",
+        "links": [
+            "images/cars/carid1.jpeg",
+            "images/cars/carid2.jpeg",
+            "images/cars/carid3.jpeg",
+            "images/cars/carid4.jpeg"
+        ]
+
+    },
+
+    {
+        "id": 4,
+        "car_name": "BMW x5",
+        "car_type": "suv",
+        "doors": 4,
+        "seat": 7,
+        "engine": 4.0,
+        "transmision": "automatic",
+        "days":{
+            "2_3":50,
+            "4_7":45,
+            "8_15":40,
+            "16_30":35,
+            "30_":30
+        },
+        "eco": false,
+        "premium": true,
+        "year": 2015,
+        "bagage": 4,
+        "wifi": true,
+        "gps": true,
+        "bluetooth": false,
+        "oil": "disel",
+        "km": 1700,
+        "photo_links": "images/cars/carid4.jpeg",
+        "links": [
+            "images/cars/carid1.jpeg",
+            "images/cars/carid2.jpeg",
+            "images/cars/carid3.jpeg",
+            "images/cars/carid4.jpeg"
+        ]
+    },
+
+    {
+        "id": 5,
+        "car_name": "Dodge Challenger",
+        "car_type": "suv",
+        "doors": 2,
+        "seat": 5,
+        "engine": 3.5,
+        "transmision": "automatic",
+        "days":{
+            "2_3":50,
+            "4_7":45,
+            "8_15":40,
+            "16_30":35,
+            "30_":30
+        },
+        "eco": false,
+        "premium": true,
+        "year": 2015,
+        "bagage": 4,
+        "wifi": true,
+        "gps": true,
+        "bluetooth": false,
+        "oil": "disel",
+        "km": 1700,
+        "photo_links": "images/cars/carid5.jpeg",
+        "links": [
+            "images/cars/carid1.jpeg",
+            "images/cars/carid2.jpeg",
+            "images/cars/carid3.jpeg",
+            "images/cars/carid4.jpeg"
+        ]
+    },
+    {
+        "id": 6,
+        "car_name": "Niva Urban",
+        "car_type": "suv",
+        "doors": 4,
+        "seat": 5,
+        "engine": 2.5,
+        "transmision": "mechanic",
+        "days":{
+            "2_3":50,
+            "4_7":45,
+            "8_15":40,
+            "16_30":35,
+            "30_":30
+        },
+        "eco": true,
+        "premium": false,
+        "year": 2010,
+        "bagage": 4,
+        "wifi": false,
+        "gps": false,
+        "bluetooth": true,
+        "oil": "disel",
+        "km": 1700,
+        "photo_links": "images/cars/carid6.jpeg",
+        "links": [
+            "images/cars/carid6.jpeg",
+            "images/cars/car2id6.jpeg",
+            "images/cars/carid3.jpeg",
+            "images/cars/carid4.jpeg"
+        ]
+    },
+    {
+        "id": 7,
+        "car_name": "BMW 525i",
+        "car_type": "suv",
+        "doors": 4,
+        "seat": 5,
+        "engine": 2.5,
+        "transmision": "automatic",
+        "days":{
+            "2_3":50,
+            "4_7":45,
+            "8_15":40,
+            "16_30":35,
+            "30_":30
+        },
+        "eco": false,
+        "premium": true,
+        "year": 2012,
+        "bagage": 4,
+        "wifi": true,
+        "gps": true,
+        "oil": "disel",
+        "km": 1700,
+        "bluetooth": true,
+        "photo_links": "images/cars/carid7.jpeg",
+        "links": [
+            "images/cars/carid7.jpeg",
+            "images/cars/car2id7.jpeg",
+            "images/cars/carid3.jpeg",
+            "images/cars/carid4.jpeg"
+        ]
+    }
+
+
+]

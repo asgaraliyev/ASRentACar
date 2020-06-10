@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+
+{% include "head.html" %}
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+    
+    <div id="crash-car">
+        <img class="table"src="{{ url_for('static', filename='images/error/errortable.png')}}" alt="error-table">
+
+    <img class="car" src="{{ url_for('static', filename='images/error/crashcar.png')}}" alt="error-table">
+
+    </div>
+    <div id="error-page">
+        <div class="logo">
+            <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='images/logos/icon.png')}}" alt="ASRentACarLogo"></a>
+            <p>There is no such a page</p>
+            </div>
+        <div class="photo-div">
+            <div class="menu">
+                <ul class="site-menu main-menu js-clone-nav ml-auto ">
+                    <li><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+                    <li><a href="{{ url_for('cars') }}" class="nav-link">Cars</a></li>
+                    <li><a href="{{ url_for('about') }}" class="nav-link">About</a></li>
+                    <li><a href="{{ url_for('contact') }}" class="nav-link">Contact</a></li>
+                  </ul>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,654 @@
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+$blue: red;
+$black:#212529;
+$gray:rgb(62, 62, 62);
+$tgray:rgba(62, 62, 62, 0.9);
+
+* {
+    font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+
+/* Base */
+@import "site-base";
+/* Navbar */
+@import "site-navbar";
+/* Blocks */
+@import "site-blocks";
+
+html {
+    overflow: hidden;
+}
+
+#crash-car {
+    width: 50%;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+
+    .car {
+        z-index: 1;
+        position: relative;
+    }
+
+    .table {
+        width: 25%;
+        bottom: 0;
+        position: absolute;
+        height: 100%;
+        margin: 0;
+    }
+}
+
+#error-page {
+
+    width: 100vw;
+    height: 100vh;
+    background: rgb(131, 131, 131);
+    background: linear-gradient(0deg, rgba(131, 131, 131, 1) 0%, rgba(255, 255, 255, 1) 100%);
+
+    .logo {
+        top: 20px;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+
+        p {
+            margin-top: 50px;
+            font-weight: bold;
+            font-size: 25px;
+            color: #484848;
+        }
+
+        img {
+            height: 25%;
+            width: 25%;
+        }
+    }
+
+    .photo-div {
+        top: 50%;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        text-align: center;
+        .menu {
+            ul {
+                li {
+                    display: inline-block;
+                    list-style: none;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+#calced {
+    width: 100vw;
+    height: 100vw;
+    background: white;
+    position: fixed;
+}
+
+#calc-result {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 20;
+
+    #title {
+        position: absolute;
+        font-weight: bolder;
+        text-transform: uppercase;
+        top: -100px;
+        font-size: 200%;
+        color: white;
+    }
+
+    .result {
+        width: 100%;
+        min-height: 70%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        display: flex;
+        justify-content: center;
+
+        .little-result {
+            height: 100%;
+            width: 75%;
+            position: absolute;
+
+            .site-logo {
+                text-align: center;
+
+                img {
+                    width: 100px;
+                }
+            }
+
+            h1 {
+                color: white;
+                text-align: center;
+                font-weight: bolder;
+
+            }
+        }
+    }
+
+    .close-result {
+        position: absolute;
+        top: 20px;
+        margin: 20px;
+        right: 20px;
+        float: right;
+        padding: 10px;
+        background: white;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+
+        &:hover {
+            background: red;
+
+            * {
+                color: white;
+                fill: white;
+            }
+        }
+
+        &:focus {
+            background: red;
+
+            * {
+                color: white;
+                fill: white;
+            }
+        }
+
+        div {
+            color: red;
+            display: inline-block;
+            font-weight: bolder;
+
+            svg {
+                height: 25px;
+                fill: red;
+            }
+        }
+    }
+}
+
+#name-and-car {
+    width: 100%;
+
+    #car-name {
+        margin: 200px 0px 0px 0px;
+        text-align: center;
+        background: rgba(255, 0, 0, 0.438);
+        width: 100%;
+
+        a {
+            text-transform: uppercase;
+            font-weight: bolder;
+            font-size: 200%;
+            color: white;
+
+        }
+    }
+}
+
+#a-car {
+
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 25px;
+
+    #calc-button {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        button {
+            width: 35%;
+            height: 50%;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            font-size: 100%;
+
+            p {
+                color: red;
+                font-weight: bolder;
+                padding: 10px 10px;
+                position: relative;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            &:focus {
+                background: red;
+
+                p {
+                    color: white;
+
+                }
+            }
+        }
+    }
+
+    .side {
+
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+    }
+
+    .asagi {
+        height: auto !important;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        #calculate {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.99);
+            display: none;
+            padding-bottom: 30px;
+
+            #calc-in-calc {
+                background: white;
+                position: absolute;
+                right: 10px;
+                bottom: 10px;
+                margin: 10px;
+                outline: none;
+                border: none;
+                border-radius: 10px;
+
+                button {
+                    border-radius: 10px;
+                    color: red;
+                    outline: none;
+                    border: none;
+                    padding: 10px 30px;
+
+                }
+            }
+
+            ul {
+                padding: 0 0 0 5px;
+                margin: 0;
+            }
+
+            #check-box {
+
+                .slide-box {
+                    position: relative;
+                    width: 42px;
+                    height: 21px;
+                    background-color: #ffffff;
+
+                    label {
+                        color: #ffffff;
+                        position: absolute;
+                        width: 21px;
+                        height: 21px;
+                        right: 21px;
+                        background-color: red;
+                        border: 1px solid #ffffff;
+                        cursor: pointer;
+                        transition: all 300ms ease;
+                    }
+
+                    input[type=checkbox] {
+                        visibility: hidden;
+
+                        &:checked+label {
+                            right: 0;
+                            background-color: #444857;
+                        }
+                    }
+                }
+
+            }
+
+            .inputs {
+                border-radius: 10px;
+                padding: 2px;
+                color: red;
+                border: none;
+                outline: none;
+            }
+
+            .close-cal {
+                float: right;
+                margin: 20px;
+                position: absolute;
+                right: 0;
+
+                p {
+                    font-size: 150%;
+                    ;
+                    color: white;
+
+                    &:hover {
+                        color: $gray;
+                    }
+
+                }
+            }
+        }
+
+        ul {
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            float: left;
+
+            li {
+                padding: 7px;
+
+                font-size: 20px;
+
+                span {
+                    text-transform: capitalize;
+                }
+            }
+
+            * {
+                color: white;
+                list-style: none;
+            }
+        }
+    }
+}
+
+#loading {
+    background: $gray;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 20;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+
+
+}
+
+#loading .loader {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+
+    img {
+        width: 50%;
+    }
+
+}
+
+#loading .car {
+
+    &__body {
+        animation: shake 0.2s ease-in-out infinite alternate;
+    }
+
+    &__line {
+        transform-origin: center right;
+        stroke-dasharray: 22;
+        animation: line 0.8s ease-in-out infinite;
+        animation-fill-mode: both;
+
+        &--top {
+            animation-delay: 0s;
+        }
+
+        &--middle {
+            animation-delay: 0.2s;
+        }
+
+        &--bottom {
+            animation-delay: 0.4s;
+        }
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: translateY(-1%);
+    }
+
+    100% {
+        transform: translateY(3%);
+    }
+}
+
+@keyframes line {
+    0% {
+        stroke-dashoffset: 22;
+    }
+
+    25% {
+        stroke-dashoffset: 22;
+    }
+
+    50% {
+        stroke-dashoffset: 0;
+    }
+
+    51% {
+        stroke-dashoffset: 0;
+    }
+
+    80% {
+        stroke-dashoffset: -22;
+    }
+
+    100% {
+        stroke-dashoffset: -22;
+    }
+}
+
+
+#list {
+    background: transparent;
+    border: none !important;
+    outline: none !important;
+    color: white;
+
+    option {
+        border: none !important;
+        outline: none !important;
+        background: transparent;
+        color: $blue;
+
+        &:hover {
+            color: white;
+            background: $blue;
+            border: none !important;
+            outline: none !important;
+        }
+    }
+}
+
+#header-top {
+    background: transparent;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+
+    * {
+        color: white;
+        font-size: 13px;
+    }
+
+    svg {
+        width: 15px;
+        height: 15px;
+        fill: white;
+        margin: 0px 10px 1px 0px;
+    }
+}
+
+#menu-nav-bar {
+    .logo {
+        width: 35%;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    #menu-nav-bar .logo {
+        width: 59%;
+    }
+
+    #a-car .asagi {
+        display: block;
+    }
+
+    #list {
+        color: $black;
+    }
+
+
+
+    #calc-button {
+
+        button {
+            width: 50%;
+        }
+    }
+
+
+}
+
+@media only screen and (max-width: 505px) {
+    #a-car .asagi ul {
+        float: none;
+    }
+
+
+}
+
+
+#page-wrap {
+    width: 100%;
+    position: relative;
+}
+
+#banner {
+    width: 500px;
+    height: 333px;
+    position: relative;
+    -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
+    left: 50%;
+    transform: translate(-50%, 0px);
+}
+
+#banner div {
+    position: absolute;
+    max-height: 100%;
+}
+
+img {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+@-webkit-keyframes wipe {
+    0% {
+        -webkit-mask-position: 0 0;
+    }
+
+    100% {
+        -webkit-mask-position: -1200px -1200px;
+    }
+}
+
+
+/*Images 2*/
+#banner div:nth-child(1) {
+    -webkit-animation: wipe 6s infinite;
+    -webkit-animation-delay: 12s;
+    -webkit-animation-direction: alternate;
+    -webkit-mask-size: 2000px 2000px;
+    -webkit-mask-image: -webkit-gradient(linear, left top, right bottom,
+            color-stop(0.00, rgba(0, 0, 0, 1)),
+            color-stop(0.45, rgba(0, 0, 0, 1)),
+            color-stop(0.50, rgba(0, 0, 0, 0)),
+            color-stop(0.55, rgba(0, 0, 0, 0)),
+            color-stop(1.00, rgba(0, 0, 0, 0)));
+}
+
+/*Images 3*/
+#banner div:nth-child(2) {
+    -webkit-animation: wipe 6s infinite;
+    -webkit-animation-delay: 9s;
+    -webkit-animation-direction: alternate;
+    -webkit-mask-size: 2000px 2000px;
+    -webkit-mask-image: -webkit-gradient(linear, left top, right bottom,
+            color-stop(0.00, rgba(0, 0, 0, 1)),
+            color-stop(0.45, rgba(0, 0, 0, 1)),
+            color-stop(0.50, rgba(0, 0, 0, 0)),
+            color-stop(0.55, rgba(0, 0, 0, 0)),
+            color-stop(1.00, rgba(0, 0, 0, 0)));
+}
+
+/*Images 4*/
+#banner div:nth-child(3) {
+    -webkit-animation: wipe 6s infinite;
+    -webkit-animation-delay: 6s;
+    -webkit-animation-direction: alternate;
+    -webkit-mask-size: 2000px 2000px;
+    -webkit-mask-image: -webkit-gradient(linear, left top, right bottom,
+            color-stop(0.00, rgba(0, 0, 0, 1)),
+            color-stop(0.45, rgba(0, 0, 0, 1)),
+            color-stop(0.50, rgba(0, 0, 0, 0)),
+            color-stop(0.55, rgba(0, 0, 0, 0)),
+            color-stop(1.00, rgba(0, 0, 0, 0)));
+}
+
+/*Images 5*/
+#banner div:nth-child(4) {
+    -webkit-animation: wipe 6s infinite;
+    -webkit-animation-delay: 3s;
+    -webkit-animation-direction: alternate;
+    -webkit-mask-size: 2000px 2000px;
+    -webkit-mask-image: -webkit-gradient(linear, left top, right bottom,
+            color-stop(0.00, rgba(0, 0, 0, 1)),
+            color-stop(0.45, rgba(0, 0, 0, 1)),
+            color-stop(0.50, rgba(0, 0, 0, 0)),
+            color-stop(0.55, rgba(0, 0, 0, 0)),
+            color-stop(1.00, rgba(0, 0, 0, 0)));
+}
+
+/*Images 1*/
+#banner div:nth-child(5) {
+    -webkit-animation: wipe 6s infinite;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-direction: alternate;
+    -webkit-mask-size: 2000px 2000px;
+    -webkit-mask-image: -webkit-gradient(linear, left top, right bottom,
+            color-stop(0.00, rgba(0, 0, 0, 1)),
+            color-stop(0.45, rgba(0, 0, 0, 1)),
+            color-stop(0.50, rgba(0, 0, 0, 0)),
+            color-stop(0.55, rgba(0, 0, 0, 0)),
+            color-stop(1.00, rgba(0, 0, 0, 0)));
+}

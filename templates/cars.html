@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+{% include "head.html" %}
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+  
+  {% include "loader.html" %}
+
+  <div class="site-wrap" id="home-section">
+
+  {% include "menu.html" %}
+
+
+    <div class="ftco-blocks-cover-1">
+      <div class="ftco-cover-1 overlay innerpage" style="background-image: url('{{url_for('static', filename='images/hero_2.jpg')}}')">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-lg-6 text-center">
+              <h1>Our For Rent Cars</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section bg-light">
+      <div class="container">
+        <div class="row">
+
+
+          
+
+          {%for car in cars%}
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="item-1">
+             
+              <a href="{{ url_for('car',id=car['id'])}}"><img src="{{ url_for('static', filename=car['photo_links'])}}" alt="ASRentACarLogo" class="img-fluid"></a>
+              <div class="item-1-contents">
+                <div class="text-center">
+                  <h3><a href="{{ url_for('car',id=car['id'])}}">{{car["car_name"]}}</a></h3>
+                  <div class="rent-price"><span>${{car['days']['2_3']}}/</span>day</div>
+                </div>
+                <ul class="specs">
+                  <li>
+                    <span>Doors</span>
+                    <span class="spec">{{car["doors"]}}</span>
+                  </li>
+                  <li>
+                    <span>Seats</span>
+                    <span class="spec">{{car["doors"]}}</span>
+                  </li>
+                  <li>
+                    <span>Transmission</span>
+                    <span class="spec">{{car["transmision"]}}</span>
+                  </li>
+                  <li>
+                    <span>Year</span>
+                    <span class="spec">{{car["year"]}}</span>
+                  </li>
+                </ul>
+                <div class="d-flex action">
+                  <a href="{{ url_for('car',id=car['id'])}}" class="btn btn-primary">Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+
+          <div class="col-12">
+            <span class="p-3">1</span>
+            <a href="#" class="p-3">2</a>
+            <a href="#" class="p-3">3</a>
+            <a href="#" class="p-3">4</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  {% include "footer.html" %}
+
+  </div>
+
+  {% include "scrolltop.html" %}
+
+  {% include "scriptler.html" %}
+
+</body>
+
+</html>
