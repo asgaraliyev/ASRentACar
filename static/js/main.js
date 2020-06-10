@@ -1,8 +1,8 @@
- AOS.init({
- 	duration: 800,
- 	easing: 'slide',
- 	once: false
- });
+//  AOS.init({
+//  	duration: 800,
+//  	easing: 'slide',
+//  	once: false
+//  });
 
 jQuery(document).ready(function($) {
 

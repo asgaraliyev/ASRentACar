@@ -2,6 +2,12 @@ from flask import Flask,render_template,url_for,request
 import json
 from datetime import date
 app = Flask(__name__)
+def getObject():
+     with open("cars.json","r") as file:
+            data=file.read()
+            file.close()
+            obyekt=json.loads(data)
+            return obyekt
 @app.errorhandler(404)
 def error404(error):
     return render_template("404.html")
@@ -121,10 +127,7 @@ def calc(id):
         pick=request.form.get('pick')
         drop=request.form.get('drop')
         baby=request.form.get('baby')
-        with open("cars.json","r") as file:
-            data=file.read()
-            file.close()
-        obyekt=json.loads(data)
+        obyekt=getObject()
         res = cheking(pick,drop)
         if res[1] is False:
             error=res[0]
@@ -134,10 +137,19 @@ def calc(id):
             return render_template("car.html",id=id,cars=obyekt,totalPrice=totalPrice,totalDays=totalDays,totalBaby=totalBaby) 
         return render_template("car.html",id=id,cars=obyekt) 
         
-    return "islemedi"
+    return render_template("404.html")
 @app.route("/contact")
 def contact():
     return render_template("contact.html")
+@app.route("/wewillcallyou",methods=["POST"])
+def wewillcallyou():
+        if request.method=="POST":
+            name=request.form.get('name')
+            mail=request.form.get('mail')
+            phone=request.form.get('phone')
+            obyekt=getObject()
+            return  render_template("cars.html",cars=obyekt,callyou=True)
+        return render_template("404.html")
 @app.route("/")
 def index():
     return render_template("index.html")

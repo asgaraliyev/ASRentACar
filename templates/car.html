@@ -9,9 +9,9 @@
     {% if totalPrice%}
     {%for car in cars%}
     {% if car['id']== id %}
-    
+
     <div id="calc-result">
-       
+
         <button id="close-calc-func" class="close-result">
             <div><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001"
@@ -27,65 +27,66 @@
             <div>Close</div>
         </button>
         <div id="header">
-            <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='images/logos/icon.png')}}" alt="ASRentACarLogo"></a>
+            <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='images/logos/icon.png')}}"
+                    alt="ASRentACarLogo"></a>
 
-          </div>
-          
-          <div class="columns">
-          
+        </div>
+
+        <div class="columns">
+
             <div class="column">
                 <div class="thumbnail-container">
-                  <img class="drift-demo-trigger" src="{{ url_for('static',filename=car['links'][0]) }}">
+                    <img class="drift-demo-trigger" src="{{ url_for('static',filename=car['links'][0]) }}">
                 </div>
             </div>
-          
-            <div class="column">
-              <div class="details">
-                  <br>
-                <h1>{{car['car_name']}}{% if totalBaby %} + Baby seat  {% endif%}</h1>
-                <p class="price">{{totalPrice}} $ for {{totalDays}} days </p>
-          
-                <div id="inputs">
-                    <input required type="text"  name=""  placeholder ="Name "id="">
-                    <input required type="text" name=""  placeholder ="E-Mail "id="">
-                    <input required type="text" name=""  placeholder ="Number to call "id="">
-                </div>
-          
-                <div class="columns">
-          
-                  <div class="column" id="wishlist-container">
-          
-                    <button class="button">
-                      <span class="icon is-small">
-                          <i class="fas fa-heart"></i>
-                        </span>
-                        <span class="wishlist">Call You</span>
-                    </button>
-          
-                  </div>
-             
-                </div>
-          <br>
-                <p style="text-align: center;" class="small-text"><span>OR</p>
+
+            <form action="/wewillcallyou" method="post" class="column">
+                <div class="details">
+                    <br>
+                    <h1>{{car['car_name']}}{% if totalBaby %} + Baby seat {% endif%}</h1>
+                    <p class="price">{{totalPrice}} $ for {{totalDays}} days </p>
+
+                    <div id="inputs">
+                        <input required type="text" name="name" placeholder="Name " >
+                        <input required type="email" name="mail" placeholder="E-Mail ">
+                        <input required type="tel" name="phone"   placeholder="Number to call " >
+                    </div>
+
                     <div class="columns">
-          
+
                         <div class="column" id="wishlist-container">
-                
-                          <button class="button">
-                            <span class="icon is-small">
-                                <i class="fas fa-heart"></i>
-                              </span>
-                              <span class="wishlist">Call Us +994 55 517 44 01</span>
-                          </button>
-                
+
+                                <button type="submit"  class="button">
+                                    <span class="icon is-small">
+                                        <i class="fas fa-heart"></i>
+                                    </span>
+                                    <span class="wishlist">Call You</span>
+                                </button>
+
                         </div>
-                   
-                      </div>
-          
-              </div>
-            </div>
-          
-          </div>
+
+                    </div>
+                    <br>
+                    <p style="text-align: center;" class="small-text"><span>OR</p>
+                    <div class="columns">
+
+                        <div class="column" id="wishlist-container">
+
+                            <button class="button">
+                                <span class="icon is-small">
+                                    <i class="fas fa-heart"></i>
+                                </span>
+                                <span class="wishlist">Call Us +994 55 517 44 01</span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
 
     </div>
     {% endif%}
