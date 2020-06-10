@@ -2395,32 +2395,19 @@ html {
   position: relative;
 }
 
-#a-car #calc-button button {
+#a-car #calc-button .calc-button {
   width: 35%;
   height: 50%;
   border: none;
   outline: none;
   border-radius: 10px;
   font-size: 100%;
-}
-
-#a-car #calc-button button p {
   color: red;
-  font-weight: bolder;
-  padding: 10px 10px;
-  position: relative;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
 }
 
-#a-car #calc-button button:focus {
-  background: red;
-}
-
-#a-car #calc-button button:focus p {
+#a-car #calc-button .calc-button:focus {
   color: white;
+  background: red;
 }
 
 #a-car .side {
@@ -2744,6 +2731,24 @@ html {
   }
 }
 
+@media only screen and (max-width: 450px) {
+  #banner div img {
+    width: 78%;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  #banner div img {
+    width: 59%;
+  }
+  #calc-result #title {
+    font-size: 156%;
+  }
+  #a-car .asagi ul li {
+    font-size: 14px;
+  }
+}
+
 #page-wrap {
   width: 100%;
   position: relative;
@@ -2762,6 +2767,12 @@ html {
 #banner div {
   position: absolute;
   max-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 img {

@@ -218,31 +218,19 @@ html {
         justify-content: center;
         position: relative;
 
-        button {
+        .calc-button{
             width: 35%;
             height: 50%;
             border: none;
             outline: none;
             border-radius: 10px;
             font-size: 100%;
-
-            p {
-                color: red;
-                font-weight: bolder;
-                padding: 10px 10px;
-                position: relative;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
-            }
-
+            color:red;
             &:focus {
+                color:white;
                 background: red;
 
-                p {
-                    color: white;
-
-                }
+                
             }
         }
     }
@@ -545,6 +533,32 @@ html {
 
 
 }
+@media only screen and (max-width: 450px) {
+    #banner div {
+        img{
+            width: 78%;
+        }
+     
+    }
+
+
+}
+@media only screen and (max-width: 350px) {
+    #banner div {
+        img{
+            width: 59%;
+        }
+     
+    }
+    #calc-result #title{
+        font-size: 156%;
+    }
+    #a-car .asagi ul li{
+        font-size: 14px;
+    }
+
+}
+
 
 
 #page-wrap {
@@ -564,6 +578,8 @@ html {
 #banner div {
     position: absolute;
     max-height: 100%;
+    display: flex;
+justify-content: center;
 }
 
 img {
