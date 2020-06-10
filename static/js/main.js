@@ -359,6 +359,7 @@ jQuery(document).ready(function($) {
 	$("#close-calc-func").on("click",
 	function(){
 		$("#calc-result").fadeOut();
+		$("#home-section").fadeIn();
 	
 	}
 	);

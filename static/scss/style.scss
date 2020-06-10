@@ -20,7 +20,9 @@ $tgray:rgba(62, 62, 62, 0.9);
 html {
     overflow: hidden;
 }
-
+body{
+    background: black;
+}
 #crash-car {
     width: 50%;
     right: 0;
@@ -94,14 +96,149 @@ html {
 }
 
 #calc-result {
+    padding: 36px;
+   
+    h1 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 5px;
+      }
+      
+      .price {
+        margin-bottom: 10px;
+      }
+      
+      .wrapper {
+        margin: 0 auto;
+        width: 860px;
+      }
+      
+      .columns {
+        margin: 0 auto;
+        max-width: 900px;
+      }
+      
+      .details {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        float: left;
+      }
+      
+      .thumbnail-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        float: left;
+        .drift-demo-trigger{
+            width: 79%;
+        }
+      }
+      
+      .price {
+        font-size: 20px;
+        color: #777474;
+      }
+      
+      .wishlist-container {
+        padding-left: 0;
+      }
+      
+      #header {
+        width: 100%;
+        text-align: center;
+        padding:41px;
+        /*box-shadow: 0 10px 17px 0px #c0c0c0;*/
+      }
+      #header img {
+        max-width: 69px;
+      }
+      .text-input{
+          color:red;
+      }
+      #inputs{
+        width: 100%;
+        min-height: 100px;
+        text-align: center;
+        input{
+            padding-left: 10px;
+            margin: 10px;
+            border-radius: 10px;
+            outline: none;
+            border:none;
+            color:red;
+        }
+      }
+      .columns {
+        margin-top: 30px;
+      }
+      
+      .button {
+        width: 100%;
+        border-radius: 31px;
+      }
+      
+      .select, select {
+        width: 100%;
+        border-radius: 0 !important;
+      }
+      
+      #wishlist-container {
+        padding-left: 0;
+      }
+      
+      #buy-container {
+        padding-right: 0;
+      }
+      
+      .small-text {
+        font-size: 14px;
+      }
+      
+      .small-text span {
+        font-weight: bold;
+      }
+      
+      .buy-button {
+        background: red;
+        color: white;
+        border: none;
+      }
+      
+      .buy-button:hover, .buy-button:active, .buy-button:focus {
+        color: white;
+        opacity: 0.9;
+      }
+      
+      a {
+        color: #ff6900;
+      }
+      a:hover {
+        color: #ff6900;
+        opacity: 0.8;
+      }
+      
+      @media only screen and (max-width: 769px) {
+      
+        #wishlist-container, #buy-container {
+          padding: 0 0 15px 0;
+        }
+      }
     width: 100vw;
-    height: 100vh;
-    position: fixed;
-    display: flex;
-    justify-content: center;
+    position: absolute;
     background: rgba(0, 0, 0, 0.95);
     z-index: 20;
-
+    .column{
+        .wishlist{
+            color:red;
+        }
+        *{
+            font-weight: bold;
+            
+            color:white;
+        }
+    }
     #title {
         position: absolute;
         font-weight: bolder;
@@ -145,6 +282,7 @@ html {
 
     .close-result {
         position: absolute;
+        z-index: 2;
         top: 20px;
         margin: 20px;
         right: 20px;
@@ -154,7 +292,7 @@ html {
         border: none;
         outline: none;
         border-radius: 10px;
-
+        
         &:hover {
             background: red;
 

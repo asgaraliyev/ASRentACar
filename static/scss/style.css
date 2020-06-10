@@ -2188,6 +2188,10 @@ html {
   overflow: hidden;
 }
 
+body {
+  background: black;
+}
+
 #crash-car {
   width: 50%;
   right: 0;
@@ -2259,17 +2263,154 @@ html {
 }
 
 #calc-result {
+  padding: 36px;
   width: 100vw;
-  height: 100vh;
-  position: fixed;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  position: absolute;
   background: rgba(0, 0, 0, 0.95);
   z-index: 20;
+}
+
+#calc-result h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+#calc-result .price {
+  margin-bottom: 10px;
+}
+
+#calc-result .wrapper {
+  margin: 0 auto;
+  width: 860px;
+}
+
+#calc-result .columns {
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+#calc-result .details {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  float: left;
+}
+
+#calc-result .thumbnail-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  float: left;
+}
+
+#calc-result .thumbnail-container .drift-demo-trigger {
+  width: 79%;
+}
+
+#calc-result .price {
+  font-size: 20px;
+  color: #777474;
+}
+
+#calc-result .wishlist-container {
+  padding-left: 0;
+}
+
+#calc-result #header {
+  width: 100%;
+  text-align: center;
+  padding: 41px;
+  /*box-shadow: 0 10px 17px 0px #c0c0c0;*/
+}
+
+#calc-result #header img {
+  max-width: 69px;
+}
+
+#calc-result .text-input {
+  color: red;
+}
+
+#calc-result #inputs {
+  width: 100%;
+  min-height: 100px;
+  text-align: center;
+}
+
+#calc-result #inputs input {
+  padding-left: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  color: red;
+}
+
+#calc-result .columns {
+  margin-top: 30px;
+}
+
+#calc-result .button {
+  width: 100%;
+  border-radius: 31px;
+}
+
+#calc-result .select, #calc-result select {
+  width: 100%;
+  border-radius: 0 !important;
+}
+
+#calc-result #wishlist-container {
+  padding-left: 0;
+}
+
+#calc-result #buy-container {
+  padding-right: 0;
+}
+
+#calc-result .small-text {
+  font-size: 14px;
+}
+
+#calc-result .small-text span {
+  font-weight: bold;
+}
+
+#calc-result .buy-button {
+  background: red;
+  color: white;
+  border: none;
+}
+
+#calc-result .buy-button:hover, #calc-result .buy-button:active, #calc-result .buy-button:focus {
+  color: white;
+  opacity: 0.9;
+}
+
+#calc-result a {
+  color: #ff6900;
+}
+
+#calc-result a:hover {
+  color: #ff6900;
+  opacity: 0.8;
+}
+
+@media only screen and (max-width: 769px) {
+  #calc-result #wishlist-container, #calc-result #buy-container {
+    padding: 0 0 15px 0;
+  }
+}
+
+#calc-result .column .wishlist {
+  color: red;
+}
+
+#calc-result .column * {
+  font-weight: bold;
+  color: white;
 }
 
 #calc-result #title {
@@ -2319,6 +2460,7 @@ html {
 
 #calc-result .close-result {
   position: absolute;
+  z-index: 2;
   top: 20px;
   margin: 20px;
   right: 20px;
