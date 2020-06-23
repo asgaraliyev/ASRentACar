@@ -14,31 +14,31 @@
   <h2>Admin Login</h2>
   <form method="post">
     {{ form.hidden_tag() }}
-    {{ form.username.label(class="form-control-label") }}
+    {{ form.username.label }}
     {% if form.username.errors %}
-    {{ form.username(class="form-control form-control-lg is-invalid") }}
+    {{ form.username }}
     <div class="invalid-feedback">
         {% for error in form.username.errors %}
         <span>{{ error }}</span>
         {% endfor %}
     </div>
     {% else %}
-    {{ form.username(class="form-control form-control-lg") }}
+    {{ form.username }}
     {% endif %}
-    {{ form.password.label(class="form-control-label") }}
+    {{ form.password.label }}
     {% if form.password.errors %}
-    {{ form.password(class="form-control form-control-lg is-invalid") }}
+    {{ form.password }}
     <div class="invalid-feedback">
         {% for error in form.password.errors %}
         <span>{{ error }}</span>
         {% endfor %}
     </div>
     {% else %}
-    {{ form.password(class="form-control form-control-lg") }}
+    {{ form.password }}
     {% endif %}
     <div class="form-check">
-        {{ form.remember(class="form-check-input") }}
-        {{ form.remember.label(class="form-check-label") }}
+        {{ form.remember }}
+        {{ form.remember.label }}
     </div>
     {{ form.submit(class="btn btn-outline-info") }}
       <span></span>
@@ -49,3 +49,5 @@
     </a>
   </form>
 </div>
+</body>
+</html>
