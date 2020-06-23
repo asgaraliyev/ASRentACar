@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {% include "head.html" %}
+    <title>Admin Panel Car</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/adminpanel.css') }}">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+  
+
+  <div class="site-wrap" id="home-section">
+{% include "adminsidebar.html" %}
+
+    <div class="site-section bg-light">
+      <div class="container">
+        <div class="row">
+
+
+          <div id="cars-lits">
+            <div class="row">
+          {%for car in cars%}
+
+          
+          <div class="col-lg-4 col-md-6 mb-4 {{car['car_type_level']}}">
+            <div class="item-1 ">
+             
+              <a href="{{ url_for('show_car',id=car['id'])}}"><img src="{{ url_for('static', filename=car['photo_links'])}}" alt="ASRentACarLogo" class="img-fluid"></a>
+              <div class="item-1-contents">
+                <div class="text-center">
+                  <h3><a href="{{ url_for('car',id=car['id'])}}">{{car["car_name"]}}</a></h3>
+                  <div class="rent-price"><span><span class="itiscurrency">{{car['days']['1_3']}}    </span><span class="itiscurrencyname">AZN</span> /</span>{{_('gün')}}</div>
+                </div>
+                <ul class="specs">
+                  <li>
+                    <span>{{_('Qapılar')}}</span>
+                    <span class="spec">{{car["doors"]}}</span>
+                  </li>
+                  <li>
+                    <span>{{_('Oturacaqlar')}}</span>
+                    <span class="spec">{{car["seat"]}}</span>
+                  </li>
+                  <li>
+                    <span>{{_('Ötürücü')}}</span>
+                    {%if car["transmision"]==0%}
+                    <span class="spec">{{_('Avtomatik')}}</span>
+                    {% elif car["transmision"]==1%}
+                    <span class="spec">{{_('Mexanik')}}</span>
+                    {%endif%}
+                  </li>
+                  <li>
+                    <span>{{_('İl')}}</span>
+                    <span class="spec">{{car["year"]}}</span>
+                  </li>
+                </ul>
+                <div class="d-flex action">
+                  <a href="{{ url_for('show_car',id=car['id'])}}" class="btn btn-primary">{{_('Detallar')}}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {% endfor %}
+        </div>
+        </div>
+         
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+  {% include "scriptler.html" %}
+
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        {%for car in cars%}
+        {% if car['id']== id %}
+        <title>{{_('Rent a ')}} {{car['car_name']}}</title>
+        {% endif%}
+        {% endfor %}
+        {% include "head.html" %}
+    </head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+        {%for car in cars%}
+        {% if car['id']== id %}
+        <div class="ftco-blocks-cover-1">
+            <div class="ftco-cover-1 overlay innerpage"
+                style="background-image: url('{{ url_for('static',filename='images/hero_2.webp') }}');height: auto!important;">
+                <div class="container">
+                    <div style="height: auto!important;" class="row align-items-center justify-content-center">
+                        <div id="name-and-car">
+                            <div id="car-name"><h1><p style="font-size:0.8em;">{{car['car_name']}}</p></h1></div>
+                            <div id="a-car">
+
+                                <div class="side">
+                                    <div id="page-wrap">
+                                        <div id="banner">
+                                            <div><img src="{{ url_for('static',filename=car['links'][0]) }}"></div>
+                                            <div><img src="{{ url_for('static',filename=car['links'][1]) }}"></div>
+                                            <div><img src="{{ url_for('static',filename=car['links'][2]) }}"></div>
+                                            <div><img src="{{ url_for('static',filename=car['links'][3]) }}"></div>
+                                            <!-- <div><img src="images/img_2.webp"></div> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="side asagi">
+                                    <form action='/calc/{{car["id"]}}' method="post" id="calculate">
+
+                                        <div id='close-cal-func' class="close-cal" style="cursor: pointer;">
+                                            <p>{{_('Bağla')}}</p>
+                                        </div>
+                                        <ul>
+                                            <li>
+                                                <span>{{_('Götürülmə tarixi:')}}</span>
+
+                                            </li>
+                                            <li>
+                                                <span>{{_('Buraxılma Tarixi:')}}</span>
+
+                                            </li>
+
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                &nbsp;&nbsp;<input type="date" name="pick" class="inputs">
+                                            </li>
+                                            <li>
+                                                &nbsp;&nbsp;<input type="date" name="drop" class="inputs">
+
+                                            </li>
+
+                                        </ul>
+
+                                        <div id="calc-in-calc">
+                                            <button id="calculate-in-calc" type="submit">{{_('Hesabla')}}</button>
+                                        </div>
+
+                                    </form>
+                                    <ul>
+                                        <li>
+                                            <span>{{_('Maşının tipi:')}}</span><span>{{car['car_type_level']}}</span>
+
+                                        </li>
+                                        <li>
+                                            <span>{{_('Qapılar:')}}</span><span>{{car['doors']}}</span>
+
+                                        </li>
+                                        <li>
+                                            <span>{{_('Mühərrik:')}}</span><span>{{car['engine']}}</span>
+
+                                        </li>
+
+                                    </ul>
+                                    <ul>
+                                        <li>
+                                            <span>{{_('İl:')}}</span><span>{{car['year']}}</span>
+
+                                        </li>
+                                        <li>
+                                            <span>{{_('Ötürücü:')}}</span>
+                                            {%if car["transmision"]==0%}
+                                             <span class="spec">{{_('Avtomatik')}}</span>
+                                             {% elif car["transmision"]==1%}
+                                            <span class="spec">{{_('Mexanik')}}</span>
+                                            {%endif%}
+
+                                        </li>
+
+                                    </ul>
+                                    
+                                    <ul>
+                                        <li>
+                                            <span>{{_('1-3 gün : ')}}</span><span> <span class="itiscurrency">{{car['days']['1_3']}}    </span><span class="itiscurrencyname">AZN</span>  </span>
+
+                                        </li>
+                                        <li>
+                                            <span>{{_('4-7 gün : ')}}</span><span> <span class="itiscurrency">{{car['days']['4_7']}}    </span><span class="itiscurrencyname">AZN</span> </span>
+
+                                        </li>
+                                        <li>
+                                            <span>{{_('8-15 gün : ')}}</span><span>  <span class="itiscurrency">{{car['days']['8_15']}}     </span><span class="itiscurrencyname">AZN</span>  </span>
+
+                                        </li>
+
+
+                                    </ul>
+                                    <ul>
+                                        <li>
+                                            <span>{{_('16-30 gün : ')}}</span><span> <span class="itiscurrency">{{car['days']['16_30']}}    </span> <span class="itiscurrencyname">AZN</span> </span>
+
+                                        </li>
+                                        <li>
+                                            <span>{{_('30 + gün : ')}}</span><span> <span class="itiscurrency">{{car['days']['30_']}}    </span> <span class="itiscurrencyname">AZN</span>  </span>
+
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div id="calc-button">
+                                    <input id="calculateFunc" style="height: 40px;" class="btn btn-danger" type="button" value="{{_('Redaktə Et')}}">&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input id="calculateFunc" style="height: 40px; width: 110px;" class="btn btn-danger" type="button" value="{{_('Sil')}}">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif%}
+        {% endfor %}
+
+
+    </div>
+
+
+    {% include "scriptler.html" %}
+</body>
+
+</html>

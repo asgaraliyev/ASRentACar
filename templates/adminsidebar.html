@@ -1,0 +1,48 @@
+<div class="area"></div>
+    <nav class="main-menu">
+        <ul>
+            <li>
+                <a href="{{ url_for('show_cars') }}">
+                    <i class="fa fa-car" aria-hidden="true"></i>
+                    <span class="nav-text">
+                        Maşınlar
+                    </span>
+                </a>
+            </li>
+                        <li>
+                            <a href="{{ url_for('add_car') }}">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                <span class="nav-text">
+                                    Maşın Əlavə Et
+                                </span>
+                            </a>
+                        </li>
+            <li>
+                <a href="{{ url_for('show_message') }}">
+                    <i class="fa fa-comments" aria-hidden="true"></i>
+                    <span class="nav-text">
+                        Mesajlar
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    <span class="nav-text">
+                        Melumatları Yenilə
+                    </span>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="logout">
+            <li>
+                <a href="">
+                    <i class="fa fa-power-off fa-2x"></i>
+                    <span class="nav-text">
+                        Çıxış
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </nav>

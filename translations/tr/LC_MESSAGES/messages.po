@@ -1,0 +1,489 @@
+# Turkish translations for PROJECT.
+# Copyright (C) 2020 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2020-06-17 23:05+0400\n"
+"PO-Revision-Date: 2020-06-17 21:11+0400\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: tr\n"
+"Language-Team: tr <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: app.py:178
+msgid "Avtomobilin götürülmə ve buraxılma tarixi yanlış daxil edilib."
+msgstr "Aracın teslim alma ve bırakma tarihi yanlış girildi."
+
+#: app.py:180
+msgid "Avtomobilin götürülmə ve buraxılma tarixi eyni ola bilməz."
+msgstr "Aracın teslim alma ve bırakma tarihi aynı olamaz."
+
+#: app.py:182
+msgid "Avtomobilin götürülmə ve ya buraxılma tarixi daxil edilməyib."
+msgstr "Aracın teslim alma ve bırakma tarihi içerilmediş"
+
+#: app.py:184
+msgid "Avtomobilin buraxılma tarixi götürülmə tarixindən tezdir."
+msgstr "Aracın teslim alma tarihi bırakma tarihinden önce"
+
+#: app.py:229
+msgid "Sizin mesajınız uğurlu şəkildə göndərildi !"
+msgstr "Mesajınız başarıyla gönderilmiştir!"
+
+#: app.py:283
+msgid ""
+"Salam hörmətli {} . Sizin istəyiniz qeydə alındı ən yaxın zamanda sizinlə"
+" əlaqə saxlayacağıq.Bizi seçdiyiniz üçün minnətdarıq."
+msgstr "Merhaba sayın {}. Sizin talebiniz kaydedildi. En kısa sürede sizinle iletişime geçeceğiz. Bizi tercih ettiğiniz için teşekkürler."
+
+#: templates/404.html:17
+msgid "Belə bir səhifə yoxdur!"
+msgstr "Böyle bir sayfa yok!"
+
+#: templates/404.html:22 templates/menu.html:106
+msgid "Ev"
+msgstr "Ev"
+
+#: templates/404.html:23 templates/menu.html:107
+msgid "Maşınlar"
+msgstr "Araçlar"
+
+#: templates/404.html:24 templates/menu.html:108
+msgid "Haqqında"
+msgstr "Hakkında"
+
+#: templates/404.html:25 templates/footer.html:70 templates/menu.html:109
+msgid "Əlaqə"
+msgstr "İletişim"
+
+#: templates/about.html:21
+msgid "Haqqımızda"
+msgstr "Hakkımızda"
+
+#: templates/about.html:22
+msgid ""
+"\n"
+"    \"ASRENTACAR\" Azərbaycanda qeydiyyatdan keçmiş \"GOODVEY MMC\"-nin "
+"(Vöen: 140423121) əmtəə nişanıdır. 2015-ci ildən fəaliyyət göstərən və "
+"Azərbaycan Respublikası, Bakı şəhəri, Tiflis prospekti 1058 ünvanında "
+"qeydiyyatdan keçmiş \"MARSHAL\" rent a car şirkəti www.marshal.az onlayn "
+"sifariş saytından avtomobil icarəsi, transfer, sürücü və eləcə də turizm "
+"xidmətlərini təklif edir."
+msgstr ""
+
+#: templates/about.html:40
+msgid "Maşın Firması"
+msgstr "Araba Şirketi"
+
+#: templates/about.html:41 templates/about.html:59
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit suscipit, "
+"repudiandae similique\n"
+"              accusantium eius nulla quam laudantium sequi."
+msgstr ""
+
+#: templates/about.html:43 templates/about.html:61
+msgid ""
+"Debitis voluptates corporis saepe molestias tenetur ab quae, quo earum "
+"commodi, laborum dolore, fuga\n"
+"              aliquid delectus cum ipsa?"
+msgstr ""
+
+#: templates/about.html:58
+msgid "Keçmişimiz"
+msgstr "Geçmişimiz"
+
+#: templates/car.html:27 templates/car.html:139
+msgid "Bağla"
+msgstr "Kapat"
+
+#: templates/car.html:46
+msgid "Uşaq oturacağı"
+msgstr "Çocuk koltuğu:"
+
+#: templates/car.html:47
+msgid "üçün"
+msgstr "için"
+
+#: templates/car.html:47 templates/cars.html:54 templates/index.html:144
+msgid "gün"
+msgstr "gün"
+
+#: templates/car.html:50 templates/contact.html:43
+msgid "Ad"
+msgstr "İsim"
+
+#: templates/car.html:51
+msgid "E-poçt"
+msgstr "E-posta"
+
+#: templates/car.html:52
+msgid "Telefon Nömrəsi"
+msgstr "Telefon numarası"
+
+#: templates/car.html:63
+msgid "Zəng Edin"
+msgstr "Arayın"
+
+#: templates/car.html:70
+msgid "və ya"
+msgstr "veya"
+
+#: templates/car.html:82
+msgid "Bizə zəng etmək üçün klikləyin"
+msgstr "Bizi aramak için tıklayın"
+
+#: templates/car.html:143
+msgid "Götürülmə tarixi:"
+msgstr "Teslim alma Tarihi"
+
+#: templates/car.html:147
+msgid "Buraxılma Tarixi:"
+msgstr "Bırakma Tarihi"
+
+#: templates/car.html:151
+msgid "Uşaq oturacağı:"
+msgstr "Çocuk Koltuğu"
+
+#: templates/car.html:176 templates/car.html:269
+msgid "Hesabla"
+msgstr "Hesapla"
+
+#: templates/car.html:182
+msgid "Maşının tipi:"
+msgstr "Arabanın türü : "
+
+#: templates/car.html:186
+msgid "Qapılar:"
+msgstr "Kapılar : "
+
+#: templates/car.html:190
+msgid "Mühərrik:"
+msgstr "Motor : "
+
+#: templates/car.html:197
+msgid "İl:"
+msgstr "Yıl : "
+
+#: templates/car.html:201
+msgid "Ötürücü:"
+msgstr "Transmisyon : "
+
+#: templates/car.html:203 templates/cars.html:68 templates/index.html:41
+#: templates/index.html:92 templates/index.html:158
+msgid "Avtomatik"
+msgstr "Otomatik"
+
+#: templates/car.html:205 templates/cars.html:70 templates/index.html:160
+msgid "Mexanik"
+msgstr "Mekanik"
+
+#: templates/car.html:210
+msgid "Baqaj:"
+msgstr "Bagaj : "
+
+#: templates/car.html:210 templates/index.html:36 templates/index.html:87
+msgid "Çanta"
+msgstr "Çanta"
+
+#: templates/car.html:217
+msgid "Yağ:"
+msgstr "Yakıt : "
+
+#: templates/car.html:219
+msgid "Benzin"
+msgstr "Benzin"
+
+#: templates/car.html:221
+msgid "Dizel"
+msgstr "Dizel"
+
+#: templates/car.html:226
+msgid "Yürüyüş:"
+msgstr "Kilometraj : "
+
+#: templates/car.html:226
+msgid "km"
+msgstr "km"
+
+#: templates/car.html:230
+msgid "Wifi"
+msgstr "Wifi"
+
+#: templates/car.html:233
+msgid "GPS"
+msgstr "GPS"
+
+#: templates/car.html:236
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+#: templates/car.html:244
+msgid "1-3 gün : "
+msgstr "1-3 gün : "
+
+#: templates/car.html:248
+msgid "4-7 gün : "
+msgstr "4-7 gün : "
+
+#: templates/car.html:252
+msgid "8-15 gün : "
+msgstr "8-15 gün : "
+
+#: templates/car.html:257
+msgid "16-30 gün : "
+msgstr "16-30 gün : "
+
+#: templates/car.html:261
+msgid "30 + gün : "
+msgstr "30 + gün : "
+
+#: templates/cars.html:20
+msgid "Kirayə maşınlar üçün"
+msgstr "Kiralık arabalar için"
+
+#: templates/cars.html:21 templates/contact.html:22
+msgid "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+msgstr ""
+
+#: templates/cars.html:34
+msgid "Hamısı"
+msgstr "Tümü"
+
+#: templates/cars.html:35
+msgid "Sport"
+msgstr "Spor"
+
+#: templates/cars.html:36
+msgid "Biznes"
+msgstr "Business"
+
+#: templates/cars.html:37
+msgid "Full-size"
+msgstr "Full-size"
+
+#: templates/cars.html:38
+msgid "Minivan"
+msgstr "Minivan"
+
+#: templates/cars.html:39
+msgid "Ekonomik"
+msgstr "Ekonomik"
+
+#: templates/cars.html:58 templates/index.html:27 templates/index.html:78
+#: templates/index.html:148
+msgid "Qapılar"
+msgstr "Kapılar"
+
+#: templates/cars.html:62 templates/index.html:31 templates/index.html:82
+#: templates/index.html:152
+msgid "Oturacaqlar"
+msgstr "Koltuklar"
+
+#: templates/cars.html:66 templates/index.html:39 templates/index.html:90
+#: templates/index.html:156
+msgid "Ötürücü"
+msgstr "Transmisyon"
+
+#: templates/cars.html:74 templates/index.html:47 templates/index.html:98
+#: templates/index.html:164
+msgid "İl"
+msgstr "Yıl"
+
+#: templates/cars.html:79
+msgid "Detallar"
+msgstr "Ayrıntılar"
+
+#: templates/cars.html:105
+msgid "Sorğu göndərildi. Biz sizə zəng edəcəyik"
+msgstr "Sorğu gönderildi. Sizi arayacağız"
+
+#: templates/contact.html:21
+msgid "Bizimlə Əlaqə"
+msgstr "Bizimle İletişim"
+
+#: templates/contact.html:33
+msgid "Bizimlə Əlaqə Qurun və ya Formu Doldurun"
+msgstr "Bizimle iletişim kurun ve ya Formu doldurun"
+
+#: templates/contact.html:34
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo assumenda,"
+" dolorum necessitatibus eius\n"
+"              earum voluptates sed!"
+msgstr ""
+
+#: templates/contact.html:46
+msgid "Soyad"
+msgstr "Soyad"
+
+#: templates/contact.html:52
+msgid "E-poçt ünvanı"
+msgstr "E-posta Adresi"
+
+#: templates/contact.html:57
+msgid "Telefon nömrəsi"
+msgstr "Telefon Numarası"
+
+#: templates/contact.html:63
+msgid "Mesajınızı bura yazın"
+msgstr "Mesajınızı buraya yazınız"
+
+#: templates/contact.html:69
+msgid "Mesajı Göndər"
+msgstr "Mesajı Gönderin"
+
+#: templates/contact.html:76
+msgid "Əlaqə Məlumatı"
+msgstr "İletişim bilgileri"
+
+#: templates/contact.html:80
+msgid "Ünvan:"
+msgstr "Adress:"
+
+#: templates/contact.html:81 templates/footer.html:76 templates/menu.html:24
+#: templates/menu.html:183
+msgid "Bakı, Həsən bəy Zərdabi küçəsi, 78B"
+msgstr "Bakü, Hasan bey Zardabi, 78B"
+
+#: templates/contact.html:84
+msgid "Telefon:"
+msgstr "Telefon:"
+
+#: templates/contact.html:87
+msgid "E-poçt:"
+msgstr "E-posta:"
+
+#: templates/footer.html:16
+msgid ""
+"is small indie game studio based in Croatia. Founded in 2020, on a "
+"mission to make\n"
+"            beautiful, fun and popular mobile games."
+msgstr ""
+"Hırvatistan merkezli küçük indie oyun stüdyosu. Güzel, eğlenceli ve "
+"popüler mobil oyunlar yapmak için 2020 yılında kuruldu."
+
+#: templates/footer.html:118
+msgid "Açıq Saatlar"
+msgstr "Açık saatler"
+
+#: templates/footer.html:122 templates/menu.html:52
+msgid "Bazar ertəsi - Cümə : 09:00 - 00:00"
+msgstr "Pazartesi - Cüma : 09:00 - 00:00"
+
+#: templates/footer.html:133
+msgid "Copyright"
+msgstr "Copyright"
+
+#: templates/footer.html:135
+msgid "Bütün Hüquqlar Qorunur"
+msgstr "Tüm haklar Saklıdır"
+
+#: templates/footer.html:135
+msgid "Team"
+msgstr "Takım"
+
+#: templates/head.html:2
+msgid "AS Rent A Car Baku-Azerbaijan"
+msgstr "AS Rent A Car Baku-Azerbaijan"
+
+#: templates/index.html:35 templates/index.html:86
+msgid "Baqaj"
+msgstr "Bagaj"
+
+#: templates/index.html:43 templates/index.html:94
+msgid "Mexanika"
+msgstr "Mekanik"
+
+#: templates/index.html:52 templates/index.html:103
+msgid "/gün"
+msgstr "/gün"
+
+#: templates/index.html:53 templates/index.html:104 templates/index.html:169
+msgid "İcarəyə götür"
+msgstr "Kirala"
+
+#: templates/index.html:119
+msgid "Bütün Maşınları Göstər"
+msgstr "Tüm Arabaları Göster"
+
+#: templates/index.html:123
+msgid "Bizim Təklifimiz"
+msgstr "Önerilerimiz"
+
+#: templates/index.html:124
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure nesciunt "
+"nemo vel earum maxime neque!"
+msgstr ""
+
+#: templates/index.html:126
+msgid "Geri"
+msgstr "Geri"
+
+#: templates/index.html:128
+msgid "İrəli"
+msgstr "İleri"
+
+#: templates/index.html:189
+msgid "Bizim Xidmətlərimiz"
+msgstr "Hizmetlerimiz"
+
+#: templates/index.html:311
+msgid "Turlar"
+msgstr "Turlar"
+
+#: templates/index.html:312
+msgid "Şəhər və rayon turlarının təşkili"
+msgstr "Şehir ve bölge turlarının organizasyonu"
+
+#: templates/index.html:322
+msgid "Avtomobil icarəsi"
+msgstr "Otomobil Kirası"
+
+#: templates/index.html:323
+msgid "Hər növ avtomobillərin günlük,həftəlik,aylıq icarəsi"
+msgstr "Her türlü otomobilin günlük, haftalık, aylık kirası"
+
+#: templates/index.html:333
+msgid "Bura bilmirəm nə yazam"
+msgstr "Burada ne yazacağımı bilmiyorum"
+
+#: templates/index.html:334
+msgid "Bura bilmirəm nə yazam,Bura bilmirəm nə yazam,Bura bilmirəm nə yazam"
+msgstr ""
+"Burada ne yazacağımı bilmiyorum, Burada ne yazacağımı bilmiyorum, Burada "
+"ne yazacağımı bilmiyorum"
+
+#: templates/menu.html:111
+msgid "Dil"
+msgstr "Dil"
+
+#: templates/menu.html:112
+msgid "Azərbaycanca"
+msgstr "Azerice"
+
+#: templates/menu.html:113
+msgid "Türkcə"
+msgstr "Türkce"
+
+#: templates/menu.html:114
+msgid "Rusca"
+msgstr "Rusca"
+
+#: templates/menu.html:115
+msgid "İngiliscə"
+msgstr "İngilizce"
+
+#: templates/menu.html:119
+msgid "Pul vahidi"
+msgstr "Para birimi-"
+

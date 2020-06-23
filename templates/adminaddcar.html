@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+
+    <title>Flask Blog </title>
+
+</head>
+
+<body>
+    
+    <form action="/adminpanel/addcar" method="post" enctype = "multipart/form-data">
+        {{ form.hidden_tag() }}
+        <p>
+        <p>
+            {{ form.carname.label }}<br>
+            {{ form.carname }}<br>
+            {% for error in form.carname.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.cartypelevel.label }}<br>
+            {{ form.cartypelevel }}<br>
+            {% for error in form.cartypelevel.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.doors.label }}<br>
+            {{ form.doors }}<br>
+            {% for error in form.doors.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.seat.label }}<br>
+            {{ form.seat }}<br>
+            {% for error in form.seat.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.engine.label }}<br>
+            {{ form.engine }}<br>
+            {% for error in form.engine.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.transmission.label }}<br>
+            {{ form.transmission }}<br>
+            {% for error in form.transmission.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.day_1_3.label }}<br>
+            {{ form.day_1_3 }}<br>
+            {% for error in form.day_1_3.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.day_4_7.label }}<br>
+            {{ form.day_4_7 }}<br>
+            {% for error in form.day_4_7.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.day_8_15.label }}<br>
+            {{ form.day_8_15 }}<br>
+            {% for error in form.day_8_15.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.day_16_30.label }}<br>
+            {{ form.day_16_30 }}<br>
+            {% for error in form.day_16_30.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.day_30_.label }}<br>
+            {{ form.day_30_ }}<br>
+            {% for error in form.day_30_.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.year.label }}<br>
+            {{ form.year }}<br>
+            {% for error in form.year.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.picture.label }}<br>
+            {{ form.picture }}<br>
+            {% for error in form.picture.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <input id="pictures" multiple name="pictures" type="file">
+        <p>{{ form.submit() }}</p>
+</form>
+
+
+</body>
+
+</html>

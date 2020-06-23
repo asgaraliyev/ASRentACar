@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>{{_('Belə bir səhifə yoxdur')}}</title>
+    {% include "head.html" %}
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+    
+    <div id="crash-car">
+        <img class="table"src="{{ url_for('static', filename='images/error/errortable.webp')}}" alt="error-table">
+
+    <img class="car" src="{{ url_for('static', filename='images/error/crashcar.webp')}}" alt="error-table">
+
+    </div>
+    <div id="error-page">
+        <div class="logo">
+            <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='images/logos/icon.webp')}}" alt="ASRentACarLogo"></a>
+            <p>{{_('Belə bir səhifə yoxdur!')}}</p>
+            </div>
+        <div class="photo-div">
+            <div class="menu">
+                <ul class="site-menu main-menu js-clone-nav ml-auto ">
+                    <li><a href="{{ url_for('index') }}" class="nav-link">{{_('Ev')}}</a></li>
+                    <li><a href="{{ url_for('cars') }}" class="nav-link">{{_('Maşınlar')}}</a></li>
+                    <li><a href="{{ url_for('about') }}" class="nav-link">{{_('Haqqında')}}</a></li>
+                    <li><a href="{{ url_for('contact') }}" class="nav-link">{{_('Əlaqə')}}</a></li>
+                  </ul>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <title>{{_('Əlaqə')}}</title>
+    {% include "head.html" %}
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+  {% include "loader.html" %}
+
+  <div class="site-wrap" id="home-section">
+
+    {% include "menu.html" %}
+
+
+    <div class="ftco-blocks-cover-1">
+      <div class="ftco-cover-1 overlay innerpage"
+        style="background-image: url('{{ url_for('static',filename='images/hero_2.webp') }}')">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-lg-6 text-center">
+              <h1>{{_('Bizimlə Əlaqə')}}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section bg-light" id="contact-section">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-7 text-center mb-5">
+            <h2>{{_('Bizimlə Əlaqə Qurun və ya Formu Doldurun')}}</h2>
+         
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-8 mb-5">
+            <form action="/takemessage" method="POST">
+              <div class="form-group row">
+                <div class="col-md-6 mb-4 mb-lg-0">
+                  <input required type="text" class="form-control" placeholder="{{_('Ad')}}" name="firstname">
+                </div>
+                <div class="col-md-6">
+                  <input  required type="text" class="form-control" placeholder="{{_('Soyad')}}" name="lastname">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <input required type="email" class="form-control" placeholder="{{_('E-poçt ünvanı')}}" name="email">
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <input required  type="text" class="form-control" placeholder="{{_('Telefon nömrəsi')}}" name="phone">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <textarea required id="" name="message" class="form-control" placeholder="{{_('Mesajınızı bura yazın')}}" cols="30"
+                    rows="10"></textarea>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6 mr-auto">
+                  <input type="submit" class="btn btn-block btn-primary text-white py-3 px-5" value="{{_('Mesajı Göndər')}}">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-4 ml-auto">
+            <div class="bg-white p-3 p-md-5">
+              <h3 class="text-black mb-4">{{_('Əlaqə Məlumatı')}}</h3>
+              <ul class="list-unstyled footer-link">
+                <li class="d-block mb-3">
+                  <a href="{{website['location']}}" target="_blank">
+                    <span class="d-block text-black">{{_('Ünvan:')}}</span>
+                    <span>{{_('Bakı, Həsən bəy Zərdabi küçəsi, 78B')}}</span>
+                </li>
+                </a>
+                <li class="d-block mb-3"><span class="d-block text-black"> {{_('Telefon:')}}</span><a
+                  href="tel:{{website['phones'][0]}}"><span>{{website['phones'][0]}}</span></a></li>
+                <li class="d-block mb-3"><a href="mailto:{{website['mail']}}"><span
+                      class="d-block text-black">{{_('E-poçt:')}}</span><span>{{website['mail']}}</span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    {% include "footer.html" %}
+
+  </div>
+
+  {% include "scrolltop.html" %}
+
+  {% include "scriptler.html" %}
+
+</body>
+
+</html>

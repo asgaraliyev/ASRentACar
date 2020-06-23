@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <title>{{_('Haqqında')}}</title>
+    {% include "head.html" %}
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+  
+  {% include "loader.html" %}
+
+  <div class="site-wrap" id="home-section">
+
+  {% include "menu.html" %}
+
+
+
+    <div class="ftco-blocks-cover-1">
+      <div class="ftco-cover-1 overlay innerpage" style="background-image: url('{{url_for('static', filename='images/hero_2.webp')}}');">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-lg-6 text-center">
+              <h1>{{_('Haqqımızda')}}</h1>
+              <h2>{{website['companyname']   }}{{_('  şirkəti 2015 ci ildən bəri hər növ avtomobillərin icarəsini,turların və kortejlərin təşkilini edir.')}} </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="site-section">
+        <h2 class="will-be-white" style="text-align: center; margin-top: -60px; font-weight:bolder;" >{{_('Bizim Nəaliyyətlərimiz')}}</h2>
+      <div class="container" style="margin-top: 70px;">
+        <div class="row">
+          <div class="col-lg-6 mb-5 mb-lg-0 order-lg-2" style="height: 400px; width: 400px;" >
+            <img src="{{url_for('static', filename='images/115f0856-43c5-47be-961e-c00449a47c46.jpg')}}" alt="Image" class="img-fluid">
+          </div>
+          <div class="col-lg-6 mb-5 mb-lg-0 order-lg-2" style="height: 400px; width: 400px;">
+            <img src="{{url_for('static', filename='images/33190f9d-a485-42a7-a5da-1f280b7ad357.jpg')}}" alt="Image" class="img-fluid">
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+  {% include "footer.html" %}
+
+  </div>
+
+  {% include "scrolltop.html" %}
+
+  {% include "scriptler.html" %}
+
+</body>
+
+</html>

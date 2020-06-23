@@ -1,0 +1,50 @@
+[
+       {
+              "id": 1,
+              "car_name": "bmw",
+              "car_type_level": "Sport",
+              "doors": 4,
+              "seat": 5,
+              "engine": 2.5,
+              "transmission": "Avtomatik",
+              "days": {
+                     "1_3": 80,
+                     "4_7": 75,
+                     "8_15": 60,
+                     "16_30": 50,
+                     "30_": 30
+              },
+              "year": 2012,
+              "photo_links": "images/cars/ad12227c-5e67-4e2a-ab9d-9b98c9b6575cbmw1.jpg",
+              "links": [
+                     "images/cars/124529ee-dd36-45a2-823e-9889037df73ebmw2.jpg",
+                     "images/cars/99cf648a-83b0-4b41-abb8-d7839c41be20bmw3.jpg",
+                     "images/cars/70a8094e-9fc1-4eb5-856e-16a49cfb7ab5bmw77.jpg",
+                     "images/cars/e5eba79b-79ca-4c20-b7dc-36b921f2c71dbmw525.jpg"
+              ]
+       },
+       {
+              "id": 2,
+              "car_name": "as",
+              "car_type_level": "Sport",
+              "doors": 2,
+              "seat": 2,
+              "engine": 2.0,
+              "transmission": "Avtomatik",
+              "days": {
+                     "1_3": 2,
+                     "4_7": 2,
+                     "8_15": 2,
+                     "16_30": 2,
+                     "30_": 2
+              },
+              "year": 2,
+              "photo_links": "images/cars/098db2d1-a93e-4ad0-ab3e-a4b3f2cdcd791bmwm5.jpeg",
+              "links": [
+                     "images/cars/2e73ab09-dd78-465b-bac2-82df86f734001gclass.jpeg",
+                     "images/cars/6148d3e7-df15-4ddd-ad72-60e5cf67816a1gclass2.jpeg",
+                     "images/cars/25953d5a-8e5c-40dc-8eea-7a0e26c4874d1gclass3.jpeg",
+                     "images/cars/a0620714-183f-4403-b2a3-dc36a9a709eb1hundaielentra1.jpeg"
+              ]
+       }
+]
