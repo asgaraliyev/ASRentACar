@@ -425,9 +425,17 @@ window.addEventListener("scroll", () => {
 	}
 })
 
-function showDialog(){
-	if (confirm("Press a button!")) {
+function showdeleteDialog(){
+	if (confirm("Bu avtomobili saytdan silmək istəyirsən?")) {
 		window.location.href="/adminpanel/delete"
+	  } else {
+		
+	  }
+}
+
+function showeditDialog(){
+	if (confirm("Bu avtomobili saytdan redaktə etmək istəyirsən?")) {
+		window.location.href="/adminpanel/edit"
 	  } else {
 		
 	  }
