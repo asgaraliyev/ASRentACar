@@ -364,7 +364,7 @@ class CarForm(FlaskForm):
     day_30_ = IntegerField("30+ gunluk", validators=[DataRequired()])
     year = IntegerField("İl", validators=[DataRequired()])
     picture = FileField("Sekil", validators=[FileRequired('Bir sekil secin'), FileAllowed(['jpg', 'png', 'jpeg'], 'Sadece sekil')])
-    pictures = FileField('Sekiller', validators=[FileRequired(), FileAllowed(['jpg', 'png', 'jpeg'], 'Images only!')])
+    pictures = FileField('Sekiller', validators=[FileRequired('Bir sekil secin'), FileAllowed(['jpg', 'png', 'jpeg'], 'Images only!')])
     submit = SubmitField('Send')
 
 
