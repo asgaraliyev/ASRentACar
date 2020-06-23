@@ -1,4 +1,4 @@
-from flask import Flask,render_template,url_for,jsonify,request,redirect,make_response
+from flask import Flask,render_template,url_for,jsonify,request,redirect,make_response, flash
 import json
 import requests
 from bs4 import BeautifulSoup
@@ -15,9 +15,24 @@ from flask_wtf.file import FileField, FileAllowed, FileRequired
 from flask_wtf import FlaskForm
 from werkzeug.utils import secure_filename
 import uuid
+from flask_login import login_user, current_user, logout_user, login_required, UserMixin
+from flask_sqlalchemy import SQLAlchemy
+from flask_bcrypt import Bcrypt, generate_password_hash, check_password_hash
+from flask_login import LoginManager
+from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask(__name__)
 app.config['BABEL_DEFAULT_LOCALE']='az'
 app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+db = SQLAlchemy(app)
+bcrypt = Bcrypt(app)
+login_manager = LoginManager(app)
+login_manager.login_view = 'adminlogin'
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 UPLOAD_FOLDER = 'static/images/cars/'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'webp'}
@@ -368,14 +383,46 @@ class CarForm(FlaskForm):
     submit = SubmitField('Send')
 
 
+class LoginForm(FlaskForm):
+    username = StringField('Email',validators=[DataRequired()])
+    password = PasswordField('Password', validators=[DataRequired()])
+    remember = BooleanField('Remember Me')
+    submit = SubmitField('Login')
+
+
+class User(db.Model, UserMixin):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(20), unique=True, nullable=False)
+    password = db.Column(db.String(60), nullable=False)
+
+    def __repr__(self):
+        return f"User('{self.username}', '{self.email}', '{self.image_file}')"
+
+
+
+
+
+@app.route("/adminlogin", methods=["GET", "POST"])
+def adminlogin():
+    form=LoginForm()
+    if form.validate_on_submit():
+        admin = User.query.filter_by(username=form.username.data).first()
+        if admin and check_password_hash(admin.password, form.password.data):
+            login_user(admin, remember=form.remember.data)
+            return redirect(url_for('adminpanel'))
+        else:
+            flash(message='istifadeci adi veya sifre yanlisdir', category='danger') 
+    return render_template("adminlogin.html", form=form)
 
 
 @app.route("/adminpanel")
+@login_required
 def adminpanel():
     return render_template("adminpanel.html")
 
 
 @app.route("/adminpanel/cars")
+@login_required
 def show_cars():
     website = getJsonFile("static/site/website.json")
     pullar = getJsonFile("static/currency/currency.json")
@@ -386,6 +433,7 @@ def show_cars():
 
 
 @app.route("/adminpanel/car/<int:id>")
+@login_required
 def show_car(id):
     website = getJsonFile("static/site/website.json")
     pullar = getJsonFile("static/currency/currency.json")
@@ -403,6 +451,7 @@ def getObject():
         obyekt = json.loads(data)
         return obyekt
 @app.route("/adminpanel/addcar", methods=["GET", "POST"])
+@login_required
 def add_car():
     form=CarForm()
     if form.validate_on_submit():
@@ -456,19 +505,30 @@ def add_car():
 
 
 @app.route("/adminpanel/car/<int:id>/edit")
+@login_required
 def car_edit(id):
     return render_template("admineditcar.html", id=id)
 
 
 @app.route("/adminpanel/message")
+@login_required
 def show_message():
     return render_template("adminmessages.html")
 @app.route("/adminpanel/delete")
+@login_required
 def deletecar():
     return render_template("adminmessages.html")
 @app.route("/adminpanel/edit")
+@login_required
 def editcar():
     return render_template("adminmessages.html")
+
+
+@app.route("/logout")
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
 
 
 #-------------------------------------------------ADMIN PANEL-----------------------------------------------
