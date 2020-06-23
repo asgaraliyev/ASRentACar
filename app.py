@@ -36,6 +36,11 @@ def load_user(user_id):
     return User.query.get(int(user_id))
 
 
+# @app.before_request 
+# def before_request():
+#     session.permanent = True
+#     app.permanent_session_lifetime = timedelta(hours=1)  #burada seconds, minutes, hours, days, years ola biler
+
 
 
 UPLOAD_FOLDER = 'static/images/cars/'
