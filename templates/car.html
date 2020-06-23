@@ -50,9 +50,7 @@
                 <div class="details">
                     <br>
                     <form action="{{ url_for('wewillcallyou',carid=car['id'],totalPrice=totalPrice,pickdate=pick,dropdate=drop,babyseat=totalBaby)}}" method="post" class="column">
-                        <h1>{{car['car_name']}}{% if totalBaby %} + {{_('Uşaq oturacağı')}} {% endif%}</h1>
                         <p class="price"> {{totalDays}} {{_('gün')}}  {{_('üçün')}}   <span class="itiscurrency">{{totalPrice}}</span>     <span class="itiscurrencyname">AZN</span>  </p>
-
                     <div id="inputs">
                         <input required type="text" name="name" placeholder=" {{_('Ad')}} ">
                         <input required type="email" name="mail" placeholder=" {{_('E-poçt')}} ">
