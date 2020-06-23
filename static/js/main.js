@@ -426,5 +426,9 @@ window.addEventListener("scroll", () => {
 })
 
 function showDialog(){
- confirm("Maşını silmək istəyirsiz?")
+	if (confirm("Press a button!")) {
+		window.location.href="/adminpanel/delete"
+	  } else {
+		
+	  }
 }

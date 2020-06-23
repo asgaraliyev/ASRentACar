@@ -463,6 +463,9 @@ def car_edit(id):
 @app.route("/adminpanel/message")
 def show_message():
     return render_template("adminmessages.html")
+@app.route("/adminpanel/delete")
+def deletecar():
+    return render_template("adminmessages.html")
 
 
 #-------------------------------------------------ADMIN PANEL-----------------------------------------------
