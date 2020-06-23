@@ -424,3 +424,7 @@ window.addEventListener("scroll", () => {
 		toTop.classList.remove("active");
 	}
 })
+
+function showDialog(){
+ confirm("Maşını silmək istəyirsiz?")
+}
