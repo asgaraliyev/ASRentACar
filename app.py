@@ -21,6 +21,7 @@ from flask_bcrypt import Bcrypt, generate_password_hash, check_password_hash
 from flask_login import LoginManager
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import timedelta
+import shutil
 app = Flask(__name__)
 app.config['BABEL_DEFAULT_LOCALE']='az'
 app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
@@ -454,6 +455,7 @@ def show_car(id):
     return render_template("admincar.html", id=id, cars=obyekt, moneys=pullar, website=website)
 
 
+
 def getObject():
     with open("cars.json", "r") as file:
         data = file.read()
@@ -524,10 +526,27 @@ def car_edit(id):
 @login_required
 def show_message():
     return render_template("adminmessages.html")
-@app.route("/adminpanel/delete")
-@login_required
-def deletecar():
-    return render_template("adminmessages.html")
+
+
+#DELETE
+
+@app.route("/adminpanel/car/<int:id>/delete", methods=["POST"])
+def deletecar(id):
+    with open("cars.json", "r") as file:
+        data = file.read()
+    galery = json.loads(data)
+    for photo in galery:
+        if photo["id"] == id:
+            galery.remove(photo)
+            for sekil in photo["links"]:
+                os.remove('static/' + sekil)
+            os.remove('static/' + photo["photo_links"])
+            with open("cars.json", "w", encoding="utf-8") as file:
+                json.dump(galery, file, indent=7, ensure_ascii=False)
+            return redirect(url_for("adminpanel"))
+
+
+
 @app.route("/adminpanel/edit")
 @login_required
 def editcar():
