@@ -427,7 +427,7 @@ window.addEventListener("scroll", () => {
 
 function showdeleteDialog(){
 	if (confirm("Bu avtomobili saytdan silmək istəyirsən?")) {
-		window.location.href="/adminpanel/delete"
+		window.location.href="/adminpanel/car/id/delete"
 	  } else {
 		
 	  }

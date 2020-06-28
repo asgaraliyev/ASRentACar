@@ -21,12 +21,10 @@ from flask_bcrypt import Bcrypt, generate_password_hash, check_password_hash
 from flask_login import LoginManager
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import timedelta
-import shutil
 app = Flask(__name__)
 app.config['BABEL_DEFAULT_LOCALE']='az'
 app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS "] = False
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
@@ -377,8 +375,8 @@ def getcur():
 
 class CarForm(FlaskForm):
     carname = StringField("Masinin Adi", validators=[DataRequired(), Length(min=2, max=20)])
-    cartypelevel = SelectField("Masin Tipi Derece", choices=[('sport', 'sport'), ('business', 'business'),
-        ('full-size', 'full-size'), ('minivan', 'minivan'), ('economy', 'economy')])
+    cartypelevel = SelectField("Masin Tipi Derece", choices=[('Sport', 'Sport'), ('Business', 'Business'),
+        ('Full-Size', 'Full-Size'), ('Minivan', 'Minivan'), ('Economy', 'Economy')])
     doors = IntegerField("Qapi Sayi", validators=[NumberRange(min=2, max=15, message='Invalid length')])
     seat = IntegerField("Oturacaq Sayi", validators=[NumberRange(min=2, max=15, message='Invalid length')])
     engine = FloatField("Muherrik", validators=[DataRequired()])
@@ -455,7 +453,6 @@ def show_car(id):
     return render_template("admincar.html", id=id, cars=obyekt, moneys=pullar, website=website)
 
 
-
 def getObject():
     with open("cars.json", "r") as file:
         data = file.read()
@@ -525,31 +522,6 @@ def car_edit(id):
 @app.route("/adminpanel/message")
 @login_required
 def show_message():
-    return render_template("adminmessages.html")
-
-
-#DELETE
-
-@app.route("/adminpanel/car/<int:id>/delete", methods=["POST"])
-def deletecar(id):
-    with open("cars.json", "r") as file:
-        data = file.read()
-    galery = json.loads(data)
-    for photo in galery:
-        if photo["id"] == id:
-            galery.remove(photo)
-            for sekil in photo["links"]:
-                os.remove('static/' + sekil)
-            os.remove('static/' + photo["photo_links"])
-            with open("cars.json", "w", encoding="utf-8") as file:
-                json.dump(galery, file, indent=7, ensure_ascii=False)
-            return redirect(url_for("adminpanel"))
-
-
-
-@app.route("/adminpanel/edit")
-@login_required
-def editcar():
     return render_template("adminmessages.html")
 
 
