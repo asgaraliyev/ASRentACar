@@ -36,38 +36,7 @@
                                 </div>
 
                                 <div class="side asagi">
-                                    <form action='/calc/{{car["id"]}}' method="post" id="calculate">
-
-                                        <div id='close-cal-func' class="close-cal" style="cursor: pointer;">
-                                            <p>{{_('Bağla')}}</p>
-                                        </div>
-                                        <ul>
-                                            <li>
-                                                <span>{{_('Götürülmə tarixi:')}}</span>
-
-                                            </li>
-                                            <li>
-                                                <span>{{_('Buraxılma Tarixi:')}}</span>
-
-                                            </li>
-
-                                        </ul>
-                                        <ul>
-                                            <li>
-                                                &nbsp;&nbsp;<input type="date" name="pick" class="inputs">
-                                            </li>
-                                            <li>
-                                                &nbsp;&nbsp;<input type="date" name="drop" class="inputs">
-
-                                            </li>
-
-                                        </ul>
-
-                                        <div id="calc-in-calc">
-                                            <button id="calculate-in-calc" type="submit">{{_('Hesabla')}}</button>
-                                        </div>
-
-                                    </form>
+                                   
                                     <ul>
                                         <li>
                                             <span>{{_('Maşının tipi:')}}</span><span>{{car['car_type_level']}}</span>
@@ -128,8 +97,12 @@
                                     </ul>
                                 </div>
                                 <div id="calc-button">
-                                    <input id="calculateFunc" onclick="showeditDialog()"  style="height: 40px;" class="btn btn-danger" type="button" value="{{_('Redaktə Et')}}">&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <input id="calculateFunc" onclick="showdeleteDialog()" style="height: 40px; width: 110px;" class="btn btn-danger" type="button" value="{{_('Sil')}}">
+                                    
+                                        <a href="{{ url_for('car_edit', id=id) }}"><input id="calculateFunc" style="height: 40px;" class="btn btn-info" type="submit" value="{{_('Redaktə Et')}}"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    
+                                    <form action="{{ url_for('deletecar', id=id) }}" method="POST">
+                                        <input id="calculateFunc" onclick="showdeleteDialog()" style="height: 40px; width: 110px;" class="btn btn-danger" type="submit" value="{{_('Sil')}}">
+                                    </form>
                                 </div>
                             </div>
                         </div>
