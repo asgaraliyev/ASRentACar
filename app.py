@@ -1,12 +1,12 @@
 from flask import Flask,render_template,url_for,jsonify,request,redirect,make_response, flash
 import json
-import requests
 from bs4 import BeautifulSoup
 import random
 from datetime import date
 import datetime 
 from flask_babel import Babel,_,gettext
 import os
+import requests
 from time import sleep 
 from urllib.request import urlopen
 from wtforms import DateField, BooleanField, IntegerField,Label, ValidationError, validators, FloatField, FormField, Form, FileField, StringField, PasswordField, SubmitField, BooleanField, TextAreaField, SelectField
@@ -361,7 +361,11 @@ def index():
     pullar=getJsonFile("static/currency/currency.json")
     website=getJsonFile("static/site/website.json")
     obyekt=getObject()
-    aCar=random.randint(1,len(obyekt))
+    try:
+        aCar=random.randint(1,len(obyekt))
+    except Exception as ex:
+        print(ex)
+        aCar=None
     print("random a car",aCar)
     return render_template("index.html",cars=obyekt,moneys=pullar,aCar=aCar,website=website)
 
