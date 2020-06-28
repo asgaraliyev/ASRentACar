@@ -397,6 +397,9 @@ class CarForm(FlaskForm):
     submit = SubmitField('Send')
 
 
+
+
+
 class LoginForm(FlaskForm):
     username = StringField('Email',validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
@@ -518,10 +521,53 @@ def add_car():
     return render_template("adminaddcar.html", form=form)
 
 
-@app.route("/adminpanel/car/<int:id>/edit")
+
+#EDIT
+def getObjectEdit():
+    with open("cars.json", "r") as file:
+        data = file.read()
+        file.close()
+        obyekt = json.loads(data)
+        for car in obyekt:
+            return car
+
+
+@app.route("/adminpanel/car/<int:id>/edit", methods=["GET", "POST"])
 @login_required
 def car_edit(id):
-    return render_template("admineditcar.html", id=id)
+    form = CarForm()
+    car = getObjectEdit()
+    if form.validate_on_submit():
+        print("post olmur")
+        car["car_name"] = form.carname.data
+        car["car_type_level"] = form.cartypelevel.data
+        car["doors"] = form.doors.data
+        car["seat"] = form.seat.data
+        car["engine"] = form.engine.data
+        car["transmission"] = form.transmission.data
+        car["days"]["1_3"] = form.day_1_3.data
+        car["days"]["4_7"] = form.day_4_7.data
+        car["days"]["8_15"] = form.day_8_15.data
+        car["days"]["16_30"] = form.day_16_30.data
+        car["days"]["30_"] = form.day_30_.data
+        car["year"] = form.year.data
+        with open("cars.json", "w", encoding="utf-8") as file:
+            json.dump(car, file, indent=7)
+        return redirect(url_for("show_cars"))
+    elif request.method == "GET":
+        form.carname.data = car["car_name"]
+        form.cartypelevel.data = car["car_type_level"]
+        form.doors.data = car["doors"]
+        form.seat.data = car["seat"]
+        form.engine.data = car["engine"]
+        form.transmission.data = car["transmission"]
+        form.day_1_3.data = car["days"]["1_3"]
+        form.day_4_7.data = car["days"]["4_7"]
+        form.day_8_15.data = car["days"]["8_15"]
+        form.day_16_30.data = car["days"]["16_30"]
+        form.day_30_.data = car["days"]["30_"]
+        form.year.data = car["year"]
+    return render_template("admineditcar.html", id=id, form=form, car=car)
 
 
 #DELETE
