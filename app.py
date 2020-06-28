@@ -520,6 +520,25 @@ def car_edit(id):
     return render_template("admineditcar.html", id=id)
 
 
+#DELETE
+
+@app.route("/adminpanel/car/<int:id>/delete", methods=["POST"])
+def deletecar(id):
+    with open("cars.json", "r") as file:
+        data = file.read()
+    galery = json.loads(data)
+    for photo in galery:
+        if photo["id"] == id:
+            galery.remove(photo)
+            for sekil in photo["links"]:
+                os.remove('static/' + sekil)
+            os.remove('static/' + photo["photo_links"])
+            with open("cars.json", "w", encoding="utf-8") as file:
+                json.dump(galery, file, indent=7, ensure_ascii=False)
+            return redirect(url_for("adminpanel"))
+
+
+
 @app.route("/adminpanel/message")
 @login_required
 def show_message():

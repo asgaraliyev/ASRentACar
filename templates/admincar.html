@@ -98,7 +98,9 @@
                                 </div>
                                 <div id="calc-button">
                                     <input id="calculateFunc" onclick="showeditDialog()"  style="height: 40px;" class="btn btn-danger" type="button" value="{{_('Redaktə Et')}}">&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <input id="calculateFunc" onclick="showdeleteDialog()" style="height: 40px; width: 110px;" class="btn btn-danger" type="submit" value="{{_('Sil')}}">
+                                    <form action="{{ url_for('deletecar', id=id) }}" method="POST">
+                                        <input id="calculateFunc" onclick="showdeleteDialog()" style="height: 40px; width: 110px;" class="btn btn-danger" type="submit" value="{{_('Sil')}}">
+                                    </form>
                                 </div>
                             </div>
                         </div>

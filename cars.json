@@ -1,74 +1,44 @@
 [
        {
               "id": 1,
-              "car_name": "Bmw",
-              "car_type_level": "sport",
+              "car_name": "Bmw1",
+              "car_type_level": "Sport",
               "doors": 4,
               "seat": 4,
               "engine": 4.5,
               "transmission": "Avtomatik",
               "days": {
-                     "1_3": 45,
-                     "4_7": 45,
-                     "8_15": 45,
-                     "16_30": 45,
-                     "30_": 45
+                     "1_3": 90,
+                     "4_7": 90,
+                     "8_15": 90,
+                     "16_30": 90,
+                     "30_": 90
               },
               "year": 2015,
-              "photo_links": "images/cars/5371b027-3036-4fde-a7d1-62e775cc77e8bmw1.jpg",
+              "photo_links": "images/cars/ace6479c-31a5-413b-8b2e-d650c23c0ffebmw1.jpg",
               "links": [
-                     "images/cars/b9c1c208-2fbf-4370-bf6b-4d3eb7cedd40bmw2.jpg",
-                     "images/cars/6233b535-963f-42d4-9958-16b997bd03bcbmw3.jpg",
-                     "images/cars/34b3f78b-810f-4d37-9657-3b08e54c17d2bmw77.jpg",
-                     "images/cars/6c429a23-0edf-44a2-94ac-bde0832c027fbmw525.jpg"
+                     "images/cars/ba3c2585-7a58-4b6c-9974-272206ca5c72bmw2.jpg"
               ]
        },
        {
               "id": 2,
-              "car_name": "asdasd",
-              "car_type_level": "sport",
+              "car_name": "Bmw2",
+              "car_type_level": "Sport",
               "doors": 4,
               "seat": 4,
               "engine": 4.5,
               "transmission": "Avtomatik",
               "days": {
-                     "1_3": 45,
-                     "4_7": 45,
-                     "8_15": 45,
-                     "16_30": 45,
-                     "30_": 45
+                     "1_3": 90,
+                     "4_7": 90,
+                     "8_15": 90,
+                     "16_30": 90,
+                     "30_": 90
               },
               "year": 2015,
-              "photo_links": "images/cars/a5b7fc4e-97bd-4259-b8aa-2dd2f72c643cbmwmbf.jpg",
+              "photo_links": "images/cars/e00dfe39-36d7-4572-a391-72f33a7584a8bmw2.jpg",
               "links": [
-                     "images/cars/3b1d3782-9a82-43a0-bf75-53ce68b2f285bmw1.jpg",
-                     "images/cars/fe14f0c5-21b0-450e-8cd0-82dc4c440af0bmw2.jpg",
-                     "images/cars/47b85837-e958-428e-a0ba-d38c89d9eca4bmw3.jpg",
-                     "images/cars/0860e105-41db-4888-9da8-e3cd4550cb0bbmw77.jpg"
-              ]
-       },
-       {
-              "id": 3,
-              "car_name": "teze",
-              "car_type_level": "Sport",
-              "doors": 3,
-              "seat": 3,
-              "engine": 3.5,
-              "transmission": "Avtomatik",
-              "days": {
-                     "1_3": 34,
-                     "4_7": 34,
-                     "8_15": 34,
-                     "16_30": 34,
-                     "30_": 34
-              },
-              "year": 2012,
-              "photo_links": "images/cars/f698e7a1-37bf-429f-a926-24cc2c689af1bmw77.jpg",
-              "links": [
-                     "images/cars/18387d17-37e2-4f79-b56a-24833fc3067cbmw1.jpg",
-                     "images/cars/381515dc-a660-4c6e-b747-bf3e6a06584abmw2.jpg",
-                     "images/cars/6bc1a25b-4992-4195-9081-52da323244dfbmw3.jpg",
-                     "images/cars/43bf6652-2c69-4040-8ac0-51f38ea931a9bmw525.jpg"
+                     "images/cars/670a36d8-fa50-43c3-a0f2-979df199ea87bmw3.jpg"
               ]
        }
 ]
