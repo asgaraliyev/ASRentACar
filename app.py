@@ -18,7 +18,7 @@ import uuid
 from flask_login import login_user, current_user, logout_user, login_required, UserMixin
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt, generate_password_hash, check_password_hash
-from flask_login import LoginManager
+from flask_login import LoginManager, current_user, login_required, logout_user, login_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import timedelta
 app = Flask(__name__)
@@ -406,6 +406,11 @@ class LoginForm(FlaskForm):
     remember = BooleanField('Remember Me')
     submit = SubmitField('Login')
 
+class UpdateAccount(FlaskForm):
+    username = StringField('Email', validators=[DataRequired()])
+    password = PasswordField('Password', validators=[DataRequired()])
+    submit = SubmitField('Update')
+
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
@@ -413,7 +418,7 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(60), nullable=False)
 
     def __repr__(self):
-        return f"User('{self.username}', '{self.email}', '{self.image_file}')"
+        return f"User('{self.username}', '{self.password}')"
 
 
 
@@ -536,10 +541,24 @@ def getObjectEdit():
 def car_edit(id):
     form = CarForm()
     cars = getObjectEdit()
-    for car in cars:
-        if form.validate_on_submit():
-            print("post olmur")
-       	    car["car_name"] = form.carname.data
+    if form.validate_on_submit():
+        print("post olmur")
+        for car in cars:
+            filename = str(uuid.uuid4()) + secure_filename(form.picture.data.filename)
+            form.picture.data.save(app.config['UPLOAD_FOLDER'] + filename)
+            images = request.files.getlist("pictures")
+            image_files = []
+            imagesForJson = []
+            if images:
+                for img in images:
+                    # Create Images
+                    file_name = str(uuid.uuid4()) + secure_filename(img.filename)
+                    image_file = os.path.join(
+                        app.config['UPLOAD_FOLDER'], file_name)
+                    imagesForJson.append("images/cars/"+file_name)
+                    img.save(image_file)
+                    image_files.append(image_file)
+            car["car_name"] = form.carname.data
             car["car_type_level"] = form.cartypelevel.data
             car["doors"] = form.doors.data
             car["seat"] = form.seat.data
@@ -551,25 +570,29 @@ def car_edit(id):
             car["days"]["16_30"] = form.day_16_30.data
             car["days"]["30_"] = form.day_30_.data
             car["year"] = form.year.data
+            car["photo_links"] = form.picture.data
+            car["photo"]
             cars.append(car)
             with open("cars.json", "w", encoding="utf-8") as file:
                 json.dump(cars, file, indent=7)
             return redirect(url_for("show_cars"))
-            print("blah blah")
-        elif request.method == "GET":
-            form.carname.data = car["car_name"]
-            form.cartypelevel.data = car["car_type_level"]
-            form.doors.data = car["doors"]
-            form.seat.data = car["seat"]
-            form.engine.data = car["engine"]
-            form.transmission.data = car["transmission"]
-            form.day_1_3.data = car["days"]["1_3"]
-            form.day_4_7.data = car["days"]["4_7"]
-            form.day_8_15.data = car["days"]["8_15"]
-            form.day_16_30.data = car["days"]["16_30"]
-            form.day_30_.data = car["days"]["30_"]
-            form.year.data = car["year"]
-        return render_template("admineditcar.html", id=id, form=form, cars=cars)
+    else:
+        for car in cars:
+            if car["id"] == id:
+                form.carname.data = car["car_name"]
+                form.cartypelevel.data = car["car_type_level"]
+                form.doors.data = car["doors"]
+                form.seat.data = car["seat"]
+                form.engine.data = car["engine"]
+                form.transmission.data = car["transmission"]
+                form.day_1_3.data = car["days"]["1_3"]
+                form.day_4_7.data = car["days"]["4_7"]
+                form.day_8_15.data = car["days"]["8_15"]
+                form.day_16_30.data = car["days"]["16_30"]
+                form.day_30_.data = car["days"]["30_"]
+                form.year.data = car["year"]
+                form.picture.data = car["photo_links"]
+                return render_template("admineditcar.html", id=id, form=form, cars=cars, car=car)
 
 
 
@@ -604,6 +627,21 @@ def logout():
     logout_user()
     return redirect(url_for('index'))
 
+
+@app.route("/adminpanel/settings", methods=["GET", "POST"])
+@login_required
+def settings():
+    form = UpdateAccount()
+    user = User.query.get_or_404(1)
+    if form.validate_on_submit():
+        user.username = form.username.data
+        user.password = generate_password_hash(form.password.data)
+        db.session.commit()
+        return redirect(url_for("adminpanel"))
+    elif request.method == "GET":
+        form.username.data = user.username
+        form.password.data = user.password
+    return render_template("adminsettings.html", form=form, id=id)
 
 #-------------------------------------------------ADMIN PANEL-----------------------------------------------
 
