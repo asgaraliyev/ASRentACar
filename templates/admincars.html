@@ -46,7 +46,7 @@
                     <span>{{_('Ötürücü')}}</span>
                     {%if car["transmission"]=='Avtomatik'%}
                     <span class="spec">{{_('Avtomatik')}}</span>
-                    {% car["transmission"]=='Mexanika'%}
+                    {% elif car["transmission"]=='Mexanika'%}
                     <span class="spec">{{_('Mexanik')}}</span>
                     {%endif%}
                   </li>
