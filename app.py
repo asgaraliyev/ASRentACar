@@ -251,7 +251,7 @@ def calPrice(pick,drop,baby,id,carss):
         return totalPrice,numberDays,True
     return totalPrice,numberDays,False
 def writethismessage(firstname,lastname,email,phone,message):
-    with open("static/messages/messages.json","r" , encoding='utf8') as file:
+    with open("messages/messages.json","r" , encoding='utf8') as file:
         data=file.read()
         file.close()
         print(data)
@@ -266,7 +266,7 @@ def writethismessage(firstname,lastname,email,phone,message):
             "message":message
         }
         data.append(amessage)
-        with open("static/messages/messages.json","w" , encoding='utf8') as file:
+        with open("messages/messages.json","w" , encoding='utf8') as file:
             json.dump(data,file)
 @app.route("/takemessage",methods=["POST"])
 def takemessage():
@@ -286,7 +286,7 @@ def takemessage():
 def gettoken():
     auth=request.authorization
     if auth and auth.password=='password' and auth.username=='username':
-        return jsonify(getJsonFile("static/messages/messages.json"))
+        return jsonify(getJsonFile("messages/messages.json"))
     return make_response('Coudnt verify',401,{'WWW-Authenticate':'Basic realm="Login Required"'})
 # getting messages info with token
 # getting messages info with token
@@ -297,7 +297,7 @@ def gettoken():
 def getresponses():
     auth=request.authorization
     if auth and auth.password=='password' and auth.username=='username':
-        return jsonify(getJsonFile("static/responses/carresponses.json"))
+        return jsonify(getJsonFile("responses/carresponses.json"))
     return make_response('Coudnt verify',401,{'WWW-Authenticate':'Basic realm="Login Required"'})
 # getting responses info with token
 # getting responses info with token
@@ -326,7 +326,7 @@ def contact():
     website=getJsonFile("static/site/website.json")
     return render_template("contact.html",website=website,moneys=pullar)
 def writethisresponse(fullname,mail,phone,carid,totalPrice,pickdate,dropdate,babyseat):
-    with open("static/responses/carresponses.json","r",encoding='utf8') as file:
+    with open("responses/carresponses.json","r",encoding='utf8') as file:
         data=file.read()
         file.close()
         data=eval(data)
@@ -344,7 +344,7 @@ def writethisresponse(fullname,mail,phone,carid,totalPrice,pickdate,dropdate,bab
         }
         data.append(amessage)
 
-        with open("static/responses/carresponses.json","w",encoding='utf8') as file:
+        with open("responses/carresponses.json","w",encoding='utf8') as file:
             json.dump(data,file)
             print(data)
 @app.route("/wewillcallyou/<int:carid>/<int:totalPrice>/<string:pickdate>/<string:dropdate>/<string:babyseat>",methods=["POST"])
