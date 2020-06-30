@@ -40,5 +40,26 @@
               "links": [
                      "images/cars/670a36d8-fa50-43c3-a0f2-979df199ea87bmw3.jpg"
               ]
+       },
+       {
+              "id": 3,
+              "car_name": "asdasd",
+              "car_type_level": "Sport",
+              "doors": 4,
+              "seat": 4,
+              "engine": 4.5,
+              "transmission": "Avtomatik",
+              "days": {
+                     "1_3": 90,
+                     "4_7": 90,
+                     "8_15": 90,
+                     "16_30": 90,
+                     "30_": 90
+              },
+              "year": 2015,
+              "photo_links": "images/cars/cad1e093-9108-49cf-bd7a-b03dfe1b6e4bALJN6058.jpg",
+              "links": [
+                     "images/cars/8371c79b-56c4-4d0f-bd8f-2cabf77514a5ASKI7838.jpg"
+              ]
        }
 ]
