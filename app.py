@@ -385,7 +385,7 @@ class CarForm(FlaskForm):
     doors = IntegerField("Qapi Sayi", validators=[NumberRange(min=2, max=15, message='Invalid length')])
     seat = IntegerField("Oturacaq Sayi", validators=[NumberRange(min=2, max=15, message='Invalid length')])
     engine = FloatField("Muherrik", validators=[DataRequired()])
-    transmission = SelectField("Ötürücü" ,choices=[('0', 'Avtomatik' ), ('1', 'Mexanik'Mexanik)])
+    transmission = SelectField("Ötürücü" ,choices=[('0', 'Avtomatik' ), ('1', 'Mexanik')])
     day_1_3 = IntegerField("1-3 gunluk", validators=[DataRequired()])
     day_4_7 = IntegerField("4-7 gunluk", validators=[DataRequired()])
     day_8_15 = IntegerField("8-15 gunluk", validators=[DataRequired()])
