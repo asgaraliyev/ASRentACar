@@ -380,8 +380,8 @@ def getcur():
 
 class CarForm(FlaskForm):
     carname = StringField("Masinin Adi", validators=[DataRequired(), Length(min=2, max=20)])
-    cartypelevel = SelectField("Masin Tipi Derece", choices=[('Sport', 'Sport'), ('Business', 'Business'),
-        ('Full-Size', 'Full-Size'), ('Minivan', 'Minivan'), ('Economy', 'Economy')])
+    cartypelevel = SelectField("Masin Tipi Derece", choices=[('sport', 'sport'), ('business', 'business'),
+        ('full-size', 'full-size'), ('minivan', 'minivan'), ('economy', 'economy')])
     doors = IntegerField("Qapi Sayi", validators=[NumberRange(min=2, max=15, message='Invalid length')])
     seat = IntegerField("Oturacaq Sayi", validators=[NumberRange(min=2, max=15, message='Invalid length')])
     engine = FloatField("Muherrik", validators=[DataRequired()])
