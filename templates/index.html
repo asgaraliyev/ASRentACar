@@ -35,9 +35,9 @@
                   </li>
                   <li>
                     <span>{{_('Ötürücü')}}</span>
-                    {%if car["transmission"]==0%}
+                    {%if car["transmission"]=='Avtomatik'%}
                     <span class="spec">{{_('Avtomatik')}}</span>
-                    {% elif car["transmission"]==1%}
+                    {% car["transmission"]=='Mexanika'%}
                     <span class="spec">{{_('Mexanika')}}</span>
                     {%endif%}
                   </li>
@@ -86,9 +86,9 @@
                   </li>
                   <li>
                     <span>{{_('Ötürücü')}}</span>
-                    {%if car["transmission"]==0%}
+                    {%if car["transmission"]=='Avtomatik'%}
                     <span class="spec">{{_('Avtomatik')}}</span>
-                    {% elif car["transmission"]==1%}
+                    {% car["transmission"]=='Mexanika'%}
                     <span class="spec">{{_('Mexanika')}}</span>
                     {%endif%}
                   </li>
@@ -151,9 +151,9 @@
                     </li>
                     <li>
                       <span>{{_('Ötürücü')}}</span>
-                      {%if car["transmission"]==0%}
+                      {%if car["transmission"]=='Avtomatik'%}
                     <span class="spec">{{_('Avtomatik')}}</span>
-                    {% elif car["transmission"]==1%}
+                    {% car["transmission"]=='Mexanika'%}
                     <span class="spec">{{_('Mexanik')}}</span>
                     {%endif%}
                     </li>
