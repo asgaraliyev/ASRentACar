@@ -177,7 +177,7 @@ msgstr "Years"
 
 #: templates/car.html:201
 msgid "Ötürücü:"
-msgstr "Transmision"
+msgstr "transmission"
 
 #: templates/car.html:203 templates/cars.html:68 templates/index.html:41
 #: templates/index.html:92 templates/index.html:158
@@ -293,7 +293,7 @@ msgstr "Seats"
 #: templates/cars.html:66 templates/index.html:39 templates/index.html:90
 #: templates/index.html:156
 msgid "Ötürücü"
-msgstr "Transmision"
+msgstr "transmission"
 
 #: templates/cars.html:74 templates/index.html:47 templates/index.html:98
 #: templates/index.html:164

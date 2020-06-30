@@ -1,12 +1,12 @@
 from flask import Flask,render_template,url_for,jsonify,request,redirect,make_response, flash
 import json
-import requests
 from bs4 import BeautifulSoup
 import random
 from datetime import date
 import datetime 
 from flask_babel import Babel,_,gettext
 import os
+import requests
 from time import sleep 
 from urllib.request import urlopen
 from wtforms import DateField, BooleanField, IntegerField,Label, ValidationError, validators, FloatField, FormField, Form, FileField, StringField, PasswordField, SubmitField, BooleanField, TextAreaField, SelectField
@@ -251,7 +251,7 @@ def calPrice(pick,drop,baby,id,carss):
         return totalPrice,numberDays,True
     return totalPrice,numberDays,False
 def writethismessage(firstname,lastname,email,phone,message):
-    with open("static/messages/messages.json","r" , encoding='utf8') as file:
+    with open("messages/messages.json","r" , encoding='utf8') as file:
         data=file.read()
         file.close()
         print(data)
@@ -266,7 +266,7 @@ def writethismessage(firstname,lastname,email,phone,message):
             "message":message
         }
         data.append(amessage)
-        with open("static/messages/messages.json","w" , encoding='utf8') as file:
+        with open("messages/messages.json","w" , encoding='utf8') as file:
             json.dump(data,file)
 @app.route("/takemessage",methods=["POST"])
 def takemessage():
@@ -286,7 +286,7 @@ def takemessage():
 def gettoken():
     auth=request.authorization
     if auth and auth.password=='password' and auth.username=='username':
-        return jsonify(getJsonFile("static/messages/messages.json"))
+        return jsonify(getJsonFile("messages/messages.json"))
     return make_response('Coudnt verify',401,{'WWW-Authenticate':'Basic realm="Login Required"'})
 # getting messages info with token
 # getting messages info with token
@@ -297,7 +297,7 @@ def gettoken():
 def getresponses():
     auth=request.authorization
     if auth and auth.password=='password' and auth.username=='username':
-        return jsonify(getJsonFile("static/responses/carresponses.json"))
+        return jsonify(getJsonFile("responses/carresponses.json"))
     return make_response('Coudnt verify',401,{'WWW-Authenticate':'Basic realm="Login Required"'})
 # getting responses info with token
 # getting responses info with token
@@ -326,7 +326,7 @@ def contact():
     website=getJsonFile("static/site/website.json")
     return render_template("contact.html",website=website,moneys=pullar)
 def writethisresponse(fullname,mail,phone,carid,totalPrice,pickdate,dropdate,babyseat):
-    with open("static/responses/carresponses.json","r",encoding='utf8') as file:
+    with open("responses/carresponses.json","r",encoding='utf8') as file:
         data=file.read()
         file.close()
         data=eval(data)
@@ -344,7 +344,7 @@ def writethisresponse(fullname,mail,phone,carid,totalPrice,pickdate,dropdate,bab
         }
         data.append(amessage)
 
-        with open("static/responses/carresponses.json","w",encoding='utf8') as file:
+        with open("responses/carresponses.json","w",encoding='utf8') as file:
             json.dump(data,file)
             print(data)
 @app.route("/wewillcallyou/<int:carid>/<int:totalPrice>/<string:pickdate>/<string:dropdate>/<string:babyseat>",methods=["POST"])
@@ -362,7 +362,11 @@ def index():
     pullar=getJsonFile("static/currency/currency.json")
     website=getJsonFile("static/site/website.json")
     obyekt=getObject()
-    aCar=random.randint(1,len(obyekt))
+    try:
+        aCar=random.randint(1,len(obyekt))
+    except Exception as ex:
+        print(ex)
+        aCar=None
     print("random a car",aCar)
     return render_template("index.html",cars=obyekt,moneys=pullar,aCar=aCar,website=website)
 
@@ -376,12 +380,12 @@ def getcur():
 
 class CarForm(FlaskForm):
     carname = StringField("Masinin Adi", validators=[DataRequired(), Length(min=2, max=20)])
-    cartypelevel = SelectField("Masin Tipi Derece", choices=[('Sport', 'Sport'), ('Business', 'Business'),
-        ('Full-Size', 'Full-Size'), ('Minivan', 'Minivan'), ('Economy', 'Economy')])
+    cartypelevel = SelectField("Masin Tipi Derece", choices=[('sport', 'sport'), ('business', 'business'),
+        ('full-size', 'full-size'), ('minivan', 'minivan'), ('economy', 'economy')])
     doors = IntegerField("Qapi Sayi", validators=[NumberRange(min=2, max=15, message='Invalid length')])
     seat = IntegerField("Oturacaq Sayi", validators=[NumberRange(min=2, max=15, message='Invalid length')])
     engine = FloatField("Muherrik", validators=[DataRequired()])
-    transmission = SelectField("Ötürücü" ,choices=[('Avtomatik', 'Avtomatik'), ('Mexanik', 'Mexanik')])
+    transmission = SelectField("Ötürücü" ,choices=[('Avtomatik', 'Avtomatik' ), ('Mexanik', 'Mexanik')])
     day_1_3 = IntegerField("1-3 gunluk", validators=[DataRequired()])
     day_4_7 = IntegerField("4-7 gunluk", validators=[DataRequired()])
     day_8_15 = IntegerField("8-15 gunluk", validators=[DataRequired()])
