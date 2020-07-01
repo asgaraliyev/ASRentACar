@@ -11,6 +11,36 @@
 </head>
 <body>
     {% include "adminsidebar.html" %}
-    {% include 'flash_message.html' %}
+    {% for data in datas %}
+
+    <div class="container">
+        <div class="row" style="margin-left: 50px;">
+            <div style="min-width: 35%; border: 2px solid; margin-top: 10px; height: 150px;">
+                <p>
+                    Tarix: {{ data["date"] }}
+                </p>
+                <p>
+                    Ad, Soyad: {{ data["firstname"] }} {{ data["lastname"] }}
+                </p>
+                <p>
+                    Email: {{ data["email"] }}
+                </p>
+                <p>
+                    Telefon: {{ data["phone"] }}
+                </p>
+               
+            </div>
+            <div style="border: 2px solid blue;  width: 250px; height: 150px; margin-top: 10px;">
+                <p style="text-align: center; ">{{ data["message"] }}</p>
+            </div>
+            
+        </div>
+    </div>
+
+    {% endfor %}
+
+
+
+
 </body>
 </html>

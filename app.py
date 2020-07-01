@@ -255,7 +255,7 @@ def writethismessage(firstname,lastname,email,phone,message):
         data=file.read()
         file.close()
         print(data)
-        time=str(datetime.datetime.now())
+        time=str(datetime.datetime.now().strftime("%d.%m.%Y, %H:%M"))
         data=eval(data)
         amessage={
             'date':time,
@@ -267,7 +267,7 @@ def writethismessage(firstname,lastname,email,phone,message):
         }
         data.append(amessage)
         with open("messages/messages.json","w" , encoding='utf8') as file:
-            json.dump(data,file)
+            json.dump(data,file, indent=2)
 @app.route("/takemessage",methods=["POST"])
 def takemessage():
     if request.method=="POST":
@@ -409,6 +409,7 @@ class LoginForm(FlaskForm):
 class UpdateAccount(FlaskForm):
     username = StringField('Email', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
+    confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Update')
 
 
@@ -614,11 +615,17 @@ def deletecar(id):
             return redirect(url_for("adminpanel"))
 
 
-
+def getJsonMessage():
+    with open("messages/messages.json", "r") as file:
+        data = file.read()
+        file.close()
+        obyekt = json.loads(data)
+        return obyekt
 @app.route("/adminpanel/message")
 @login_required
 def show_message():
-    return render_template("adminmessages.html")
+    datas = getJsonMessage()
+    return render_template("adminmessages.html", datas=datas)
 
 
 @app.route("/logout")
@@ -641,6 +648,7 @@ def settings():
     elif request.method == "GET":
         form.username.data = user.username
         form.password.data = user.password
+        form.confirm_password.data = user.password
     return render_template("adminsettings.html", form=form, id=id)
 
 #-------------------------------------------------ADMIN PANEL-----------------------------------------------

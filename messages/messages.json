@@ -1,1 +1,58 @@
-[{"date": "2020-06-21 01:59:56.236958", "firstname": "asd", "lastname": "asda", "email": "asda@gmail.com", "phone": "sd", "message": "sd"}]
+[
+  {
+    "date": "2020-06-21 01:59:56.236958",
+    "firstname": "asd",
+    "lastname": "asda",
+    "email": "asda@gmail.com",
+    "phone": "sd",
+    "message": "sd"
+  },
+  {
+    "date": "2020-07-01 03:46:15.077205",
+    "firstname": "Togrul",
+    "lastname": "Mammadov",
+    "email": "mammadov@gmail.com",
+    "phone": "0502721002",
+    "message": "Bu rent a car saytidi"
+  },
+  {
+    "date": "Wed Jul  1 15:59:04 2020",
+    "firstname": "Esger",
+    "lastname": "Eliyev",
+    "email": "esger@gmail.com",
+    "phone": "0506068090",
+    "message": "Esger yaxwi oglandi"
+  },
+  {
+    "date": "01, 07, 20",
+    "firstname": "Eli",
+    "lastname": "Isayev",
+    "email": "eli@gmail.com",
+    "phone": "0708675787",
+    "message": "Rent a car bomba saytdi"
+  },
+  {
+    "date": "01, 07, 2020, 16, 04",
+    "firstname": "Murad",
+    "lastname": "Qurbanov",
+    "email": "murad@gmail.com",
+    "phone": "0506709077",
+    "message": "Rent a car hele qutarmiyib"
+  },
+  {
+    "date": "01.07.2020, 16:06",
+    "firstname": "Eynulla",
+    "lastname": "Sebzullayev",
+    "email": "eynulla@gmail.com",
+    "phone": "0505505050",
+    "message": "Eynulla borzudu"
+  },
+  {
+    "date": "01.07.2020, 16:09",
+    "firstname": "Togrul",
+    "lastname": "Mammadov",
+    "email": "togrul@gmail.com",
+    "phone": "0505004402",
+    "message": "Togrul strimlyaqa"
+  }
+]
