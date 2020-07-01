@@ -2,7 +2,7 @@ from flask import Flask,render_template,url_for,jsonify,request,redirect,make_re
 import json
 from bs4 import BeautifulSoup
 import random
-from datetime import date
+from datetime import date, timedelta
 import datetime 
 from flask_babel import Babel,_,gettext
 import os
@@ -20,7 +20,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt, generate_password_hash, check_password_hash
 from flask_login import LoginManager, current_user, login_required, logout_user, login_user
 from werkzeug.security import generate_password_hash, check_password_hash
-from datetime import timedelta
+
 app = Flask(__name__)
 app.config['BABEL_DEFAULT_LOCALE']='az'
 app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
@@ -267,7 +267,7 @@ def writethismessage(firstname,lastname,email,phone,message):
         }
         data.append(amessage)
         with open("messages/messages.json","w" , encoding='utf8') as file:
-            json.dump(data,file, indent=2)
+            json.dump(data,file, indent=2, ensure_ascii=False)
 @app.route("/takemessage",methods=["POST"])
 def takemessage():
     if request.method=="POST":
@@ -308,7 +308,7 @@ def calc(id):
     if request.method=="POST":
         pick=request.form.get('pick')
         drop=request.form.get('drop')
-        baby=request.form.get('baby')
+        baby = request.form.get('baby')
         obyekt=getObject()
         res = cheking(pick,drop)
         if res[1] is False:
@@ -330,7 +330,7 @@ def writethisresponse(fullname,mail,phone,carid,totalPrice,pickdate,dropdate,bab
         data=file.read()
         file.close()
         data=eval(data)
-        time=str(datetime.datetime.now())
+        time = str(datetime.datetime.now().strftime("%d.%m.%Y, %H:%M"))
         amessage={
             'date':time,
             "fullname":fullname,
@@ -340,12 +340,12 @@ def writethisresponse(fullname,mail,phone,carid,totalPrice,pickdate,dropdate,bab
             "totalPrice":totalPrice,
             "pickdate":pickdate,
             "dropdate":dropdate,
-            "babyseat":babyseat
+            "babyseat": babyseat
         }
         data.append(amessage)
 
         with open("responses/carresponses.json","w",encoding='utf8') as file:
-            json.dump(data,file)
+            json.dump(data,file, indent=2)
             print(data)
 @app.route("/wewillcallyou/<int:carid>/<int:totalPrice>/<string:pickdate>/<string:dropdate>/<string:babyseat>",methods=["POST"])
 def wewillcallyou(carid,totalPrice,pickdate,dropdate,babyseat):
@@ -403,7 +403,6 @@ class CarForm(FlaskForm):
 class LoginForm(FlaskForm):
     username = StringField('Email',validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
-    remember = BooleanField('Remember Me')
     submit = SubmitField('Login')
 
 class UpdateAccount(FlaskForm):
@@ -431,7 +430,7 @@ def adminlogin():
     if form.validate_on_submit():
         admin = User.query.filter_by(username=form.username.data).first()
         if admin and check_password_hash(admin.password, form.password.data):
-            login_user(admin, remember=form.remember.data)
+            login_user(admin)
             return redirect(url_for('adminpanel'))
         else:
             flash(message='istifadeci adi veya sifre yanlisdir', category='danger') 
