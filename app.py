@@ -431,9 +431,14 @@ def adminlogin():
         admin = User.query.filter_by(username=form.username.data).first()
         if admin and check_password_hash(admin.password, form.password.data):
             login_user(admin)
-            return redirect(url_for('adminpanel'))
+            next_page = request.args.get('next')
+            if next_page:
+                return redirect(next_page)
+            else:
+                return redirect(url_for('adminpanel'))
         else:
-            flash(message='istifadeci adi veya sifre yanlisdir', category='danger') 
+            flash(message='istifadeci adi veya sifre yanlisdir', category='danger')
+            return redirect(url_for("adminlogin")) 
     return render_template("adminlogin.html", form=form)
 
 

@@ -12,10 +12,11 @@
 
 <body>
 
-<div class="container" style="width: 500px; transform: translate(50px, 100px); ">
-    <div class="row">
+<div class="container" >
+
       {% include "flash_message.html" %}
-  <form method="post">
+<div class="d-flex justify-content-center">
+  <form method="post" style="width:500px; margin-top: 200px;">
     {{ form.hidden_tag() }}
     <legend class="border-bottom mb-4" style="color: azure;">Admin Login</legend>
     <div class="form-group">
