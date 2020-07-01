@@ -17,21 +17,21 @@
         <div class="row" style="margin-left: 50px;">
             <div style="min-width: 35%; border: 2px solid; margin-top: 10px; height: 150px;">
                 <p>
-                    Tarix: {{ data["date"] }}
+                    <span style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Tarix:</span> <span style="font-style: italic;">{{ data["date"] }}</span>
                 </p>
                 <p>
-                    Ad, Soyad: {{ data["firstname"] }} {{ data["lastname"] }}
+                    <span style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Ad, Soyad:</span> <span style="font-style: italic;">{{ data["firstname"] }} {{ data["lastname"] }}</span>
                 </p>
                 <p>
-                    Email: {{ data["email"] }}
+                    <span style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Email:</span> <span style="font-style: italic;">{{ data["email"] }}</span>
                 </p>
                 <p>
-                    Telefon: {{ data["phone"] }}
+                    <span style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Telefon:</span> <span style="font-style: italic;">{{ data["phone"] }}</span>
                 </p>
                
             </div>
-            <div style="border: 2px solid blue;  width: 250px; height: 150px; margin-top: 10px;">
-                <p style="text-align: center; ">{{ data["message"] }}</p>
+            <div style="border: 2px solid blue;  width: 250px; max-height: 150px; margin-top: 10px; overflow-y: scroll;">
+                <p style="text-align: center;">{{ data["message"] }}</p>
             </div>
             
         </div>
