@@ -20,6 +20,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt, generate_password_hash, check_password_hash
 from flask_login import LoginManager, current_user, login_required, logout_user, login_user
 from werkzeug.security import generate_password_hash, check_password_hash
+from PIL import Image
 
 app = Flask(__name__)
 app.config['BABEL_DEFAULT_LOCALE']='az'
@@ -493,6 +494,8 @@ def add_car():
         print(maksimum,"maksimum id")
         filename = str(uuid.uuid4()) + secure_filename(form.picture.data.filename)
         form.picture.data.save(app.config['UPLOAD_FOLDER'] + filename)
+        imgg = Image.open("static/images/cars/" + filename).resize((411, 201))
+        imgg.save("static/images/cars/" + filename)
         images = request.files.getlist("pictures")
         image_files = []
         imagesForJson=[]
@@ -504,6 +507,8 @@ def add_car():
                 imagesForJson.append("images/cars/"+file_name)
                 img.save(image_file)
                 image_files.append(image_file)
+                imgfl = Image.open("static/images/cars/" + file_name).resize((500, 333))
+                imgfl.save("static/images/cars/" + file_name)
         masinbilgi = {
             "id":maksimum+1,
             "car_name" : form.carname.data,
@@ -616,7 +621,10 @@ def deletecar(id):
             os.remove('static/' + photo["photo_links"])
             with open("cars.json", "w", encoding="utf-8") as file:
                 json.dump(galery, file, indent=7, ensure_ascii=False)
-            return redirect(url_for("adminpanel"))
+            if galery:
+                return redirect(url_for("show_cars"))
+            else:
+                return redirect(url_for("adminpanel"))
 
 
 def getJsonMessage():
@@ -660,3 +668,5 @@ def settings():
 
 if __name__=="__main__":
     app.run(port=5000,debug=True,host='127.0.0.2')
+
+

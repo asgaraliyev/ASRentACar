@@ -1,8 +1,8 @@
 [
        {
               "id": 1,
-              "car_name": "Bmw1",
-              "car_type_level": "Sport",
+              "car_name": "BMW",
+              "car_type_level": "sport",
               "doors": 4,
               "seat": 4,
               "engine": 4.5,
@@ -15,51 +15,12 @@
                      "30_": 90
               },
               "year": 2015,
-              "photo_links": "images/cars/ace6479c-31a5-413b-8b2e-d650c23c0ffebmw1.jpg",
+              "photo_links": "images/cars/fe040c4b-563e-4a4c-afd6-45c283731f84bmw1.jpg",
               "links": [
-                     "images/cars/ba3c2585-7a58-4b6c-9974-272206ca5c72bmw2.jpg"
-              ]
-       },
-       {
-              "id": 2,
-              "car_name": "Bmw2",
-              "car_type_level": "Sport",
-              "doors": 4,
-              "seat": 4,
-              "engine": 4.5,
-              "transmission": "Avtomatik",
-              "days": {
-                     "1_3": 90,
-                     "4_7": 90,
-                     "8_15": 90,
-                     "16_30": 90,
-                     "30_": 90
-              },
-              "year": 2015,
-              "photo_links": "images/cars/e00dfe39-36d7-4572-a391-72f33a7584a8bmw2.jpg",
-              "links": [
-                     "images/cars/670a36d8-fa50-43c3-a0f2-979df199ea87bmw3.jpg"
-              ]
-       },
-       {
-              "id": 3,
-              "car_name": "asdasd",
-              "car_type_level": "Sport",
-              "doors": 4,
-              "seat": 4,
-              "engine": 4.5,
-              "transmission": "Avtomatik",
-              "days": {
-                     "1_3": 90,
-                     "4_7": 90,
-                     "8_15": 90,
-                     "16_30": 90,
-                     "30_": 90
-              },
-              "year": 2015,
-              "photo_links": "images/cars/cad1e093-9108-49cf-bd7a-b03dfe1b6e4bALJN6058.jpg",
-              "links": [
-                     "images/cars/8371c79b-56c4-4d0f-bd8f-2cabf77514a5ASKI7838.jpg"
+                     "images/cars/180ef68e-0f44-4363-8dd0-f5b9ae0dca7bbmw2.jpg",
+                     "images/cars/316fe6ed-437a-48d9-815e-d3613c2c78a4bmw3.jpg",
+                     "images/cars/2d2f5aca-13bc-4cb4-9ded-cb50cad84c75bmw77.jpg",
+                     "images/cars/ae013ddb-5323-4662-978a-e5dff5216eb7bmw525.jpg"
               ]
        }
 ]
