@@ -1595,7 +1595,7 @@ h1, h2, h3, h4, h5,
   height: 120px;
   border: none;
   outline: none;
-  background: url("../images/scrollcar.png") no-repeat;
+  background: url("../images/scrollcar.webp") no-repeat;
   cursor: pointer;
   padding: 15px;
   border-radius: 4px;
